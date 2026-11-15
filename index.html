@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Informática V | Temario Resuelto y Catálogo de Programas</title>
+  <title>Informática V | Temario Resuelto y Catálogo de Ejercicios</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- Barra Superior Institucional Azul con Acento Dorado -->
+  <!-- Barra Superior Institucional -->
   <header class="header-main">
     <div class="header-banner">
       <div class="container header-container">
@@ -43,27 +43,30 @@
       </div>
     </div>
 
-    <!-- Barra de Navegación por Pestañas -->
+    <!-- Barra de Navegación -->
     <nav class="nav-bar">
       <div class="container nav-container">
         <div class="tabs-group">
           <button class="nav-tab active" data-tab="tab-temario">
             <span class="tab-text">Temario Resuelto</span>
           </button>
+          <button class="nav-tab" data-tab="tab-todos">
+            <span class="tab-text">Todos los Ejercicios (100)</span>
+          </button>
           <button class="nav-tab" data-tab="tab-clase">
-            <span class="tab-text">Programas de Clase (51)</span>
+            <span class="tab-text">Versión Original (51)</span>
           </button>
           <button class="nav-tab" data-tab="tab-version-b">
-            <span class="tab-text">Programas Versión B (49)</span>
+            <span class="tab-text">Versión B (49)</span>
           </button>
           <button class="nav-tab" data-tab="tab-drive">
             <span class="tab-text">Google Drive</span>
           </button>
         </div>
         <div class="stats-pills">
-          <span class="pill">100 Programas VB6</span>
-          <span class="pill pill-gold">100 PDFs Técnicos</span>
-          <span class="pill pill-accent">8 Unidades</span>
+          <span class="pill">51 Originales</span>
+          <span class="pill pill-gold">49 Versión B</span>
+          <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="pill pill-link">Abrir Drive</a>
         </div>
       </div>
     </nav>
@@ -94,25 +97,47 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 2: PROGRAMAS EN CLASE -->
+    <!-- SECCIÓN 2: TODOS LOS EJERCICIOS (100 TOTALES) -->
+    <section id="tab-todos" class="tab-pane">
+      <div class="pane-header">
+        <h2>Catálogo de Ejercicios — Versión Original y Versión B</h2>
+        <div class="filter-actions-row">
+          <div class="filter-buttons">
+            <button class="btn-filter active" data-filter="all">Todos (100)</button>
+            <button class="btn-filter" data-filter="clase">Versión Original (51)</button>
+            <button class="btn-filter" data-filter="b">Versión B (49)</button>
+          </div>
+          <div class="search-box">
+            <input type="text" id="todos-search" placeholder="Buscar por nombre o proceso...">
+            <button id="clear-todos-search" class="btn-clear" title="Limpiar búsqueda">X</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="programs-grid" id="grid-todos">
+        <div class="loading-state">Cargando catálogo completo de 100 ejercicios...</div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: PROGRAMAS EN CLASE (VERSIÓN ORIGINAL) -->
     <section id="tab-clase" class="tab-pane">
       <div class="pane-header">
-        <h2>1. Programas Realizados en Clase</h2>
+        <h2>1. Programas Realizados en Clase (Versión Original)</h2>
         <div class="search-box">
-          <input type="text" id="clase-search" placeholder="Buscar programa de clase...">
+          <input type="text" id="clase-search" placeholder="Buscar programa original...">
           <button id="clear-clase-search" class="btn-clear" title="Limpiar búsqueda">X</button>
         </div>
       </div>
 
       <div class="programs-grid" id="grid-clase">
-        <div class="loading-state">Cargando programas de clase...</div>
+        <div class="loading-state">Cargando 51 programas originales...</div>
       </div>
     </section>
 
-    <!-- SECCIÓN 3: PROGRAMAS VERSIÓN B (ALUMNO) -->
+    <!-- SECCIÓN 4: PROGRAMAS VERSIÓN B (ALUMNO) -->
     <section id="tab-version-b" class="tab-pane">
       <div class="pane-header">
-        <h2>2. Programas Similares (Versión B)</h2>
+        <h2>2. Programas Similares pero no Iguales (Versión B)</h2>
         <div class="search-box">
           <input type="text" id="version-b-search" placeholder="Buscar programa Versión B...">
           <button id="clear-version-b-search" class="btn-clear" title="Limpiar búsqueda">X</button>
@@ -120,21 +145,22 @@
       </div>
 
       <div class="programs-grid" id="grid-version-b">
-        <div class="loading-state">Cargando programas Versión B...</div>
+        <div class="loading-state">Cargando 49 programas Versión B...</div>
       </div>
     </section>
 
-    <!-- SECCIÓN 4: GOOGLE DRIVE -->
+    <!-- SECCIÓN 5: GOOGLE DRIVE -->
     <section id="tab-drive" class="tab-pane">
       <div class="drive-hub">
         <div class="drive-card-hero">
-          <h2>4. Carpeta en Google Drive</h2>
+          <h2>Carpeta Oficial en Google Drive</h2>
           <div class="drive-actions">
             <div class="drive-url-box">
-              <span class="url-label">URL de Compartición:</span>
+              <span class="url-label">URL Oficial de Compartición:</span>
               <div class="url-input-wrap">
-                <input type="text" id="drive-url-input" readonly value="https://drive.google.com/drive/folders/1_alan_orona_enriquez_informatica_v_1501">
+                <input type="text" id="drive-url-input" readonly value="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9">
                 <button class="btn btn-gold" onclick="copyDriveUrl()">Copiar Enlace</button>
+                <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="btn btn-primary">Abrir en Drive</a>
               </div>
             </div>
           </div>
@@ -142,34 +168,37 @@
 
         <div class="delivery-structure-grid">
           <div class="structure-card">
-            <h3>Carpeta A: Programas Realizados en Clase</h3>
+            <h3>1. Programas Realizados en Clase</h3>
             <span class="struct-tag">51 Programas</span>
             <ul>
-              <li>Código fuente en Visual Basic 6.0 (.vbp, .frm, .bas)</li>
+              <li>Código fuente original en Visual Basic 6.0</li>
               <li>Ejecutables compilados (.exe)</li>
-              <li>Documento individual DOCUMENTACION.pdf</li>
+              <li>Documentación individual DOCUMENTACION.pdf</li>
             </ul>
+            <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="card-link">Ver en Google Drive</a>
           </div>
 
           <div class="structure-card highlight-card">
-            <h3>Carpeta B: Programas Similares Versión B</h3>
+            <h3>2. Programas Similares Versión B</h3>
             <span class="struct-tag tag-gold">49 Programas</span>
             <ul>
               <li>Nuevas funcionalidades y diseño renovado</li>
-              <li>Código sin comentarios</li>
+              <li>Código fuente sin comentarios</li>
               <li>Ejecutables compilados (.exe)</li>
-              <li>Documento individual DOCUMENTACION.pdf</li>
+              <li>Documentación individual DOCUMENTACION.pdf</li>
             </ul>
+            <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="card-link">Ver en Google Drive</a>
           </div>
 
           <div class="structure-card">
-            <h3>Carpeta C: Temario y Blog</h3>
+            <h3>3. Temario Resuelto y Catálogo</h3>
             <span class="struct-tag">8 Unidades</span>
             <ul>
               <li>8 Unidades académicas resueltas</li>
-              <li>Catálogo con buscador en tiempo real</li>
-              <li>Acceso y descarga de documentación</li>
+              <li>100 Ejercicios con codificación en línea</li>
+              <li>Descarga directa de PDFs y ejecutables</li>
             </ul>
+            <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="card-link">Ver en Google Drive</a>
           </div>
         </div>
       </div>
@@ -177,7 +206,7 @@
 
   </main>
 
-  <!-- MODAL DE DETALLE DE PROGRAMA -->
+  <!-- MODAL DE DETALLE Y CÓDIGO DEL PROGRAMA -->
   <div id="modal-backdrop" class="modal-backdrop hidden">
     <div class="modal-dialog">
       <div class="modal-header">
@@ -210,10 +239,18 @@
           </div>
         </div>
 
+        <div class="modal-section">
+          <h4>Codificación en Visual Basic 6.0</h4>
+          <div id="modal-code-container">
+            <!-- Rellenado dinámicamente con pestañas de archivos si hay múltiples -->
+          </div>
+        </div>
+
         <div class="modal-section modal-files-box">
           <div class="modal-action-btns">
-            <a id="modal-btn-pdf" href="#" target="_blank" class="btn btn-primary">Ver DOCUMENTACION.pdf</a>
-            <a id="modal-btn-exe" href="#" download class="btn btn-gold">Descargar Ejecutable (.EXE)</a>
+            <a id="modal-btn-pdf" href="#" target="_blank" class="btn btn-pdf">Ver DOCUMENTACION.pdf</a>
+            <a id="modal-btn-exe" href="#" download class="btn btn-primary">Descargar Ejecutable (.EXE)</a>
+            <a id="modal-btn-drive" href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="btn btn-gold">Abrir en Google Drive</a>
           </div>
         </div>
       </div>
@@ -233,7 +270,7 @@
         <p><strong>Alumno:</strong> Alan Ernesto Orona Enríquez | Grupo 1501</p>
       </div>
       <div class="footer-right">
-        <p class="status-online">Entrega de Proyectos</p>
+        <p><a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="footer-link">Carpeta en Google Drive</a></p>
         <p class="copyright">Quinto Semestre</p>
       </div>
     </div>

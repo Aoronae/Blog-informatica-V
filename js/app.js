@@ -94,22 +94,45 @@ function scrollToUnit(elementId, clickedBtn) {
 }
 
 function initProgramas() {
+  const gridTodos = document.getElementById("grid-todos");
   const gridClase = document.getElementById("grid-clase");
   const gridVersionB = document.getElementById("grid-version-b");
 
   if (!window.PROGRAMAS_DATA) {
-    gridClase.innerHTML = "<p>No se encontraron datos de programas.</p>";
     return;
   }
 
   const projsClase = window.PROGRAMAS_DATA.programas_clase || [];
   const projsB = window.PROGRAMAS_DATA.programas_b || [];
+  const projsTodos = window.PROGRAMAS_DATA.todos_los_programas || (projsClase.concat(projsB));
 
-  renderGrid(gridClase, projsClase, false);
-  renderGrid(gridVersionB, projsB, true);
+  renderGrid(gridTodos, projsTodos);
+  renderGrid(gridClase, projsClase);
+  renderGrid(gridVersionB, projsB);
+
+  // Filtros de pestaña "Todos los Ejercicios"
+  const filterBtns = document.querySelectorAll(".btn-filter");
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const f = btn.getAttribute("data-filter");
+      const cards = gridTodos.querySelectorAll(".program-card");
+      cards.forEach(c => {
+        if (f === "all") {
+          c.style.display = "flex";
+        } else if (f === "clase") {
+          c.style.display = c.getAttribute("data-es-b") === "false" ? "flex" : "none";
+        } else if (f === "b") {
+          c.style.display = c.getAttribute("data-es-b") === "true" ? "flex" : "none";
+        }
+      });
+    });
+  });
 }
 
-function renderGrid(container, list, isVersionB) {
+function renderGrid(container, list) {
+  if (!container) return;
   container.innerHTML = "";
   if (list.length === 0) {
     container.innerHTML = "<p>No hay programas para mostrar.</p>";
@@ -120,9 +143,10 @@ function renderGrid(container, list, isVersionB) {
     const card = document.createElement("div");
     card.className = "program-card";
     card.setAttribute("data-search", `${p.nombre.toLowerCase()} ${p.descripcion.toLowerCase()}`);
+    card.setAttribute("data-es-b", p.es_version_b ? "true" : "false");
 
-    const badgeClass = isVersionB ? "card-category-badge version-b" : "card-category-badge";
-    const badgeText = isVersionB ? "Versión B" : "Realizado en Clase";
+    const badgeClass = p.es_version_b ? "card-category-badge version-b" : "card-category-badge";
+    const badgeText = p.version || (p.es_version_b ? "Versión B (Alumno)" : "Versión Original (Clase)");
 
     const pdfHref = p.pdf_url || p.pdf_local;
     const exeHref = p.exe_url || p.exe_local;
@@ -140,9 +164,9 @@ function renderGrid(container, list, isVersionB) {
         </div>
         <div class="card-actions">
           <button class="btn btn-secondary" onclick='openModal(${JSON.stringify(p).replace(/'/g, "&#39;")})' style="flex:1;">
-            Ficha Técnica
+            Ficha y Código
           </button>
-          <a href="${pdfHref}" target="_blank" class="btn btn-pdf" title="Ver Documentación Oficial en PDF">
+          <a href="${pdfHref}" target="_blank" class="btn btn-pdf" title="Ver Documentación en PDF">
             PDF
           </a>
           ${exeHref ? `<a href="${exeHref}" download class="btn btn-exe" title="Descargar ejecutable .EXE">EXE</a>` : ''}
@@ -155,7 +179,7 @@ function renderGrid(container, list, isVersionB) {
 }
 
 window.openModal = function (p) {
-  document.getElementById("modal-category").innerText = p.categoria;
+  document.getElementById("modal-category").innerText = p.version || p.categoria;
   document.getElementById("modal-title").innerText = p.nombre;
   document.getElementById("modal-desc").innerText = p.descripcion;
 
@@ -175,6 +199,26 @@ window.openModal = function (p) {
   document.getElementById("modal-proc2-title").innerText = (p.proceso_2 && p.proceso_2.nombre) ? p.proceso_2.nombre : "Proceso 2";
   document.getElementById("modal-proc2-code").innerText = (p.proceso_2 && p.proceso_2.pseudocodigo) ? p.proceso_2.pseudocodigo : "// Algoritmo implementado";
 
+  // Contenedor de código fuente VB6
+  const codeContainer = document.getElementById("modal-code-container");
+  codeContainer.innerHTML = "";
+  if (p.archivos_codigo && p.archivos_codigo.length > 0) {
+    p.archivos_codigo.forEach(cfile => {
+      const viewer = document.createElement("div");
+      viewer.className = "code-viewer";
+      viewer.innerHTML = `
+        <div class="code-viewer-header">
+          <span class="code-file-tag">${cfile.archivo}</span>
+          <button class="btn-copy-code" onclick="navigator.clipboard.writeText(decodeURIComponent('${encodeURIComponent(cfile.codigo)}')); alert('Código copiado al portapapeles');">Copiar Código</button>
+        </div>
+        <pre><code>${escapeHtml(cfile.codigo)}</code></pre>
+      `;
+      codeContainer.appendChild(viewer);
+    });
+  } else {
+    codeContainer.innerHTML = "<p>Código fuente disponible en el archivo del proyecto.</p>";
+  }
+
   const btnPdf = document.getElementById("modal-btn-pdf");
   const btnExe = document.getElementById("modal-btn-exe");
 
@@ -188,6 +232,15 @@ window.openModal = function (p) {
 
   document.getElementById("modal-backdrop").classList.remove("hidden");
 };
+
+function escapeHtml(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
 
 window.closeModal = function () {
   document.getElementById("modal-backdrop").classList.add("hidden");
@@ -210,6 +263,7 @@ function initSearch() {
     temarioInput.dispatchEvent(new Event("input"));
   });
 
+  setupGridFilter("todos-search", "clear-todos-search", "grid-todos");
   setupGridFilter("clase-search", "clear-clase-search", "grid-clase");
   setupGridFilter("version-b-search", "clear-version-b-search", "grid-version-b");
 }
@@ -218,6 +272,7 @@ function setupGridFilter(inputId, clearId, gridId) {
   const input = document.getElementById(inputId);
   const clear = document.getElementById(clearId);
   const grid = document.getElementById(gridId);
+  if (!input || !grid) return;
 
   input.addEventListener("input", () => {
     const q = input.value.toLowerCase().trim();
@@ -239,5 +294,5 @@ window.copyDriveUrl = function () {
   const input = document.getElementById("drive-url-input");
   input.select();
   document.execCommand("copy");
-  alert("Enlace copiado al portapapeles.");
+  alert("Enlace de Google Drive copiado al portapapeles.");
 };
