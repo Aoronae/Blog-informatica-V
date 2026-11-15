@@ -59,16 +59,16 @@ function initTemario() {
     const btn = document.createElement("button");
     btn.className = `unit-nav-btn ${idx === 0 ? "active" : ""}`;
     const num = u.numero || (idx + 1);
-    const tit = u.titulo || "";
     const numClean = String(num).replace("Unidad ", "");
+    const tit = u.titulo || "";
     btn.innerHTML = `<span class="unit-badge-small">U${numClean}</span> ${escapeHtml(tit)}`;
-    btn.onclick = () => scrollToUnit(`unit-section-${num}`, btn);
+    btn.onclick = () => scrollToUnit(`unit-section-${numClean}`, btn);
     li.appendChild(btn);
     unitsNavList.appendChild(li);
 
     const card = document.createElement("div");
     card.className = "unit-card";
-    card.id = `unit-section-${num}`;
+    card.id = `unit-section-${numClean}`;
 
     let temasHtml = "";
     if (u.temas && Array.isArray(u.temas)) {
@@ -95,7 +95,7 @@ function initTemario() {
 
     card.innerHTML = `
       <div class="unit-card-header">
-        <span class="unit-num-pill">${String(num).startsWith("Unidad") ? num : "Unidad " + num}</span>
+        <span class="unit-num-pill">Unidad ${numClean}</span>
         <h3>${escapeHtml(tit)}</h3>
       </div>
       <div class="temas-list">
@@ -196,8 +196,8 @@ function renderGrid(container, list) {
       </div>
       <div>
         <div class="card-meta">
-          <span>${p.total_archivos || 0} archivos</span>
-          <span>${((p.pdf_size || 0) / 1024).toFixed(0)} KB PDF</span>
+          <span>Proyecto Visual Basic 6.0</span>
+          <span>Documentación Oficial</span>
         </div>
         <div class="card-actions-col">
           <div class="card-sub-actions">
@@ -236,7 +236,6 @@ window.openModal = function (p) {
   document.getElementById("modal-proc2-title").innerText = (p.proceso_2 && p.proceso_2.nombre) ? p.proceso_2.nombre : "Proceso 2";
   document.getElementById("modal-proc2-code").innerText = (p.proceso_2 && p.proceso_2.pseudocodigo) ? p.proceso_2.pseudocodigo : "// Algoritmo implementado";
 
-  // Visualizador de código fuente VB6
   const codeContainer = document.getElementById("modal-code-container");
   codeContainer.innerHTML = "";
   if (p.archivos_codigo && p.archivos_codigo.length > 0) {
