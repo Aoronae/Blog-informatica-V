@@ -1,7 +1,4 @@
-// =====================================================================
-// BLOG INGENIERÍA DE SOFTWARE — APLICACIÓN PRINCIPAL (CLIENT-SIDE)
-// =====================================================================
-
+// BLOG INFORMÁTICA V — CLIENT SIDE
 document.addEventListener("DOMContentLoaded", function () {
   initTabs();
   initTemario();
@@ -9,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initSearch();
 });
 
-// GESTIÓN DE PESTAÑAS
 function initTabs() {
   const tabs = document.querySelectorAll(".nav-tab");
   const panes = document.querySelectorAll(".tab-pane");
@@ -17,7 +13,6 @@ function initTabs() {
   tabs.forEach(tab => {
     tab.addEventListener("click", () => {
       const targetId = tab.getAttribute("data-tab");
-
       tabs.forEach(t => t.classList.remove("active"));
       panes.forEach(p => p.classList.remove("active"));
 
@@ -30,7 +25,6 @@ function initTabs() {
   });
 }
 
-// RENDERIZADO DEL TEMARIO
 function initTemario() {
   const unitsNavList = document.getElementById("units-nav-list");
   const unitsContainer = document.getElementById("units-container");
@@ -45,7 +39,6 @@ function initTemario() {
   unitsContainer.innerHTML = "";
 
   unidades.forEach((u, idx) => {
-    // 1. Botón de navegación lateral
     const li = document.createElement("li");
     const btn = document.createElement("button");
     btn.className = `unit-nav-btn ${idx === 0 ? "active" : ""}`;
@@ -54,7 +47,6 @@ function initTemario() {
     li.appendChild(btn);
     unitsNavList.appendChild(li);
 
-    // 2. Tarjeta completa de la unidad
     const card = document.createElement("div");
     card.className = "unit-card";
     card.id = `unit-section-${u.numero}`;
@@ -79,7 +71,6 @@ function initTemario() {
       <div class="unit-card-header">
         <span class="unit-num-pill">Unidad ${u.numero}</span>
         <h3>${u.titulo}</h3>
-        <p class="unit-obj"><strong>Propósito:</strong> ${u.objetivo}</p>
       </div>
       <div class="temas-list">
         ${temasHtml}
@@ -102,7 +93,6 @@ function scrollToUnit(elementId, clickedBtn) {
   }
 }
 
-// RENDERIZADO DE PROGRAMAS (CLASE Y VERSIÓN B)
 function initProgramas() {
   const gridClase = document.getElementById("grid-clase");
   const gridVersionB = document.getElementById("grid-version-b");
@@ -122,7 +112,7 @@ function initProgramas() {
 function renderGrid(container, list, isVersionB) {
   container.innerHTML = "";
   if (list.length === 0) {
-    container.innerHTML = "<p class='subtitle'>No hay programas para mostrar.</p>";
+    container.innerHTML = "<p>No hay programas para mostrar.</p>";
     return;
   }
 
@@ -132,9 +122,8 @@ function renderGrid(container, list, isVersionB) {
     card.setAttribute("data-search", `${p.nombre.toLowerCase()} ${p.descripcion.toLowerCase()}`);
 
     const badgeClass = isVersionB ? "card-category-badge version-b" : "card-category-badge";
-    const badgeText = isVersionB ? "Versión B (Innovada)" : "Realizado en Clase";
+    const badgeText = isVersionB ? "Versión B" : "Realizado en Clase";
 
-    // URLs con fallback para visualización local o web
     const pdfHref = p.pdf_url || p.pdf_local;
     const exeHref = p.exe_url || p.exe_local;
 
@@ -146,17 +135,17 @@ function renderGrid(container, list, isVersionB) {
       </div>
       <div>
         <div class="card-meta">
-          <span>📦 ${p.total_archivos} archivos</span>
-          <span>📄 ${(p.pdf_size / 1024).toFixed(0)} KB PDF</span>
+          <span>${p.total_archivos} archivos</span>
+          <span>${(p.pdf_size / 1024).toFixed(0)} KB PDF</span>
         </div>
         <div class="card-actions">
           <button class="btn btn-secondary" onclick='openModal(${JSON.stringify(p).replace(/'/g, "&#39;")})' style="flex:1;">
-            🔍 Ficha Técnica
+            Ficha Técnica
           </button>
           <a href="${pdfHref}" target="_blank" class="btn btn-pdf" title="Ver Documentación Oficial en PDF">
-            📄 PDF
+            PDF
           </a>
-          ${exeHref ? `<a href="${exeHref}" download class="btn btn-exe" title="Descargar ejecutable .EXE">💾 EXE</a>` : ''}
+          ${exeHref ? `<a href="${exeHref}" download class="btn btn-exe" title="Descargar ejecutable .EXE">EXE</a>` : ''}
         </div>
       </div>
     `;
@@ -165,7 +154,6 @@ function renderGrid(container, list, isVersionB) {
   });
 }
 
-// MODAL DE DETALLE
 window.openModal = function (p) {
   document.getElementById("modal-category").innerText = p.categoria;
   document.getElementById("modal-title").innerText = p.nombre;
@@ -181,10 +169,10 @@ window.openModal = function (p) {
     });
   }
 
-  document.getElementById("modal-proc1-title").innerText = (p.proceso_1 && p.proceso_1.nombre) ? p.proceso_1.nombre : "Proceso Principal";
+  document.getElementById("modal-proc1-title").innerText = (p.proceso_1 && p.proceso_1.nombre) ? p.proceso_1.nombre : "Proceso 1";
   document.getElementById("modal-proc1-code").innerText = (p.proceso_1 && p.proceso_1.pseudocodigo) ? p.proceso_1.pseudocodigo : "// Algoritmo implementado";
 
-  document.getElementById("modal-proc2-title").innerText = (p.proceso_2 && p.proceso_2.nombre) ? p.proceso_2.nombre : "Proceso Secundario";
+  document.getElementById("modal-proc2-title").innerText = (p.proceso_2 && p.proceso_2.nombre) ? p.proceso_2.nombre : "Proceso 2";
   document.getElementById("modal-proc2-code").innerText = (p.proceso_2 && p.proceso_2.pseudocodigo) ? p.proceso_2.pseudocodigo : "// Algoritmo implementado";
 
   const btnPdf = document.getElementById("modal-btn-pdf");
@@ -205,9 +193,7 @@ window.closeModal = function () {
   document.getElementById("modal-backdrop").classList.add("hidden");
 };
 
-// BUSCADORES EN TIEMPO REAL
 function initSearch() {
-  // 1. Buscador Temario
   const temarioInput = document.getElementById("temario-search");
   const temarioClear = document.getElementById("clear-temario-search");
   temarioInput.addEventListener("input", () => {
@@ -224,10 +210,7 @@ function initSearch() {
     temarioInput.dispatchEvent(new Event("input"));
   });
 
-  // 2. Buscador Clase
   setupGridFilter("clase-search", "clear-clase-search", "grid-clase");
-
-  // 3. Buscador Versión B
   setupGridFilter("version-b-search", "clear-version-b-search", "grid-version-b");
 }
 
@@ -256,5 +239,5 @@ window.copyDriveUrl = function () {
   const input = document.getElementById("drive-url-input");
   input.select();
   document.execCommand("copy");
-  alert("¡Enlace de Google Drive copiado al portapapeles!");
+  alert("Enlace copiado al portapapeles.");
 };

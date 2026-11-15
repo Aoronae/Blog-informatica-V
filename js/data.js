@@ -1,8 +1,7 @@
 // Base de datos estática embebida para compatibilidad local y web sin CORS
 const TEMARIO_DATA = {
-  "asignatura": "Ingeniería de Software",
+  "asignatura": "Informática V",
   "institucion": "Universidad Nacional Autónoma de México - Facultad de Estudios Superiores Cuautitlán",
-  "carrera": "Licenciatura en Ingeniería en Telecomunicaciones, Sistemas y Electrónica",
   "alumno": "Alan Ernesto Orona Enríquez",
   "semestre": "Quinto Semestre",
   "grupo": "1501",
