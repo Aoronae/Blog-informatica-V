@@ -1,29 +1,44 @@
 /* =====================================================================
    BLOG INFORMÁTICA V — UNAM FESC
-   Barra superior Azul UNAM + Elementos de acción en Dorado UNAM
+   Regla 60-30-10:
+   - 60% Dominante: Blanco (#FFFFFF) y Lienzo Suave (#F8FAFC)
+   - 30% Secundario: Azul Marino Institucional (#002B49) y Azul Acción (#3861FB)
+   - 10% Acento: Amarillo-Dorado Vivo (#F59E0B / #FACC15)
    ===================================================================== */
 
 :root {
-  --unam-blue: #002B49;
-  --unam-blue-dark: #001F35;
-  --unam-blue-light: #003E6B;
-  --unam-gold: #D59F0F;
-  --unam-gold-hover: #C48D08;
-  --unam-gold-dark: #A17405;
-  --unam-gold-soft: #FEF3C7;
-  --unam-gold-border: #FDE68A;
+  /* 60% Dominante */
   --bg-page: #F8FAFC;
   --bg-card: #FFFFFF;
-  --border-light: #E2E8F0;
+  --bg-nav: #FFFFFF;
+  
+  /* 30% Secundario */
+  --blue-header: #002B49;
+  --blue-header-dark: #001A2C;
+  --primary-blue: #3861FB;
+  --primary-blue-hover: #254EDB;
   --text-title: #0F172A;
   --text-body: #334155;
   --text-muted: #64748B;
-  --text-subtle: #94A3B8;
+  --border-light: #E2E8F0;
+
+  /* 10% Acento Amarillo-Dorado Vivo */
+  --gold-vivid: #F59E0B;
+  --gold-bright: #FACC15;
+  --gold-bg-chip: #FEF9C3;
+  --gold-text-chip: #854D0E;
+  --gold-border-chip: #FDE047;
+
+  /* Chips y auxiliares */
+  --chip-blue-bg: #EFF6FF;
+  --chip-blue-text: #1D4ED8;
+  --chip-blue-border: #DBEAFE;
+
   --code-bg: #0F172A;
   --code-text: #F8FAFC;
   --radius-card: 12px;
   --radius-btn: 8px;
-  --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.08);
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', Consolas, Monaco, monospace;
@@ -50,12 +65,12 @@ body {
 }
 
 /* ==========================================
-   BARRA SUPERIOR AZUL UNAM CON ACENTO DORADO
+   HEADER: 30% AZUL CON 10% ACENTO DORADO VIVO
    ========================================== */
 .header-main {
-  background-color: var(--unam-blue);
+  background-color: var(--blue-header);
   color: #FFFFFF;
-  border-bottom: 3px solid var(--unam-gold);
+  border-bottom: 3.5px solid var(--gold-vivid);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -99,8 +114,8 @@ body {
 }
 
 .badge-item {
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: var(--blue-header-dark);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 6px;
   padding: 6px 12px;
   display: flex;
@@ -122,14 +137,14 @@ body {
 }
 
 .badge-val.highlight {
-  color: #FDE047;
+  color: var(--gold-bright);
   font-weight: 700;
 }
 
-/* BARRA DE NAVEGACIÓN MODERNA BLANCA */
+/* BARRA DE NAVEGACIÓN BLANCA (60% BASE) */
 .nav-bar {
-  background-color: #FFFFFF;
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: var(--bg-nav);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid var(--border-light);
   padding: 0;
 }
@@ -169,8 +184,8 @@ body {
 }
 
 .nav-tab.active {
-  color: var(--unam-gold-dark);
-  background-color: #FFFBEB;
+  color: var(--primary-blue);
+  background-color: #EFF6FF;
 }
 
 .nav-tab.active::after {
@@ -180,7 +195,7 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background-color: var(--unam-gold);
+  background-color: var(--primary-blue);
 }
 
 .stats-pills {
@@ -189,10 +204,10 @@ body {
 }
 
 .pill-drive {
-  background-color: var(--unam-gold);
-  color: var(--unam-blue);
+  background-color: var(--primary-blue);
+  color: #FFFFFF;
   font-size: 0.82rem;
-  font-weight: 700;
+  font-weight: 600;
   padding: 7px 14px;
   border-radius: var(--radius-btn);
   text-decoration: none;
@@ -200,13 +215,12 @@ body {
 }
 
 .pill-drive:hover {
-  background-color: var(--unam-gold-hover);
-  color: #FFFFFF;
+  background-color: var(--primary-blue-hover);
 }
 
 /* ==========================================
-   MAIN CONTENT
-   ========================================= */
+   MAIN CONTENT (60% BASE)
+   ========================================== */
 .main-content {
   padding: 32px 24px 60px;
 }
@@ -253,21 +267,20 @@ body {
   color: var(--text-body);
   font-size: 0.86rem;
   font-weight: 600;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: var(--radius-btn);
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .btn-filter:hover {
-  border-color: var(--unam-gold);
+  border-color: var(--primary-blue);
 }
 
 .btn-filter.active {
-  background-color: var(--unam-gold);
-  color: var(--unam-blue);
-  border-color: var(--unam-gold);
-  font-weight: 700;
+  background-color: var(--primary-blue);
+  color: #FFFFFF;
+  border-color: var(--primary-blue);
 }
 
 .search-box {
@@ -289,8 +302,8 @@ body {
 }
 
 .search-box input:focus {
-  border-color: var(--unam-gold);
-  box-shadow: 0 0 0 3px rgba(213, 159, 15, 0.18);
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(56, 97, 251, 0.12);
 }
 
 .btn-clear {
@@ -300,7 +313,7 @@ body {
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: var(--text-subtle);
+  color: var(--text-muted);
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 700;
@@ -312,7 +325,7 @@ body {
 }
 
 /* ==========================================
-   TARJETAS DE PROGRAMAS (ACENTO DORADO UNAM)
+   PROGRAMAS GRID (60% BLANCO + 10% ACENTO)
    ========================================== */
 .programs-grid {
   display: grid;
@@ -355,15 +368,16 @@ body {
   font-weight: 700;
   padding: 3px 10px;
   border-radius: 6px;
-  background-color: #F1F5F9;
-  color: var(--unam-blue);
-  border: 1px solid #CBD5E1;
+  background-color: var(--chip-blue-bg);
+  color: var(--chip-blue-text);
+  border: 1px solid var(--chip-blue-border);
 }
 
+/* 10% ACENTO AMARILLO-DORADO VIVO EN VERSIÓN B */
 .card-category-badge.version-b {
-  background-color: var(--unam-gold-soft);
-  color: var(--unam-gold-dark);
-  border-color: var(--unam-gold-border);
+  background-color: var(--gold-bg-chip);
+  color: var(--gold-text-chip);
+  border: 1px solid var(--gold-border-chip);
 }
 
 .program-title {
@@ -395,7 +409,6 @@ body {
   color: var(--text-muted);
 }
 
-/* BOTONES DE LA TARJETA (DORADO UNAM) */
 .card-actions-col {
   display: flex;
   flex-direction: column;
@@ -404,26 +417,25 @@ body {
 }
 
 .btn-inscribir-style {
-  background-color: var(--unam-gold);
-  color: var(--unam-blue);
+  background-color: var(--primary-blue);
+  color: #FFFFFF;
   border: none;
   border-radius: var(--radius-btn);
   padding: 10px 16px;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
   cursor: pointer;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease;
   font-family: inherit;
 }
 
 .btn-inscribir-style:hover {
-  background-color: var(--unam-gold-hover);
-  color: #FFFFFF;
+  background-color: var(--primary-blue-hover);
 }
 
 .card-sub-actions {
@@ -453,8 +465,8 @@ body {
 .btn-sub-exe {
   flex: 1;
   background-color: #FFFFFF;
-  color: var(--unam-blue);
-  border: 1px solid #CBD5E1;
+  color: #0D9488;
+  border: 1px solid #99F6E4;
   border-radius: 6px;
   padding: 7px 10px;
   font-size: 0.82rem;
@@ -465,12 +477,12 @@ body {
 }
 
 .btn-sub-exe:hover {
-  background-color: #F1F5F9;
-  border-color: var(--unam-blue);
+  background-color: #F0FDFA;
+  border-color: #0D9488;
 }
 
 /* ==========================================
-   TEMARIO RESUELTO
+   TEMARIO
    ========================================== */
 .temario-layout {
   display: grid;
@@ -529,9 +541,9 @@ body {
 }
 
 .unit-nav-btn.active {
-  background-color: var(--unam-gold);
-  color: var(--unam-blue);
-  font-weight: 700;
+  background-color: var(--primary-blue);
+  color: #FFFFFF;
+  font-weight: 600;
 }
 
 .unit-badge-small {
@@ -545,7 +557,7 @@ body {
 }
 
 .unit-nav-btn.active .unit-badge-small {
-  background-color: rgba(0, 43, 73, 0.15);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .units-content {
@@ -570,9 +582,9 @@ body {
 
 .unit-num-pill {
   display: inline-block;
-  background-color: var(--unam-gold-soft);
-  color: var(--unam-gold-dark);
-  border: 1px solid var(--unam-gold-border);
+  background-color: var(--gold-bg-chip);
+  color: var(--gold-text-chip);
+  border: 1px solid var(--gold-border-chip);
   font-weight: 700;
   font-size: 0.8rem;
   padding: 4px 10px;
@@ -595,7 +607,7 @@ body {
 .tema-item {
   background-color: #F8FAFC;
   border: 1px solid var(--border-light);
-  border-left: 4px solid var(--unam-gold);
+  border-left: 4px solid var(--primary-blue);
   border-radius: 6px;
   padding: 18px 22px;
 }
@@ -636,7 +648,7 @@ body {
 .drive-card-hero {
   background-color: #FFFFFF;
   border: 1px solid var(--border-light);
-  border-top: 4px solid var(--unam-gold);
+  border-top: 4px solid var(--gold-vivid);
   border-radius: var(--radius-card);
   padding: 36px;
   text-align: center;
@@ -702,8 +714,8 @@ body {
 }
 
 .structure-card.highlight-card {
-  border-color: var(--unam-gold);
-  background-color: #FFFEFA;
+  border-color: var(--gold-border-chip);
+  background-color: #FFFDF5;
 }
 
 .structure-card h3 {
@@ -719,15 +731,16 @@ body {
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 4px;
-  background-color: #F1F5F9;
-  color: var(--unam-blue);
+  background-color: var(--chip-blue-bg);
+  color: var(--chip-blue-text);
   margin-bottom: 14px;
   width: fit-content;
 }
 
 .struct-tag.tag-b {
-  background-color: var(--unam-gold-soft);
-  color: var(--unam-gold-dark);
+  background-color: var(--gold-bg-chip);
+  color: var(--gold-text-chip);
+  border: 1px solid var(--gold-border-chip);
 }
 
 .structure-card ul {
@@ -742,14 +755,10 @@ body {
 }
 
 .card-link {
-  color: var(--unam-blue);
+  color: var(--primary-blue);
   font-weight: 700;
   text-decoration: underline;
   font-size: 0.88rem;
-}
-
-.card-link:hover {
-  color: var(--unam-gold);
 }
 
 /* ==========================================
@@ -777,7 +786,7 @@ body {
 .modal-dialog {
   background-color: #FFFFFF;
   border-radius: var(--radius-card);
-  border-top: 5px solid var(--unam-gold);
+  border-top: 4px solid var(--gold-vivid);
   max-width: 900px;
   width: 100%;
   max-height: 90vh;
@@ -803,8 +812,8 @@ body {
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 4px;
-  background-color: var(--unam-gold-soft);
-  color: var(--unam-gold-dark);
+  background-color: var(--chip-blue-bg);
+  color: var(--chip-blue-text);
   margin-bottom: 6px;
 }
 
@@ -898,7 +907,7 @@ body {
 .code-file-tag {
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--unam-gold-dark);
+  color: var(--primary-blue);
   font-family: var(--font-mono);
 }
 
@@ -943,25 +952,23 @@ body {
   transition: all 0.15s ease;
 }
 
-.btn-action-gold {
-  background-color: var(--unam-gold);
-  color: var(--unam-blue);
-  font-weight: 700;
-}
-
-.btn-action-gold:hover {
-  background-color: var(--unam-gold-hover);
+.btn-action-blue {
+  background-color: var(--primary-blue);
   color: #FFFFFF;
 }
 
-.btn-action-outline {
-  background-color: #FFFFFF;
-  color: var(--unam-blue);
-  border: 1.5px solid var(--unam-blue);
+.btn-action-blue:hover {
+  background-color: var(--primary-blue-hover);
 }
 
-.btn-action-outline:hover {
-  background-color: #F1F5F9;
+.btn-gold-accent {
+  background-color: var(--gold-vivid);
+  color: #001A2C;
+  font-weight: 700;
+}
+
+.btn-gold-accent:hover {
+  background-color: var(--gold-bright);
 }
 
 .btn-modal-pdf {
@@ -974,12 +981,12 @@ body {
 }
 
 .btn-modal-exe {
-  background-color: var(--unam-blue);
+  background-color: #0D9488;
   color: #FFFFFF;
 }
 
 .btn-modal-exe:hover {
-  background-color: var(--unam-blue-dark);
+  background-color: #0F766E;
 }
 
 /* FOOTER */
@@ -1004,7 +1011,7 @@ body {
 }
 
 .footer-link {
-  color: var(--unam-gold-dark);
+  color: var(--primary-blue);
   text-decoration: underline;
   font-weight: 700;
 }

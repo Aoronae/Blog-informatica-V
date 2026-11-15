@@ -11,7 +11,7 @@
 </head>
 <body>
 
-  <!-- Barra Superior Institucional (Limpia, sin letrero UNAM, colores modernos) -->
+  <!-- Barra Superior: 30% Azul Institucional con 10% Acento Amarillo-Dorado Vivo -->
   <header class="header-main">
     <div class="header-banner">
       <div class="container header-container">
@@ -42,18 +42,18 @@
       </div>
     </div>
 
-    <!-- Barra de Navegación por Pestañas -->
+    <!-- Barra de Navegación por Pestañas (Sin números) -->
     <nav class="nav-bar">
       <div class="container nav-container">
         <div class="tabs-group">
           <button class="nav-tab active" data-tab="tab-todos">
-            <span class="tab-text">Catálogo de Ejercicios (100)</span>
+            <span class="tab-text">Catálogo de Ejercicios</span>
           </button>
           <button class="nav-tab" data-tab="tab-clase">
-            <span class="tab-text">Versión Original (51)</span>
+            <span class="tab-text">Versión Original</span>
           </button>
           <button class="nav-tab" data-tab="tab-version-b">
-            <span class="tab-text">Versión B (49)</span>
+            <span class="tab-text">Versión B</span>
           </button>
           <button class="nav-tab" data-tab="tab-temario">
             <span class="tab-text">Temario Resuelto</span>
@@ -69,18 +69,18 @@
     </nav>
   </header>
 
-  <!-- Contenedor Principal de la Página -->
+  <!-- Contenedor Principal: 60% Base Limpia y Moderna -->
   <main class="container main-content">
 
-    <!-- SECCIÓN 1: TODOS LOS EJERCICIOS (100) -->
+    <!-- SECCIÓN 1: TODOS LOS EJERCICIOS (SIN NÚMEROS) -->
     <section id="tab-todos" class="tab-pane active">
       <div class="pane-header">
         <h2>Catálogo de Ejercicios — Versión Original y Versión B</h2>
         <div class="filter-actions-row">
           <div class="filter-buttons">
-            <button class="btn-filter active" data-filter="all">Todos (100)</button>
-            <button class="btn-filter" data-filter="clase">Versión Original (51)</button>
-            <button class="btn-filter" data-filter="b">Versión B (49)</button>
+            <button class="btn-filter active" data-filter="all">Todos</button>
+            <button class="btn-filter" data-filter="clase">Versión Original</button>
+            <button class="btn-filter" data-filter="b">Versión B</button>
           </div>
           <div class="search-box">
             <input type="text" id="todos-search" placeholder="Buscar por nombre o proceso...">
@@ -90,14 +90,14 @@
       </div>
 
       <div class="programs-grid" id="grid-todos">
-        <div class="loading-state">Cargando catálogo completo de 100 ejercicios...</div>
+        <div class="loading-state">Cargando catálogo de ejercicios...</div>
       </div>
     </section>
 
-    <!-- SECCIÓN 2: PROGRAMAS EN CLASE (VERSIÓN ORIGINAL 51) -->
+    <!-- SECCIÓN 2: PROGRAMAS EN CLASE (VERSIÓN ORIGINAL, SIN NÚMEROS) -->
     <section id="tab-clase" class="tab-pane">
       <div class="pane-header">
-        <h2>1. Programas Realizados en Clase (Versión Original)</h2>
+        <h2>Programas Realizados en Clase (Versión Original)</h2>
         <div class="search-box">
           <input type="text" id="clase-search" placeholder="Buscar programa original...">
           <button id="clear-clase-search" class="btn-clear" title="Limpiar búsqueda">X</button>
@@ -105,14 +105,14 @@
       </div>
 
       <div class="programs-grid" id="grid-clase">
-        <div class="loading-state">Cargando 51 programas originales...</div>
+        <div class="loading-state">Cargando programas originales...</div>
       </div>
     </section>
 
-    <!-- SECCIÓN 3: PROGRAMAS VERSIÓN B (ALUMNO 49) -->
+    <!-- SECCIÓN 3: PROGRAMAS VERSIÓN B (ALUMNO, SIN NÚMEROS) -->
     <section id="tab-version-b" class="tab-pane">
       <div class="pane-header">
-        <h2>2. Programas Similares pero no Iguales (Versión B)</h2>
+        <h2>Programas Similares pero no Iguales (Versión B)</h2>
         <div class="search-box">
           <input type="text" id="version-b-search" placeholder="Buscar programa Versión B...">
           <button id="clear-version-b-search" class="btn-clear" title="Limpiar búsqueda">X</button>
@@ -120,7 +120,7 @@
       </div>
 
       <div class="programs-grid" id="grid-version-b">
-        <div class="loading-state">Cargando 49 programas Versión B...</div>
+        <div class="loading-state">Cargando programas Versión B...</div>
       </div>
     </section>
 
@@ -156,8 +156,8 @@
               <span class="url-label">URL Oficial de Compartición:</span>
               <div class="url-input-wrap">
                 <input type="text" id="drive-url-input" readonly value="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9">
-                <button class="btn btn-action-blue" onclick="copyDriveUrl()">Copiar Enlace</button>
-                <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="btn btn-action-outline">Abrir en Drive</a>
+                <button class="btn btn-gold-accent" onclick="copyDriveUrl()">Copiar Enlace</button>
+                <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="btn btn-action-blue">Abrir en Drive</a>
               </div>
             </div>
           </div>
@@ -165,34 +165,34 @@
 
         <div class="delivery-structure-grid">
           <div class="structure-card">
-            <h3>1. Programas Realizados en Clase</h3>
-            <span class="struct-tag">51 Programas</span>
+            <h3>Programas Realizados en Clase</h3>
+            <span class="struct-tag">Versión Original</span>
             <ul>
               <li>Código fuente original en Visual Basic 6.0</li>
               <li>Ejecutables compilados (.exe)</li>
-              <li>Documento DOCUMENTACION.pdf de cada programa</li>
+              <li>Documento DOCUMENTACION.pdf individual</li>
             </ul>
             <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="card-link">Ver en Google Drive</a>
           </div>
 
           <div class="structure-card highlight-card">
-            <h3>2. Programas Similares Versión B</h3>
-            <span class="struct-tag tag-b">49 Programas</span>
+            <h3>Programas Similares Versión B</h3>
+            <span class="struct-tag tag-b">Innovaciones y Nuevas Funciones</span>
             <ul>
               <li>Nuevas funcionalidades y diseño renovado</li>
-              <li>Código fuente sin comentarios</li>
+              <li>Código fuente limpio sin comentarios</li>
               <li>Ejecutables compilados (.exe)</li>
-              <li>Documento DOCUMENTACION.pdf de cada programa</li>
+              <li>Documento DOCUMENTACION.pdf individual</li>
             </ul>
             <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="card-link">Ver en Google Drive</a>
           </div>
 
           <div class="structure-card">
-            <h3>3. Temario Resuelto y Catálogo</h3>
-            <span class="struct-tag">8 Unidades</span>
+            <h3>Temario Resuelto y Catálogo</h3>
+            <span class="struct-tag">Unidades Temáticas</span>
             <ul>
-              <li>8 Unidades académicas resueltas</li>
-              <li>100 Ejercicios con codificación en línea</li>
+              <li>Unidades académicas resueltas</li>
+              <li>Ejercicios con codificación en línea</li>
               <li>Descarga directa de PDFs y ejecutables</li>
             </ul>
             <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="card-link">Ver en Google Drive</a>
