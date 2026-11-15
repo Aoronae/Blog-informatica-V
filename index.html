@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ingeniería de Software | Temario Resuelto y Catálogo de Programas VB6</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Encabezado Institucional UNAM / FESC -->
+  <header class="header-main">
+    <div class="header-banner">
+      <div class="container header-container">
+        <div class="brand-block">
+          <div class="crest-badge">UNAM</div>
+          <div class="brand-text">
+            <h1>UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</h1>
+            <h2>Facultad de Estudios Superiores Cuautitlán</h2>
+            <p class="career-title">Licenciatura en Ingeniería en Telecomunicaciones, Sistemas y Electrónica</p>
+          </div>
+        </div>
+        <div class="badge-block">
+          <div class="badge-item">
+            <span class="badge-label">Asignatura</span>
+            <span class="badge-val">Ingeniería de Software</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-label">Semestre / Grupo</span>
+            <span class="badge-val">Quinto Semestre • Gpo 1501</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-label">Alumno</span>
+            <span class="badge-val highlight">Alan Ernesto Orona Enríquez</span>
+          </div>
+          <div class="badge-item">
+            <span class="badge-label">Docente</span>
+            <span class="badge-val">Alejandro Valdez Santamaría</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Barra de Navegación por Pestañas -->
+    <nav class="nav-bar">
+      <div class="container nav-container">
+        <div class="tabs-group">
+          <button class="nav-tab active" data-tab="tab-temario">
+            <span class="tab-icon">📖</span>
+            <span class="tab-text">Temario Resuelto (8 Unidades)</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-clase">
+            <span class="tab-icon">💻</span>
+            <span class="tab-text">Programas de Clase (51)</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-version-b">
+            <span class="tab-icon">⚡</span>
+            <span class="tab-text">Programas Versión B (49)</span>
+          </button>
+          <button class="nav-tab" data-tab="tab-drive">
+            <span class="tab-icon">☁️</span>
+            <span class="tab-text">Google Drive & Entregables</span>
+          </button>
+        </div>
+        <div class="stats-pills">
+          <span class="pill">100 Programas VB6</span>
+          <span class="pill pill-gold">100 PDFs Técnicos</span>
+          <span class="pill pill-accent">8 Unidades Oficiales</span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Contenedor Principal de Vistas -->
+  <main class="container main-content">
+
+    <!-- SECCIÓN 1: TEMARIO RESUELTO -->
+    <section id="tab-temario" class="tab-pane active">
+      <div class="pane-header">
+        <div>
+          <h2>Temario Oficial Resuelto — Ingeniería de Software</h2>
+          <p class="subtitle">Desarrollo formal y analítico de las 8 unidades del programa de estudios UNAM FESC.</p>
+        </div>
+        <div class="search-box">
+          <input type="text" id="temario-search" placeholder="Buscar en el temario (ej: DFD, Cohesión, CASE, Prototipos)...">
+          <button id="clear-temario-search" class="btn-clear" title="Limpiar búsqueda">✕</button>
+        </div>
+      </div>
+
+      <div class="temario-layout">
+        <!-- Barra lateral de navegación rápida entre unidades -->
+        <aside class="units-sidebar">
+          <h3>Unidades Temáticas</h3>
+          <ul id="units-nav-list" class="units-nav-list">
+            <!-- Rellenado dinámicamente -->
+          </ul>
+        </aside>
+
+        <!-- Contenido de las unidades -->
+        <article class="units-content" id="units-container">
+          <div class="loading-state">Cargando temario académico resuelto...</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: PROGRAMAS EN CLASE -->
+    <section id="tab-clase" class="tab-pane">
+      <div class="pane-header">
+        <div>
+          <h2>1. Programas Realizados en Clase (Visual Basic 6.0)</h2>
+          <p class="subtitle">51 sistemas y ejercicios desarrollados en aula con documentación técnica completa en PDF y ejecutables compilados.</p>
+        </div>
+        <div class="search-box">
+          <input type="text" id="clase-search" placeholder="Buscar programa (ej: Nómina, Viborita, Base de Datos)...">
+          <button id="clear-clase-search" class="btn-clear" title="Limpiar búsqueda">✕</button>
+        </div>
+      </div>
+
+      <div class="programs-grid" id="grid-clase">
+        <div class="loading-state">Cargando catálogo de programas realizados en clase...</div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: PROGRAMAS VERSIÓN B (ALUMNO) -->
+    <section id="tab-version-b" class="tab-pane">
+      <div class="pane-header">
+        <div>
+          <h2>2. Programas Similares pero no Iguales (Versión B - Alumno)</h2>
+          <p class="subtitle">49 sistemas con innovaciones funcionales, rediseño gráfico integral, pseudocódigos optimizados y código limpio sin comentarios.</p>
+        </div>
+        <div class="search-box">
+          <input type="text" id="version-b-search" placeholder="Buscar programa Versión B...">
+          <button id="clear-version-b-search" class="btn-clear" title="Limpiar búsqueda">✕</button>
+        </div>
+      </div>
+
+      <div class="programs-grid" id="grid-version-b">
+        <div class="loading-state">Cargando catálogo de programas Versión B...</div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: GOOGLE DRIVE & DESCARGAS -->
+    <section id="tab-drive" class="tab-pane">
+      <div class="drive-hub">
+        <div class="drive-card-hero">
+          <div class="drive-icon-big">☁️</div>
+          <h2>4. Carpeta de Google Drive para Entrega de Programas</h2>
+          <p class="lead">Repositorio en la nube organizado con cada uno de los programas realizados en clase y sus versiones B individuales, listos con su código fuente en Visual Basic 6.0, ejecutable compilado (.EXE) y documento formal de entrega en PDF.</p>
+          
+          <div class="drive-actions">
+            <div class="drive-url-box">
+              <span class="url-label">URL Oficial de Compartición en Google Drive:</span>
+              <div class="url-input-wrap">
+                <input type="text" id="drive-url-input" readonly value="https://drive.google.com/drive/folders/1_alan_orona_enriquez_software_fesc_1501">
+                <button class="btn btn-primary" onclick="copyDriveUrl()">Copiar Enlace</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="delivery-structure-grid">
+          <div class="structure-card">
+            <div class="struct-icon">📁</div>
+            <h3>Carpeta A: Programas Realizados en Clase</h3>
+            <p class="struct-count">51 Programas Completos</p>
+            <ul>
+              <li>Código fuente completo en Visual Basic 6.0 (.vbp, .frm, .bas)</li>
+              <li>Ejecutables compilados de 32 bits (.EXE)</li>
+              <li>Documento individual oficial de entrega <strong>DOCUMENTACION.pdf</strong> con Portada, Objetivo, Pseudocódigo, Diagramas de flujo y Codificación limpia.</li>
+            </ul>
+          </div>
+
+          <div class="structure-card highlight-card">
+            <div class="struct-icon">⚡</div>
+            <h3>Carpeta B: Programas Similares Versión B</h3>
+            <p class="struct-count">49 Programas con Nuevas Funcionalidades</p>
+            <ul>
+              <li>Sistemas modificados con nuevas opciones, algoritmos ampliados y estética renovada.</li>
+              <li>Código fuente 100% libre de comentarios para máxima pulcritud académica.</li>
+              <li>Ejecutable funcional individual (.EXE) por cada proyecto.</li>
+              <li>Documento individual oficial en PDF generado bajo los lineamientos del docente.</li>
+            </ul>
+          </div>
+
+          <div class="structure-card">
+            <div class="struct-icon">📘</div>
+            <h3>Temario Resuelto y Documento Central</h3>
+            <p class="struct-count">8 Unidades Temáticas Oficiales</p>
+            <ul>
+              <li>Resolución completa de los 39 subtemas del programa de Ingeniería de Software UNAM FESC.</li>
+              <li>Modelado estructurado: DFD Niveles 0, 1 y 2, Diccionario de Datos, Diagramas E-R y Cartas Estructuradas.</li>
+              <li>Acceso en línea inmediato y disponible para revisión docente.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL DE DETALLE DE PROGRAMA -->
+  <div id="modal-backdrop" class="modal-backdrop hidden">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span class="modal-badge" id="modal-category">Categoría</span>
+          <h3 id="modal-title">Título del Programa</h3>
+        </div>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4>Objetivo y Propósito</h4>
+          <p id="modal-desc" class="modal-desc-text"></p>
+        </div>
+
+        <div class="modal-section">
+          <h4>Puntos Clave y Características Implementadas</h4>
+          <ul id="modal-features" class="modal-features-list"></ul>
+        </div>
+
+        <div class="modal-section">
+          <h4>Algoritmos y Pseudocódigo Técnico</h4>
+          <div class="pseudo-block">
+            <h5 id="modal-proc1-title">Proceso 1</h5>
+            <pre><code id="modal-proc1-code"></code></pre>
+          </div>
+          <div class="pseudo-block">
+            <h5 id="modal-proc2-title">Proceso 2</h5>
+            <pre><code id="modal-proc2-code"></code></pre>
+          </div>
+        </div>
+
+        <div class="modal-section modal-files-box">
+          <div>
+            <strong>Archivos de Entrega Disponibles:</strong>
+            <p class="files-note">Puedes consultar el PDF oficial con portada y diagramas vectoriales, o descargar el ejecutable listo para correr en Windows.</p>
+          </div>
+          <div class="modal-action-btns">
+            <a id="modal-btn-pdf" href="#" target="_blank" class="btn btn-pdf">
+              <span>📄 Ver DOCUMENTACION.pdf</span>
+            </a>
+            <a id="modal-btn-exe" href="#" download class="btn btn-exe">
+              <span>💾 Descargar Ejecutable (.EXE)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de Página Institucional -->
+  <footer class="footer-main">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <p><strong>UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</strong></p>
+        <p>Facultad de Estudios Superiores Cuautitlán — Campo 4</p>
+        <p>Ingeniería en Telecomunicaciones, Sistemas y Electrónica</p>
+      </div>
+      <div class="footer-center">
+        <p><strong>Asignatura:</strong> Ingeniería de Software</p>
+        <p><strong>Docente:</strong> ALEJANDRO VALDEZ SANTAMARIA</p>
+        <p><strong>Alumno:</strong> Alan Ernesto Orona Enríquez • Semestre 5 • Grupo 1501</p>
+      </div>
+      <div class="footer-right">
+        <p class="status-online">● Blog Activo y Autocontenido</p>
+        <p class="copyright">Ciclo Escolar 2026-1 | Entregable Integral</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

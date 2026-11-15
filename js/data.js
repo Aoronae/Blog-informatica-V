@@ -1,0 +1,2998 @@
+// Base de datos estática embebida para compatibilidad local y web sin CORS
+const TEMARIO_DATA = {
+  "asignatura": "Ingeniería de Software",
+  "institucion": "Universidad Nacional Autónoma de México - Facultad de Estudios Superiores Cuautitlán",
+  "carrera": "Licenciatura en Ingeniería en Telecomunicaciones, Sistemas y Electrónica",
+  "alumno": "Alan Ernesto Orona Enríquez",
+  "semestre": "Quinto Semestre",
+  "grupo": "1501",
+  "docente": "ALEJANDRO VALDEZ SANTAMARIA",
+  "horas_totales": 80,
+  "horas_teoricas": 48,
+  "horas_practicas": 32,
+  "creditos": 8,
+  "unidades": [
+    {
+      "id": 1,
+      "numero": "Unidad 1",
+      "titulo": "Introducción al Desarrollo de Sistemas",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Comprender los fundamentos, conceptos generales y la evolución histórica de los sistemas de información, así como los principios elementales que rigen la disciplina de la Ingeniería de Software.",
+      "temas": [
+        {
+          "subtema": "1.1. Definición de un sistema",
+          "contenido": "Un sistema es un conjunto estructurado de elementos interrelacionados e interdependientes que interactúan de forma coordinada para alcanzar un objetivo común mediante la transformación de entradas (datos, materia o energía) en salidas procesadas, operando dentro de un entorno delimitado y sujeto a mecanismos de control y retroalimentación (feedback).\n\nEn el ámbito informático, un Sistema de Información (SI) integra recursos humanos, hardware, software, bases de datos y procedimientos organizacionales para capturar, almacenar, procesar y distribuir información estratégica útil para la toma de decisiones, el análisis operativo y la coordinación empresarial."
+        },
+        {
+          "subtema": "1.2. Tipos de sistemas",
+          "contenido": "Los sistemas informáticos se clasifican de acuerdo con su nivel jerárquico y función operativa dentro de una organización:\n\n• Sistemas de Procesamiento de Transacciones (TPS): Automatizan las actividades rutinarias de negocio (ej. cobro en punto de venta, altas de empleados, movimientos contables).\n• Sistemas de Información Gerencial (MIS): Consolidan los datos de los TPS para emitir reportes periódicos y resúmenes estructurados para jefaturas de departamento.\n• Sistemas de Soporte a Decisiones (DSS): Herramientas analíticas avanzadas que permiten realizar simulaciones '¿Qué pasaría si...?' para apoyar la toma de decisiones no estructuradas.\n• Sistemas de Información Ejecutiva (EIS): Tableros de control de alto nivel con indicadores clave de desempeño (KPIs) para directivos.\n• Sistemas Empresariales Integrados (ERP): Plataformas unificadas que centralizan finanzas, compras, recursos humanos y producción (ej. SAP, Oracle)."
+        },
+        {
+          "subtema": "1.3. Conceptos de desarrollo de sistemas",
+          "contenido": "El desarrollo de sistemas es el proceso sistemático, estructurado y disciplinado que abarca desde la concepción de una idea hasta la puesta en marcha, mantenimiento y retiro del software. Este proceso se fundamenta en el Ciclo de Vida del Desarrollo de Software (SDLC - Software Development Life Cycle), compuesto por las fases indispensables de:\n1. Planificación y Factibilidad\n2. Análisis de Requerimientos\n3. Diseño Arquitectónico y de Detalle\n4. Codificación o Implementación\n5. Pruebas y Aseguramiento de Calidad (QA)\n6. Despliegue y Mantenimiento.\n\nExisten diversos paradigmas de ciclo de vida: modelos tradicionales secuenciales (Cascada / Waterfall), iterativos e incrementales (Espiral, RUP) y metodologías ágiles modernas (Scrum, Kanban, XP) enfocadas en entregas continuas de valor."
+        },
+        {
+          "subtema": "1.4. Retos y problemas en el desarrollo de software",
+          "contenido": "Históricamente conocido como la 'Crisis del Software', el desarrollo de aplicaciones enfrenta problemáticas recurrentes que justifican la aplicación de métodos formales de ingeniería:\n\n• Desviación presupuestal y de tiempos: La mayoría de los proyectos tradicionales superan el costo proyectado o entregan con meses de retraso.\n• Requerimientos ambiguos o cambiantes: Los clientes rara vez comprenden con precisión sus necesidades desde el día uno, provocando retrabajo masivo (scope creep).\n• Deuda técnica y falta de documentación: Código no estructurado o sin comentar que imposibilita el mantenimiento futuro por otros desarrolladores.\n• Falta de pruebas exhaustivas: Errores que llegan a producción causando fallas de seguridad, pérdidas financieras o pérdida de datos críticos."
+        },
+        {
+          "subtema": "1.5. Participantes en el desarrollo de sistemas",
+          "contenido": "El éxito de un proyecto de software depende de la interacción armónica entre diversos roles multidisciplinarios:\n\n• Interesados (Stakeholders): Propietarios, directivos y patrocinadores que financian el proyecto y definen las metas de negocio.\n• Usuarios Finales: Personas que operan directamente el software diariamente; determinan la usabilidad y adopción de la herramienta.\n• Analista de Sistemas: Puente de comunicación entre las necesidades del usuario y la solución tecnológica; levanta requerimientos y elabora especificaciones funcionales.\n• Diseñador / Arquitecto de Software: Diseña la estructura global del sistema, modelos de bases de datos y patrones arquitectónicos.\n• Desarrolladores / Programadores: Traducen las especificaciones de diseño a código fuente en lenguajes de programación (ej. Visual Basic, Java, C#, SQL).\n• Ingenieros de Pruebas (Testers / QA): Validan que el software funcione sin fallas, cumpla los requerimientos y resista casos extremos.\n• Administrador del Proyecto (Project Manager): Coordina tiempos, costos, equipo de trabajo y riesgos."
+        },
+        {
+          "subtema": "1.6. Conceptos de Ingeniería de Software",
+          "contenido": "Según el IEEE (Institute of Electrical and Electronics Engineers), la Ingeniería de Software es: 'La aplicación de un enfoque sistemático, disciplinado y cuantificable al desarrollo, operación y mantenimiento del software; es decir, la aplicación de la ingeniería al software'.\n\nSus pilares fundamentales comprenden:\n• Calidad del Software: Conforme al estándar internacional ISO/IEC 25010 (adecuación funcional, eficiencia de desempeño, compatibilidad, usabilidad, fiabilidad, seguridad, mantenibilidad y portabilidad).\n• Principios de Modularidad: Descomposición de sistemas complejos en módulos pequeños y manejables.\n• Cohesión y Acoplamiento: Maximizar la cohesión interna de cada módulo (que realice una sola tarea bien definida) y minimizar el acoplamiento externo (independencia entre módulos)."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "numero": "Unidad 2",
+      "titulo": "Análisis de Sistemas",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Dominar las técnicas de levantamiento de información, detección de necesidades y formulación de especificaciones funcionales formales previas a la etapa de diseño de software.",
+      "temas": [
+        {
+          "subtema": "2.1. Pasos previos al análisis de sistemas",
+          "contenido": "Antes de iniciar el modelado técnico, es indispensable realizar la Solicitud de Proyecto y el Estudio de Factibilidad en tres vertientes obligatorias:\n\n1. Factibilidad Técnica: ¿Se dispone de hardware, software, redes y conocimientos técnicos para construir la solución propuesta?\n2. Factibilidad Económica: Análisis Costo-Beneficio (ROI - Retorno de Inversión) para determinar si las ganancias o ahorros generados superan el costo de desarrollo y mantenimiento.\n3. Factibilidad Operativa: ¿El personal de la organización adoptará el sistema o existirá resistencia al cambio institucional?"
+        },
+        {
+          "subtema": "2.2. Detección de necesidades",
+          "contenido": "Consiste en identificar los verdaderos problemas y cuellos de botella que obstaculizan la operación de la empresa, distinguiendo síntomas de causas de raíz mediante herramientas como el Diagrama de Causa y Efecto (Ishikawa) o el análisis FODA.\n\nSe analiza el sistema actual (manual o computarizado antiguo), las demoras en el flujo de información, la duplicidad de captura de datos, los errores de cálculo humano y la falta de seguridad en la información."
+        },
+        {
+          "subtema": "2.3. Levantamiento de información",
+          "contenido": "El analista utiliza diversas técnicas científicas para recolectar información verídica y completa:\n\n• Entrevistas estructuradas y no estructuradas: Diálogo directo con usuarios clave y directivos para recopilar expectativas cualitativas.\n• Cuestionarios y encuestas: Herramientas masivas para obtener datos estadísticos estandarizados de grandes plantillas de usuarios.\n• Observación directa: El analista presencia presencialmente cómo se ejecutan las tareas en el puesto de trabajo para detectar omisiones que los usuarios olvidan mencionar.\n• Análisis de documentos: Revisión de formatos en papel, reportes, pólizas, facturas y hojas de cálculo para identificar la estructura real de los datos.\n• Sesiones JAD (Joint Application Design): Talleres intensivos entre usuarios, directivos y desarrolladores para consensuar requerimientos en tiempo récord."
+        },
+        {
+          "subtema": "2.4. Propuesta de desarrollo",
+          "contenido": "Documento ejecutivo formal dirigido a los directivos de la organización que incluye:\n• Definición clara del problema y justificación del proyecto.\n• Alcance y limitaciones explícitas (lo que el sistema hará y lo que queda fuera).\n• Alternativas de solución evaluadas (desarrollo a la medida, compra de software comercial COTS, o parametrización).\n• Presupuesto desglosado y cronograma preliminar mediante Diagrama de Gantt.\n• Beneficios tangibles e intangibles esperados."
+        },
+        {
+          "subtema": "2.5. Documento de especificación funcional",
+          "contenido": "Conocido como SRS (Software Requirements Specification) bajo el estándar IEEE 830. Este documento es el contrato formal entre el cliente y el equipo de desarrollo y clasifica los requerimientos en:\n\n• Requerimientos Funcionales (RF): Describen qué debe hacer el sistema, los cálculos matemáticos, las entradas y salidas requeridas (ej. 'El sistema calculará automáticamente el tiempo extra doble cuando las horas trabajadas superen 40 semanales').\n• Requerimientos No Funcionales (RNF): Propiedades del servicio o restricciones técnicas (rendimiento, tiempos de respuesta menores a 2 segundos, seguridad, cifrado de contraseñas, respaldo en base de datos Access o SQL Server y compatibilidad de sistema operativo)."
+        },
+        {
+          "subtema": "2.6. Elección del entorno de desarrollo",
+          "contenido": "Criterios para seleccionar las herramientas de software idóneas para construir la solución:\n• Lenguaje de Programación e IDE: Por ejemplo, Microsoft Visual Basic 6.0 Enterprise Edition (ideal para interfaces gráficas rápidas basadas en eventos, aplicaciones de escritorio cliente-servidor y compatibilidad con bibliotecas nativas de Windows).\n• Sistema Gestor de Bases de Datos (DBMS): Microsoft Access Jet OLEDB 4.0 para aplicaciones departamentales o de oficina, frente a Microsoft SQL Server / Oracle para grandes volúmenes corporativos.\n• Arquitectura de la solución: Aplicaciones monolíticas de escritorio, modelo cliente-servidor de dos capas o aplicaciones distribuidas en tres capas (interfaz, lógica de negocio y persistencia de datos)."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "numero": "Unidad 3",
+      "titulo": "Análisis Estructurado Moderno",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Aplicar la metodología del Análisis Estructurado Moderno (Yourdon / DeMarco) y modelar los flujos de información organizacionales mediante Diagramas de Flujo de Datos jerárquicos.",
+      "temas": [
+        {
+          "subtema": "3.1. Herramientas y metodología",
+          "contenido": "El Análisis Estructurado Moderno, impulsado por Edward Yourdon y Tom DeMarco, propone modelar el sistema desde dos perspectivas complementarias:\n\n1. El Modelo Ambiental: Define el contexto del sistema, las fronteras con el mundo exterior y los estímulos a los que responde. Consta de:\n   • Declaración de Propósito del sistema.\n   • Diagrama de Contexto (DFD Nivel 0).\n   • Lista de Eventos que activan el sistema.\n2. El Modelo de Comportamiento: Modela la lógica interna, el almacenamiento y la transformación de datos mediante:\n   • Diagramas de Flujo de Datos (DFDs) detallados.\n   • Diccionario de Datos.\n   • Especificación de Procesos (Minispecs).\n   • Diagramas de Transición de Estados (DTE)."
+        },
+        {
+          "subtema": "3.2. Diagramas de Flujo de Datos (DFD)",
+          "contenido": "El DFD es la herramienta gráfica fundamental para representar la trayectoria y transformación que sufren los datos a través del sistema. Sus elementos estandarizados (notación Yourdon/DeMarco o Gane/Sarson) son:\n\n• Procesos (Círculos o Rectángulos redondeados): Transforman entradas en salidas mediante lógica matemática o reglas de negocio.\n• Flujos de Datos (Flechas orientadas): Representan el movimiento de paquetes de información entre procesos, entidades o almacenes.\n• Almacenes de Datos (Líneas paralelas abiertas): Archivos, tablas de base de datos o carpetas donde los datos reposan temporal o permanentemente.\n• Entidades Externas / Terminadores (Rectángulos): Personas, departamentos o sistemas externos que suministran datos de entrada o reciben salidas del sistema.\n\nJerarquía de DFDs:\n• Nivel 0 (Diagrama de Contexto): Un solo proceso central representativo con todas las entidades externas que interactúan con él.\n• Nivel 1 (Diagrama General): Descompone el proceso central en los subsistemas o módulos funcionales principales.\n• Nivel 2 (Descomposición Primitiva): Detalla cada subsistema en sus procesos matemáticos e interactivos elementales."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "numero": "Unidad 4",
+      "titulo": "Diseño de Sistemas",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Transformar los modelos lógicos de análisis en especificaciones técnicas de diseño arquitectónico, procedimental y de interfaz de usuario.",
+      "temas": [
+        {
+          "subtema": "4.1. Conceptos de diseño de sistemas",
+          "contenido": "Mientras el análisis responde a la pregunta '¿QUÉ debe hacer el sistema?', el diseño responde a la pregunta '¿CÓMO se va a construir técnicamente?'.\n\nEl diseño de software es el proceso de traducir los requerimientos del usuario en un plano de ingeniería ejecutable. Se basa en principios rectores:\n• Abstracción: Ocultar detalles complejos de bajo nivel para enfocar el esfuerzo en la arquitectura general.\n• Modularidad: División del software en componentes con interfaces explícitas.\n• Ocultamiento de Información (Information Hiding): Los detalles internos de un módulo deben ser inaccesibles para otros módulos que no requieran conocerlos.\n• Refinamiento Sucesivo: Proceso descendente (top-down) desde la vista más general hasta la especificación de algoritmos y variables."
+        },
+        {
+          "subtema": "4.2. Metodología de diseño",
+          "contenido": "El diseño de sistemas se estructura en cuatro actividades fundamentales:\n\n1. Diseño Arquitectónico: Define la estructura global del software, los módulos principales y sus patrones de comunicación (ej. arquitectura en capas, cliente-servidor o MVC).\n2. Diseño de la Interfaz: Especifica el diálogo entre las personas y la computadora (pantallas, menús, controles visuales, atajos de teclado y retroalimentación de errores).\n3. Diseño de Datos: Traduce los requerimientos de información en esquemas lógicos y físicos de bases de datos relacionales normalizados.\n4. Diseño a Nivel de Componentes (Procedimental): Define la lógica interna, algoritmos, estructuras de control y funciones de cada módulo individual."
+        },
+        {
+          "subtema": "4.3. Herramientas de diseño",
+          "contenido": "Instrumentos gráficos y técnicos utilizados durante la etapa de diseño:\n• Diagramas de Bloques Arquitectónicos.\n• Matrices de Trazabilidad de Requerimientos: Garantizan que cada requerimiento del análisis tenga un componente de diseño que lo satisfaga.\n• Wireframes y Maquetación de Interfaces: Bocetos de las ventanas, formularios y controles.\n• Especificaciones de Interfaz de Programación (APIs): Definición de firmas de métodos, tipos de parámetros y valores de retorno."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "numero": "Unidad 5",
+      "titulo": "Diseño Estructurado Moderno",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Aplicar las técnicas de modelado relacional de datos, cartas de estructura, especificación de procesos y diccionarios de datos bajo el paradigma estructurado.",
+      "temas": [
+        {
+          "subtema": "5.1. Metodología del diseño estructurado",
+          "contenido": "La metodología estructurada transforma los Diagramas de Flujo de Datos (DFDs) obtenidos en el análisis en Cartas de Estructura de software jerárquicas mediante dos estrategias de mapeo:\n\n• Análisis de Transformación: Se aplica a flujos de datos donde existe una corriente de entrada clara, un centro de transformación algorítmico y una corriente de salida (ej. cálculo de nómina, conversores de bases o algoritmos matemáticos).\n• Análisis de Transacciones: Se aplica cuando un flujo de datos se bifurca en múltiples caminos alternativos basados en el tipo de acción seleccionada por el usuario (ej. menú principal de opciones, punto de venta o cajero automático ATM)."
+        },
+        {
+          "subtema": "5.2. Herramientas del diseño estructurado",
+          "contenido": "Las principales herramientas técnicas para la especificación detallada del diseño estructurado son:\n• Modelo Entidad/Relación (MER).\n• Diccionario de Datos.\n• Especificación de Procesos (Minispecs).\n• Diagramas de Transición de Estados (DTE).\n• Cartas de Estructura (Structure Charts)."
+        },
+        {
+          "subtema": "5.3. Ventajas y limitaciones",
+          "contenido": "• Ventajas: Claridad en el flujo de información, descomposición jerárquica sencilla de comprender para clientes y programadores, excelente adecuación para sistemas orientados a procesamiento secuencial de transacciones.\n• Limitaciones: Dificultad para modelar interfaces gráficas complejas orientadas a eventos (GUI), mantenimiento costoso en sistemas con requerimientos que cambian drásticamente y separación artificial entre datos y funciones (lo que motivó el surgimiento del paradigma orientado a objetos)."
+        },
+        {
+          "subtema": "5.4. Modelo Entidad/Relación (MER)",
+          "contenido": "Modela la estructura de información que será almacenada en la base de datos relacional:\n\n• Entidades: Objetos del mundo real sobre los que se recolecta información (ej. Empleado, Cliente, Producto, Venta).\n• Atributos: Propiedades o características de una entidad (ej. RFC, Nombre, HorasTrabajadas, Precio).\n• Clave Primaria (PK): Atributo o conjunto de atributos que identifica unívocamente a cada registro.\n• Clave Foránea (FK): Atributo que establece la relación referencial con la clave primaria de otra tabla.\n• Cardinalidades: Tipo de relación entre entidades (1:1 Uno a Uno, 1:N Uno a Muchos, N:M Muchos a Muchos resuelta mediante tabla intermedia).\n• Normalización (1FN, 2FN, 3FN): Proceso sistemático para eliminar la redundancia de datos, evitar anomalías de inserción/borrado y garantizar la integridad referencial."
+        },
+        {
+          "subtema": "5.5. Diccionario de datos",
+          "contenido": "Es el repositorio formal y exhaustivo que describe el significado, composición y tipo de dato de cada elemento, flujo y almacén presente en el sistema. Utiliza operadores de notación estándar:\n• =  Significa 'está compuesto por'\n• +  Significa 'y' (secuencia)\n• [ | ]  Significa 'selección' (uno u otro)\n• { }  Significa 'iteración' (cero o más repeticiones)\n• ( )  Significa 'opcional'\n\nEjemplo formal:\nExpediente_Nomina = Clave_Empleado + Nombre_Completo + RFC + CURP + Horas_Trabajadas + Tarifa_Hora + (Bono_Antiguedad) + {Deduccion_Aplicada} + Sueldo_Neto."
+        },
+        {
+          "subtema": "5.6. Especificación de procesos (Minispecs)",
+          "contenido": "Describe la lógica interna de los procesos primitivos (los procesos de nivel más bajo en los DFDs que ya no se descomponen más). Se emplean tres técnicas estandarizadas:\n\n1. Lenguaje Estructurado (Pseudocódigo formal): Utiliza vocabulario restringido con palabras reservadas en mayúsculas (SI, ENTONCES, SINO, REPETIR, MIENTRAS, FINSI) con sangrías obligatorias.\n2. Tablas de Decisión: Matrices de filas y columnas que relacionan combinaciones complejas de condiciones con las acciones que deben ejecutarse (muy útiles para reglas fiscales o de nómina con múltiples excepciones).\n3. Árboles de Decisión: Representaciones gráficas ramificadas útiles para explicar la lógica condicional a usuarios no técnicos."
+        },
+        {
+          "subtema": "5.7. Diagrama de transición de estados (DTE)",
+          "contenido": "Modela el comportamiento dinámico del sistema a lo largo del tiempo, representando cómo responde ante eventos externos o del usuario según su estado interno actual.\n\nElementos:\n• Estados (Rectángulos): Situación o condición en la que se encuentra el software en un momento dado (ej. 'Modo Espera', 'Modo Captura', 'Procesando Pago', 'Alarma Activada').\n• Transiciones (Flechas): Cambio de un estado a otro provocado por un Evento y condicionado por una Guarda.\n• Acciones: Tareas que el sistema ejecuta de inmediato como consecuencia de la transición (ej. reproducir sonido, actualizar pantalla, guardar en base de datos)."
+        },
+        {
+          "subtema": "5.8. Cartas de estructura (Structure Charts)",
+          "contenido": "Diagrama en árbol jerárquico que describe la arquitectura modular del código fuente del programa:\n\n• Módulos de Control: Módulos superiores que coordinan las decisiones y llamadas a procedimientos subordinados.\n• Módulos Trabajadores: Procedimientos y funciones que realizan tareas específicas de cómputo o entrada/salida.\n• Coplas de Datos (Flechas con círculo blanco): Información útil enviada entre módulos como parámetros de función.\n• Coplas de Control (Flechas con círculo negro): Banderas (flags) lógicas booleanas que indican estados, condiciones de error o fin de archivo."
+        },
+        {
+          "subtema": "5.9. Partición por eventos",
+          "contenido": "Técnica moderna para descomponer un sistema complejo a partir de los eventos del entorno que exigen una respuesta del software. Se clasifican en:\n• Eventos Normales / Externos: Provocados por el usuario (ej. clic en botón 'Guardar', pulsar tecla de dirección en el juego de la viborita).\n• Eventos Temporales: Disparados por el paso del tiempo o controles Timer (ej. segundo cumplido en reloj, tiempo de semáforo, actualización de posición de objetos).\n• Eventos de Control: Señales generadas por hardware o sensores externos (ej. puerto serie, escáner de código de barras)."
+        },
+        {
+          "subtema": "5.10. Documentación técnica de diseño",
+          "contenido": "La documentación de diseño recopila toda la arquitectura del software de forma que cualquier ingeniero de desarrollo pueda mantener, corregir o extender la aplicación sin depender del programador original. Incluye diagramas de base de datos, descripción de procedimientos, esquemas de navegación y manuales de usuario."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "numero": "Unidad 6",
+      "titulo": "Herramientas CASE",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Conocer la clasificación, utilidad e impacto de las herramientas de Ingeniería de Software Asistida por Computadora (CASE) en el ciclo de vida del software.",
+      "temas": [
+        {
+          "subtema": "6.1. Introducción a las herramientas CASE",
+          "contenido": "CASE (Computer-Aided Software Engineering) comprende el conjunto de aplicaciones informáticas diseñadas para automatizar, asistir y mejorar las actividades del ciclo de vida del software, reduciendo errores humanos, acortando tiempos de entrega y asegurando la consistencia de los modelos técnicos.\n\nClasificación funcional de las herramientas CASE:\n• Upper CASE (CASE Superior): Enfocadas en las fases iniciales de planificación, análisis y modelado de requerimientos (ej. diagramadores de DFDs, modeladores de procesos de negocio).\n• Lower CASE (CASE Inferior): Enfocadas en las fases finales de generación automática de código, esquemas de bases de datos DDL, compilación automatizada y suites de pruebas unitarias.\n• Integrated CASE (I-CASE): Entornos integrados completos que cubren desde el levantamiento de requerimientos hasta el despliegue y mantenimiento con repositorio central unificado."
+        },
+        {
+          "subtema": "6.2. Taller de CASE y aplicaciones prácticas",
+          "contenido": "Uso práctico de herramientas de modelado y desarrollo:\n• Modelado de Datos y Generación de Esquemas: Herramientas como Erwin Data Modeler o Microsoft Access Visual Schema que permiten diseñar el MER y generar automáticamente las tablas, relaciones y restricciones de clave primaria y foránea.\n• Asistentes de Ingeniería Inversa: Capacidad de una herramienta CASE para inspeccionar una base de datos o código fuente existente y generar automáticamente sus diagramas arquitectónicos y de flujo.\n• Repositorio Central de Metadatos: Almacén unificado donde se registran todas las definiciones del diccionario de datos, pantallas, módulos y reglas de negocio para asegurar que ningún cambio rompa la integridad del sistema."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "numero": "Unidad 7",
+      "titulo": "Elaboración de Prototipos",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Analizar la metodología del desarrollo basado en prototipos como mecanismo ágil para validar requerimientos, reducir la incertidumbre y diseñar interfaces de usuario centradas en la persona.",
+      "temas": [
+        {
+          "subtema": "7.1. Prototipos no funcionales",
+          "contenido": "Los prototipos no funcionales (de baja fidelidad) representan la apariencia y distribución espacial de las interfaces sin contener lógica de programación interna ni acceso a bases de datos reales:\n\n• Prototipos en papel: Bocetos rápidos dibujados a mano durante reuniones iniciales con el cliente.\n• Wireframes y Mockups: Esquemas digitales estáticos elaborados en herramientas gráficas que muestran la disposición de cajas de texto, etiquetas, botones y menús.\n• Storyboards: Secuencias de pantallas que ilustran la navegación y el flujo de trabajo del usuario a través de los diferentes módulos del sistema.\n\nObjetivo principal: Validar con rapidez y costo mínimo la comprensión de los requerimientos y el diseño conceptual antes de escribir una sola línea de código."
+        },
+        {
+          "subtema": "7.2. Prototipos funcionales",
+          "contenido": "Los prototipos funcionales (de alta fidelidad) son programas ejecutables reales que responden de forma interactiva ante las acciones del usuario:\n\n• Prototipos Desechables (Throwaway Prototyping): Construidos rápidamente para explorar aspectos técnicos poco claros (ej. validar si un control de código de barras lee correctamente en Visual Basic) y que luego se descartan para construir la versión definitiva con código optimizado.\n• Prototipos Evolutivos (Evolutionary Prototyping): Sistemas que inician con un núcleo funcional básico y van incorporando módulos en iteraciones sucesivas hasta convertirse en el producto final entregado al cliente (enfoque adoptado en las prácticas de Visual Basic 6.0 desarrolladas en el curso)."
+        },
+        {
+          "subtema": "7.3. Ventajas y riesgos de los prototipos",
+          "contenido": "• Ventajas:\n  1. Claridad absoluta de requerimientos: Los usuarios descubren necesidades ocultas al interactuar con una interfaz viva.\n  2. Reducción drástica del riesgo de rechazo: El cliente participa activamente en el diseño.\n  3. Capacitación temprana del personal operativo antes del despliegue final.\n\n• Riesgos y Desventajas:\n  1. Falsas expectativas del cliente: Al ver una pantalla funcionando, el usuario puede pensar equivocadamente que el sistema completo está terminado, sin considerar la lógica de seguridad y robustez pendiente.\n  2. Tentación de dejar el código 'parchado': Presión para poner en producción prototipos con código rápido no optimizado ni seguro.\n  3. Desbordamiento del alcance si no se fijan límites estrictos a las revisiones del prototipo."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "numero": "Unidad 8",
+      "titulo": "Especificación de Programas",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Diseñar e implementar con excelencia técnica los componentes visuales, procesos algorítmicos, periféricos especiales (código de barras, lectura óptica) y sistemas multimedia de aplicaciones de software.",
+      "temas": [
+        {
+          "subtema": "8.1. Diseño de pantallas",
+          "contenido": "El diseño de formularios en Visual Basic 6.0 debe aplicar principios rigurosos de ergonomía visual e Interacción Humano-Computadora (HCI):\n\n• Jerarquía visual y flujo de lectura natural: Disposición lógica de controles de izquierda a derecha y de arriba hacia abajo.\n• Contraste y psicología del color: Uso de colores sobrios y contrastes accesibles para evitar la fatiga visual del operador en jornadas laborales prolongadas.\n• Agrupación lógica: Uso de marcos (Frame) para agrupar campos relacionados (ej. datos personales, percepciones, deducciones en la nómina).\n• Consistencia de controles: Mantener alineaciones, tamaños homogéneos de cajas de texto y fuentes tipográficas legibles (Segoe UI, Arial, Tahoma)."
+        },
+        {
+          "subtema": "8.2. Diseño de reportes",
+          "contenido": "La salida de información impresa o digital debe satisfacer estándares ejecutivos y legales:\n\n• Estructura estándar de reporte: Encabezado corporativo (logotipo, razón social, fecha, folio), cuerpo del reporte (tabla con datos tabulados y justificados) y pie de página (totales acumulados, firmas de autorización y número de página).\n• Formatos digitales: Generación de textos formateados con tabuladores y caracteres monoespaciados para impresión en impresoras térmicas de tickets o exportación al portapapeles de Windows.\n• Resúmenes estadísticos: Inclusión de conteo total de registros, promedios salariales, valores máximos y mínimos."
+        },
+        {
+          "subtema": "8.3. Diseño de procesos y algoritmos",
+          "contenido": "Estructuración de la lógica interna de cada programa aplicando programación modular y estructurada:\n\n• Descomposición algorítmica: Separar la lectura de datos, el cálculo matemático y la presentación de resultados en procedimientos independientes.\n• Manejo de estructuras de control:\n  - Condicionales: If-Then-Else para decisiones simples y Select Case para bifurcaciones múltiples (operaciones de calculadora, menús de cajero ATM).\n  - Iterativas: For-Next para conteos acotados (tablas de multiplicar, búsqueda en arreglos) y Do-While / Do-Until para recorridos de registros en bases de datos (Recordset.EOF).\n• Limpieza de código: Nombres nemotécnicos de variables, validación preventiva contra división entre cero y código libre de comentarios redundantes."
+        },
+        {
+          "subtema": "8.4. Interfaz con el usuario",
+          "contenido": "Programación basada en eventos que responde con inmediatez a la interacción de la persona:\n\n• Eventos de teclado: KeyPress, KeyDown y KeyUp para filtrar caracteres (ej. restringir a sólo números en cajas de importe o detectar flechas en el juego de la viborita).\n• Eventos de ratón: Click, DblClick, MouseMove, MouseDown, MouseUp y eventos de arrastre DragDrop / DragOver.\n• Accesibilidad por teclado: Definición rigurosa de TabIndex para que el usuario pueda navegar entre controles con la tecla Tabulador sin requerir el ratón, y teclas aceleradoras mnemónicas (tecla Alt + letra subrayada)."
+        },
+        {
+          "subtema": "8.5. Lectura óptica",
+          "contenido": "Integración de tecnologías de reconocimiento visual y captura masiva de datos en sistemas de software:\n\n• OMR (Optical Mark Recognition): Reconocimiento óptico de marcas para calificación automatizada de cuestionarios o encuestas de opción múltiple.\n• OCR (Optical Character Recognition): Conversión de texto impreso o manuscrito digitalizado en caracteres de texto editables por computadora.\n• Integración en aplicaciones: Lectura de credenciales, captura digital de firmas y archivo fotográfico automatizado mediante controles gráficos de Visual Basic."
+        },
+        {
+          "subtema": "8.6. Código de barras",
+          "contenido": "Tecnología de identificación automática y captura de datos (AIDC) ampliamente utilizada en puntos de venta, control de inventarios y logística:\n\n• Estándar Code 39 (3 de 9): Estándar industrial alfanumérico donde cada carácter está compuesto por 9 elementos (5 barras y 4 espacios, de los cuales 3 son anchos y 6 son estrechos).\n• Generación Gráfica en Software: Algoritmo para convertir una cadena de texto en líneas verticales trazadas con el método Line (X1, Y1)-(X2, Y2), vbBlack, BF en un PictureBox, incluyendo delimitadores de inicio y fin (*).\n• Lectura por Escáner: Los lectores ópticos emiten una secuencia emulando pulsaciones de teclado, permitiendo la captura inmediata de productos o claves con cero margen de error humano."
+        },
+        {
+          "subtema": "8.7. Sistemas de información multimedia",
+          "contenido": "Integración armónica de múltiples medios digitales (texto, gráficos de alta resolución, audio digital, video y animaciones) dentro de aplicaciones interactivas:\n\n• Control de Audio: Reproducción de efectos sonoros y música mediante llamadas a la API de Windows (mciSendString, sndPlaySound de winmm.dll) o controles OCX de Windows Media Player (WMP).\n• Gráficos Interactivos y Animación: Uso de temporizadores para controlar velocidad de cuadros por segundo (FPS), detección de colisiones geométricas y renderizado de texto tridimensional con sombras dinámicas.\n• Aplicaciones representativas desarrolladas: Rockola Multimedia Jukebox, Piano MIDI Virtual, Protectores de Pantalla interactivos y Videojuegos clásicos (Gato, Memoria, Tiro al Blanco, Viborita)."
+        }
+      ]
+    }
+  ],
+  "bibliografia": [
+    {
+      "autor": "Roger S. Pressman",
+      "titulo": "Ingeniería del Software: Un enfoque práctico",
+      "edicion": "7ma Edición",
+      "editorial": "McGraw-Hill",
+      "año": "2010"
+    },
+    {
+      "autor": "Ian Sommerville",
+      "titulo": "Software Engineering",
+      "edicion": "9na Edición",
+      "editorial": "Addison-Wesley",
+      "año": "2011"
+    },
+    {
+      "autor": "Kenneth E. Kendall & Julie E. Kendall",
+      "titulo": "Systems Analysis and Design",
+      "edicion": "8va Edición",
+      "editorial": "Pearson Prentice Hall",
+      "año": "2010"
+    },
+    {
+      "autor": "Edward Yourdon",
+      "titulo": "Modern Structured Analysis",
+      "edicion": "1ra Edición",
+      "editorial": "Prentice-Hall",
+      "año": "1989"
+    },
+    {
+      "autor": "Tom DeMarco",
+      "titulo": "Structured Analysis and System Specification",
+      "edicion": "1ra Edición",
+      "editorial": "Yourdon Press",
+      "año": "1979"
+    }
+  ]
+};
+const PROGRAMAS_DATA = {
+  "total_programas": 100,
+  "programas_clase": [
+    {
+      "nombre": "Alarma Musical",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Alarma Musical",
+      "pdf_url": "docs/clase/Alarma%20Musical/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Alarma Musical/DOCUMENTACION.pdf",
+      "pdf_size": 118563,
+      "exe_nombre": "AlarmaMusical.exe",
+      "exe_url": "docs/clase/Alarma%20Musical/AlarmaMusical.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Alarma Musical/AlarmaMusical.exe",
+      "descripcion": "Permitir al usuario programar una hora y minuto específicos para activar una alarma sonora o musical mediante la sincronización continua con el reloj interno del sistema.",
+      "puntos_clave": [
+        "Configurar la hora y minutos deseados para el disparo de la alarma.",
+        "Monitorear segundo a segundo la hora del sistema a través del control Timer.",
+        "Ejecutar la reproducción del archivo de audio o tono al coincidir la hora programada.",
+        "Permitir detener, silenciar o reiniciar la alarma mediante botones de control."
+      ],
+      "proceso_1": {
+        "nombre": "Verificación del Reloj (Timer_Timer)",
+        "pseudocodigo": "Inicio Timer_Timer\n    horaActual <- ObtenerHoraSistema()\n    lblHora.Caption <- horaActual\n    Si alarmaActivada = Verdadero Entonces\n        Si horaActual >= horaAlarma Entonces\n            alarmaActivada <- Falso\n            Llamar ReproducirSonidoAlarma()\n            MostrarAviso \"¡Alarma Activada!\"\n        FinSi\n    FinSi\nFin Timer_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Programación de Alarma (cmdActivar_Click)",
+        "pseudocodigo": "Inicio cmdActivar_Click\n    Si txtHora.Text = \"\" O txtMinuto.Text = \"\" Entonces\n        MostrarAviso \"Ingrese hora y minuto válidos.\"\n        Salir\n    FinSi\n    horaAlarma <- FormatearHora(txtHora.Text, txtMinuto.Text)\n    alarmaActivada <- Verdadero\n    lblEstado.Caption <- \"Alarma fijada: \" + horaAlarma\nFin cmdActivar_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Arrastrar y Soltar Imagen",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Arrastrar y Soltar Imagen",
+      "pdf_url": "docs/clase/Arrastrar%20y%20Soltar%20Imagen/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Arrastrar y Soltar Imagen/DOCUMENTACION.pdf",
+      "pdf_size": 112417,
+      "exe_nombre": "Alan.exe",
+      "exe_url": "docs/clase/Arrastrar%20y%20Soltar%20Imagen/Alan.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Arrastrar y Soltar Imagen/Alan.exe",
+      "descripcion": "Demostrar el funcionamiento de los eventos Drag & Drop (arrastre y soltado) en Visual Basic 6.0, permitiendo al usuario mover controles gráficos libremente sobre el área del formulario.",
+      "puntos_clave": [
+        "Habilitar el modo de arrastre (DragMode) manual o automático en el control de imagen.",
+        "Detectar el desplazamiento del objeto sobre el lienzo mediante el evento DragOver.",
+        "Calcular las coordenadas finales X e Y en el evento DragDrop y reubicar la imagen.",
+        "Ofrecer un botón para restablecer la imagen a su posición original."
+      ],
+      "proceso_1": {
+        "nombre": "Ubicación del Objeto al Soltar (Form_DragDrop)",
+        "pseudocodigo": "Inicio Form_DragDrop(Origen, X, Y)\n    Origen.Left <- X - (Origen.Width / 2)\n    Origen.Top <- Y - (Origen.Height / 2)\n    lblCoordenadas.Caption <- \"Posición: X=\" + X + \" Y=\" + Y\nFin Form_DragDrop"
+      },
+      "proceso_2": {
+        "nombre": "Restablecer Posición Inicial (cmdRestablecer_Click)",
+        "pseudocodigo": "Inicio cmdRestablecer_Click\n    imgObjeto.Left <- posInicialX\n    imgObjeto.Top <- posInicialY\n    lblCoordenadas.Caption <- \"Posición: Original\"\nFin cmdRestablecer_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Barras de Desplazamiento",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Barras de Desplazamiento",
+      "pdf_url": "docs/clase/Barras%20de%20Desplazamiento/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Barras de Desplazamiento/DOCUMENTACION.pdf",
+      "pdf_size": 109187,
+      "exe_nombre": "ScrollbarsControl.exe",
+      "exe_url": "docs/clase/Barras%20de%20Desplazamiento/ScrollbarsControl.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Barras de Desplazamiento/ScrollbarsControl.exe",
+      "descripcion": "Controlar de forma dinámica valores numéricos, dimensiones o propiedades visuales de elementos en pantalla mediante el uso de barras de desplazamiento horizontal (HScrollBar) y vertical (VScrollBar).",
+      "puntos_clave": [
+        "Configurar los límites mínimo (Min) y máximo (Max) de las barras de desplazamiento.",
+        "Capturar el evento Change y Scroll para actualizar en tiempo real los valores numéricos.",
+        "Modificar dinámicamente las dimensiones (Width, Height) o la posición de un objeto en pantalla.",
+        "Desplegar etiquetas con los valores numéricos actuales de desplazamiento."
+      ],
+      "proceso_1": {
+        "nombre": "Ajuste Horizontal (HScroll1_Change)",
+        "pseudocodigo": "Inicio HScroll1_Change\n    valorH <- HScroll1.Value\n    picCuadro.Width <- valorH\n    lblValorH.Caption <- \"Ancho: \" + valorH + \" px\"\nFin HScroll1_Change"
+      },
+      "proceso_2": {
+        "nombre": "Ajuste Vertical (VScroll1_Change)",
+        "pseudocodigo": "Inicio VScroll1_Change\n    valorV <- VScroll1.Value\n    picCuadro.Height <- valorV\n    lblValorV.Caption <- \"Alto: \" + valorV + \" px\"\nFin VScroll1_Change"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Base De Datos",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Base De Datos",
+      "pdf_url": "docs/clase/Base%20De%20Datos/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Base De Datos/DOCUMENTACION.pdf",
+      "pdf_size": 109274,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/clase/Base%20De%20Datos/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Base De Datos/Proyecto1.exe",
+      "descripcion": "Conectar el formulario a una base de datos relacional Microsoft Access mediante el control intrínseco Data (DAO) para consultar, navegar y dar de alta registros de clientes de forma interactiva.",
+      "puntos_clave": [
+        "Enlazar cajas de texto a las columnas de la tabla (Nombre del Cliente, Dirección, Teléfono, Edad).",
+        "Navegar secuencialmente entre registros utilizando los controles de desplazamiento del control Data.",
+        "Validar la integridad de los datos ingresados antes de confirmar cambios en la base de datos.",
+        "Ofrecer una interfaz limpia y estructurada para la gestión de expedientes de clientes."
+      ],
+      "proceso_1": {
+        "nombre": "Navegación y Carga de Registro (Data1_Reposition)",
+        "pseudocodigo": "Inicio Data1_Reposition\n    Si Not Data1.Recordset.EOF Y Not Data1.Recordset.BOF Entonces\n        lblRegistro.Caption <- \"Registro: \" + Data1.Recordset.AbsolutePosition + \" de \" + Data1.Recordset.RecordCount\n    FinSi\nFin Data1_Reposition"
+      },
+      "proceso_2": {
+        "nombre": "Agregar Nuevo Cliente (cmdNuevo_Click)",
+        "pseudocodigo": "Inicio cmdNuevo_Click\n    Data1.Recordset.AddNew\n    txtNombre.SetFocus\n    lblRegistro.Caption <- \"Capturando nuevo registro...\"\nFin cmdNuevo_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Base de Datos Plana",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Base de Datos Plana",
+      "pdf_url": "docs/clase/Base%20de%20Datos%20Plana/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Base de Datos Plana/DOCUMENTACION.pdf",
+      "pdf_size": 113793,
+      "exe_nombre": "BaseDatosPlana.exe",
+      "exe_url": "docs/clase/Base%20de%20Datos%20Plana/BaseDatosPlana.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Base de Datos Plana/BaseDatosPlana.exe",
+      "descripcion": "Almacenar y consultar registros de información estructurada en archivos secuenciales de texto plano (.txt o .dat), implementando operaciones de lectura, escritura y búsqueda secuencial.",
+      "puntos_clave": [
+        "Abrir archivos secuenciales en modo Append para agregar registros sin sobreescribir los previos.",
+        "Leer línea por línea en modo Input para cargar los registros existentes en controles de lista.",
+        "Separar los campos de cada registro mediante delimitadores o formato de longitud fija.",
+        "Permitir la búsqueda rápida de registros a través de comparaciones de cadenas de texto."
+      ],
+      "proceso_1": {
+        "nombre": "Guardar en Archivo Secuencial (cmdGuardar_Click)",
+        "pseudocodigo": "Inicio cmdGuardar_Click\n    canal <- ObtenerCanalLibre()\n    Abrir \"datos.txt\" Para Agregar Como canal\n    EscribirLinea canal, txtNombre.Text + \",\" + txtDireccion.Text + \",\" + txtTelefono.Text\n    Cerrar canal\n    MostrarMensaje \"Registro guardado exitosamente en archivo plano.\"\nFin cmdGuardar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Cargar Registros a Lista (cmdCargar_Click)",
+        "pseudocodigo": "Inicio cmdCargar_Click\n    lstRegistros.Limpiar\n    canal <- ObtenerCanalLibre()\n    Abrir \"datos.txt\" Para Lectura Como canal\n    Mientras Not FinDeArchivo(canal)\n        LeerLinea canal, linea\n        lstRegistros.AgregarItem linea\n    FinMientras\n    Cerrar canal\nFin cmdCargar_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Base de Datos con Imagen",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Base de Datos con Imagen",
+      "pdf_url": "docs/clase/Base%20de%20Datos%20con%20Imagen/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Base de Datos con Imagen/DOCUMENTACION.pdf",
+      "pdf_size": 115473,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/clase/Base%20de%20Datos%20con%20Imagen/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Base de Datos con Imagen/Proyecto1.exe",
+      "descripcion": "Gestionar expedientes de datos vinculando información textual con imágenes gráficas (fotografías o credenciales), cargando las fotos desde disco en un control Image según la clave del registro.",
+      "puntos_clave": [
+        "Conectar a la base de datos para almacenar datos del empleado o alumno junto con la ruta de su fotografía.",
+        "Cargar dinámicamente imágenes mediante la función LoadPicture al navegar entre registros.",
+        "Controlar excepciones en caso de que el archivo gráfico no se encuentre en la ruta especificada.",
+        "Proveer botones de navegación completa y alta de nuevos registros con selección de fotografía."
+      ],
+      "proceso_1": {
+        "nombre": "Cargar Fotografía Asociada (MostrarFoto)",
+        "pseudocodigo": "Inicio MostrarFoto(rutaArchivo)\n    Si ArchivoExiste(rutaArchivo) Entonces\n        imgFoto.Picture <- CargarImagen(rutaArchivo)\n    Sino\n        imgFoto.Picture <- CargarImagen(rutaFotoPredeterminada)\n    FinSi\nFin MostrarFoto"
+      },
+      "proceso_2": {
+        "nombre": "Navegar y Sincronizar Registro (cmdSiguiente_Click)",
+        "pseudocodigo": "Inicio cmdSiguiente_Click\n    rs.MoveNext\n    Si rs.EOF Entonces rs.MoveLast\n    txtNombre.Text <- rs.Fields(\"Nombre\")\n    txtMatricula.Text <- rs.Fields(\"Matricula\")\n    Llamar MostrarFoto(rs.Fields(\"RutaFoto\"))\nFin cmdSiguiente_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Base de Datos-ADODC",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Base de Datos-ADODC",
+      "pdf_url": "docs/clase/Base%20de%20Datos-ADODC/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Base de Datos-ADODC/DOCUMENTACION.pdf",
+      "pdf_size": 112410,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/clase/Base%20de%20Datos-ADODC/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Base de Datos-ADODC/Proyecto1.exe",
+      "descripcion": "Implementar un sistema de gestión de base de datos utilizando el control Microsoft ADO Data Control 6.0 (ADODC) para administrar registros con operaciones completas de consulta, inserción y desplazamiento.",
+      "puntos_clave": [
+        "Configurar la cadena de conexión OLE DB hacia la base de datos Access.",
+        "Vincular cajas de texto a las columnas: Clave, Dirección, Teléfono y Nombre Completo.",
+        "Programar botones de navegación personalizados (Primero, Anterior, Siguiente, Último).",
+        "Ejecutar los métodos AddNew y Update del Recordset para dar de alta nuevos registros de forma segura."
+      ],
+      "proceso_1": {
+        "nombre": "Inserción de Nuevo Registro (cmdNuevo_Click)",
+        "pseudocodigo": "Inicio cmdNuevo_Click\n    Adodc1.Recordset.AddNew\n    txtClave.SetFocus\n    lblEstado.Caption <- \"Modo inserción: Capture los datos\"\nFin cmdNuevo_Click"
+      },
+      "proceso_2": {
+        "nombre": "Guardar Registro Actual (cmdGuardar_Click)",
+        "pseudocodigo": "Inicio cmdGuardar_Click\n    Si txtClave.Text = \"\" O txtNombreCompleto.Text = \"\" Entonces\n        MostrarAviso \"Debe ingresar clave y nombre completo.\"\n        Salir\n    FinSi\n    Adodc1.Recordset.Update\n    MostrarMensaje \"Registro guardado exitosamente en ADODC.\"\nFin cmdGuardar_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Calculadora Completa",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Calculadora Completa",
+      "pdf_url": "docs/clase/Calculadora%20Completa/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Calculadora Completa/DOCUMENTACION.pdf",
+      "pdf_size": 118069,
+      "exe_nombre": "Calculadora.exe",
+      "exe_url": "docs/clase/Calculadora%20Completa/Calculadora.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Calculadora Completa/Calculadora.exe",
+      "descripcion": "Simular una calculadora aritmética y científica completa con interfaz de botones digitales en pantalla, permitiendo operaciones básicas, cálculo de porcentajes, raíz cuadrada, cambio de signo y manejo de memoria.",
+      "puntos_clave": [
+        "Manejar el ingreso secuencial de dígitos numéricos y punto decimal mediante una matriz de botones.",
+        "Almacenar el primer operando y el operador seleccionado (+, -, *, /).",
+        "Calcular el resultado final al presionar el botón igual (=) y validar divisiones entre cero.",
+        "Implementar funciones adicionales como raíz cuadrada (Sqr), inverso (1/x) y borrado total (C) o parcial (CE)."
+      ],
+      "proceso_1": {
+        "nombre": "Presionar Dígito Numérico (cmdNumero_Click)",
+        "pseudocodigo": "Inicio cmdNumero_Click(Indice)\n    Si nuevaOperacion = Verdadero Entonces\n        txtDisplay.Text <- Indice\n        nuevaOperacion <- Falso\n    Sino\n        txtDisplay.Text <- txtDisplay.Text + Indice\n    FinSi\nFin cmdNumero_Click"
+      },
+      "proceso_2": {
+        "nombre": "Calcular Resultado (cmdIgual_Click)",
+        "pseudocodigo": "Inicio cmdIgual_Click\n    op2 <- ConvertirANumero(txtDisplay.Text)\n    Segun operador\n        Caso \"+\": resultado <- op1 + op2\n        Caso \"-\": resultado <- op1 - op2\n        Caso \"*\": resultado <- op1 * op2\n        Caso \"/\":\n            Si op2 = 0 Entonces\n                txtDisplay.Text <- \"Error\"\n                Salir\n            Sino\n                resultado <- op1 / op2\n            FinSi\n    FinSegun\n    txtDisplay.Text <- resultado\n    nuevaOperacion <- Verdadero\nFin cmdIgual_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Calculadora Simple",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Calculadora Simple",
+      "pdf_url": "docs/clase/Calculadora%20Simple/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Calculadora Simple/DOCUMENTACION.pdf",
+      "pdf_size": 114585,
+      "exe_nombre": "CalculadoraSimple.exe",
+      "exe_url": "docs/clase/Calculadora%20Simple/CalculadoraSimple.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Calculadora Simple/CalculadoraSimple.exe",
+      "descripcion": "Realizar cálculos aritméticos básicos (suma, resta, multiplicación y división) entre dos valores numéricos ingresados por el usuario, previniendo errores por división entre cero.",
+      "puntos_clave": [
+        "Capturar dos valores numéricos a través de cajas de texto con validación de tipo de dato.",
+        "Ejecutar sumas, restas, multiplicaciones y divisiones según la operación elegida.",
+        "Prevenir errores en tiempo de ejecución validando que el divisor no sea cero.",
+        "Limpiar los campos de entrada y restablecer la calculadora para nuevas operaciones."
+      ],
+      "proceso_1": {
+        "nombre": "Cálculo de Operación (cmdOperar_Click)",
+        "pseudocodigo": "Inicio cmdOperar_Click\n    val1 <- ConvertirANumero(txtNum1.Text)\n    val2 <- ConvertirANumero(txtNum2.Text)\n    Segun operacion\n        Caso \"Suma\": resultado <- val1 + val2\n        Caso \"Resta\": resultado <- val1 - val2\n        Caso \"Multiplicacion\": resultado <- val1 * val2\n        Caso \"Division\":\n            Si val2 = 0 Entonces\n                MostrarError \"No es posible dividir entre cero.\"\n                Salir\n            Sino\n                resultado <- val1 / val2\n            FinSi\n    FinSegun\n    txtResultado.Text <- resultado\nFin cmdOperar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Limpieza de Controles (cmdLimpiar_Click)",
+        "pseudocodigo": "Inicio cmdLimpiar_Click\n    txtNum1.Text <- \"\"\n    txtNum2.Text <- \"\"\n    txtResultado.Text <- \"\"\n    txtNum1.SetFocus\nFin cmdLimpiar_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Calculo de Nomina de Empleados",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Calculo de Nomina de Empleados",
+      "pdf_url": "docs/clase/Calculo%20de%20Nomina%20de%20Empleados/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Calculo de Nomina de Empleados/DOCUMENTACION.pdf",
+      "pdf_size": 123164,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/clase/Calculo%20de%20Nomina%20de%20Empleados/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Calculo de Nomina de Empleados/Proyecto1.exe",
+      "descripcion": "Automatizar el cálculo de nómina semanal de empleados, computando horas normales, horas extras al 200%, bono de antigüedad y retenciones de seguridad social (IMSS) e impuestos (ISR), con persistencia en Access.",
+      "puntos_clave": [
+        "Calcular las horas ordinarias (hasta 40 horas) y horas extras dobles (>40 horas).",
+        "Aplicar un bono de antigüedad del 2.5% por cada año laborado.",
+        "Descontar deducciones legales: IMSS (5.0%), ISR/ISPT (4.5%) y Fondo de Ahorro (2.0%).",
+        "Guardar y navegar registros en base de datos Access (nomina.mdb) y emitir recibos de pago."
+      ],
+      "proceso_1": {
+        "nombre": "Algoritmo de Cálculo Salarial (CalcularSueldo)",
+        "pseudocodigo": "Inicio CalcularSueldo\n    horas <- Val(txtHorasTrabajadas.Text)\n    precio <- Val(txtPrecioHora.Text)\n    anios <- Val(txtAntiguedad.Text)\n    Si horas > 40 Entonces\n        hNormales <- 40\n        hExtras <- horas - 40\n    Sino\n        hNormales <- horas\n        hExtras <- 0\n    FinSi\n    sueldoBase <- (hNormales * precio) + (hExtras * precio * 2)\n    bonoAntig <- sueldoBase * (anios * 0.025)\n    sueldoBruto <- sueldoBase + bonoAntig\n    imss <- sueldoBruto * 0.05\n    ispt <- sueldoBruto * 0.045\n    fondo <- sueldoBruto * 0.02\n    sueldoNeto <- sueldoBruto - (imss + ispt + fondo)\nFin CalcularSueldo"
+      },
+      "proceso_2": {
+        "nombre": "Guardado en Base de Datos (cmdGuardar_Click)",
+        "pseudocodigo": "Inicio cmdGuardar_Click\n    Llamar CalcularSueldo()\n    rs.AddNew\n    rs.Fields(\"Nombre\") <- txtNombre.Text\n    rs.Fields(\"HorasTrabajadas\") <- Val(txtHorasTrabajadas.Text)\n    rs.Fields(\"SueldoNeto\") <- Val(txtSueldoNeto.Text)\n    rs.Update\n    MostrarMensaje \"Expediente guardado exitosamente.\"\nFin cmdGuardar_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Ciclos y Estadistica",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Ciclos y Estadistica",
+      "pdf_url": "docs/clase/Ciclos%20y%20Estadistica/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Ciclos y Estadistica/DOCUMENTACION.pdf",
+      "pdf_size": 114810,
+      "exe_nombre": "CiclosEstadistica.exe",
+      "exe_url": "docs/clase/Ciclos%20y%20Estadistica/CiclosEstadistica.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Ciclos y Estadistica/CiclosEstadistica.exe",
+      "descripcion": "Aplicar estructuras de control iterativas (bucles For-Next y Do-While) para procesar conjuntos de valores numéricos, calculando sumatorias, promedios, valores máximos y mínimos con generación de estadísticas.",
+      "puntos_clave": [
+        "Capturar una serie de números ingresados por el usuario o generados dinámicamente.",
+        "Recorrer la colección numérica mediante ciclos para acumular sumatorias.",
+        "Determinar el promedio aritmético y los valores extremos (máximo y mínimo).",
+        "Desplegar los resultados estadísticos ordenados en una lista interactiva."
+      ],
+      "proceso_1": {
+        "nombre": "Cálculo Estadístico (cmdCalcular_Click)",
+        "pseudocodigo": "Inicio cmdCalcular_Click\n    suma <- 0\n    maximo <- -999999\n    minimo <- 999999\n    Para i <- 0 Hasta lstNumeros.ListCount - 1\n        valor <- ConvertirANumero(lstNumeros.List(i))\n        suma <- suma + valor\n        Si valor > maximo Entonces maximo <- valor\n        Si valor < minimo Entonces minimo <- valor\n    FinPara\n    promedio <- suma / lstNumeros.ListCount\n    lblPromedio.Caption <- \"Promedio: \" + promedio\n    lblMaximo.Caption <- \"Máximo: \" + maximo\n    lblMinimo.Caption <- \"Mínimo: \" + minimo\nFin cmdCalcular_Click"
+      },
+      "proceso_2": {
+        "nombre": "Agregar Valor Numérico (cmdAgregar_Click)",
+        "pseudocodigo": "Inicio cmdAgregar_Click\n    Si txtNumero.Text <> \"\" Entonces\n        lstNumeros.AddItem txtNumero.Text\n        txtNumero.Text <- \"\"\n        txtNumero.SetFocus\n    FinSi\nFin cmdAgregar_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Codigo de Barras Code 39",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Codigo de Barras Code 39",
+      "pdf_url": "docs/clase/Codigo%20de%20Barras%20Code%2039/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Codigo de Barras Code 39/DOCUMENTACION.pdf",
+      "pdf_size": 121786,
+      "exe_nombre": "CodigoDeBarras.exe",
+      "exe_url": "docs/clase/Codigo%20de%20Barras%20Code%2039/CodigoDeBarras.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Codigo de Barras Code 39/CodigoDeBarras.exe",
+      "descripcion": "Generar y dibujar de forma gráfica códigos de barras bajo el estándar industrial Code 39 en un control PictureBox, convirtiendo texto alfanumérico en patrones de líneas de barras y espacios anchos y estrechos.",
+      "puntos_clave": [
+        "Validar que el texto a codificar contenga caracteres alfanuméricos válidos.",
+        "Agregar los delimitadores de inicio y fin de código (*).",
+        "Mapear cada carácter a su correspondiente patrón binario de 9 elementos (barras y espacios).",
+        "Dibujar mediante el método Line del PictureBox las barras verticales proporcionales."
+      ],
+      "proceso_1": {
+        "nombre": "Generación de Código de Barras (GenerarCode39)",
+        "pseudocodigo": "Inicio GenerarCode39(cadena)\n    textoCodificado <- \"*\" + UCase(cadena) + \"*\"\n    picBarras.Cls\n    posicionX <- 100\n    Para i <- 1 Hasta Longitud(textoCodificado)\n        caracter <- ExtraerCaracter(textoCodificado, i)\n        patron <- ObtenerPatronBinario(caracter)\n        Llamar DibujarPatron(patron, posicionX)\n    FinPara\nFin GenerarCode39"
+      },
+      "proceso_2": {
+        "nombre": "Dibujo de Patrón (DibujarPatron)",
+        "pseudocodigo": "Inicio DibujarPatron(patron, posRef)\n    Para bit <- 1 Hasta Longitud(patron)\n        Si EsBarra(bit) Entonces\n            ancho <- Si(BitValor(bit) = 1, anchoGrueso, anchoFino)\n            picBarras.Line (posRef, 10)-(posRef + ancho, altoBarra), colorNegro, BF\n        FinSi\n        posRef <- posRef + ancho\n    FinPara\nFin DibujarPatron"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Contador y Secuencia Numerica",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Contador y Secuencia Numerica",
+      "pdf_url": "docs/clase/Contador%20y%20Secuencia%20Numerica/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Contador y Secuencia Numerica/DOCUMENTACION.pdf",
+      "pdf_size": 109752,
+      "exe_nombre": "SecuenciaNumerica.exe",
+      "exe_url": "docs/clase/Contador%20y%20Secuencia%20Numerica/SecuenciaNumerica.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Contador y Secuencia Numerica/SecuenciaNumerica.exe",
+      "descripcion": "Controlar progresiones y secuencias numéricas (ascendentes y descendentes) con intervalos configurables, utilizando un control Timer para simular contadores y cronómetros digitales.",
+      "puntos_clave": [
+        "Establecer valores de inicio, límite y paso de incremento o decremento.",
+        "Controlar la velocidad de conteo mediante la propiedad Interval del Timer.",
+        "Proveer botones de arranque (Start), pausa (Pause) y reinicio (Reset).",
+        "Mostrar el valor numérico en una pantalla digital con formato de dígitos."
+      ],
+      "proceso_1": {
+        "nombre": "Incremento Automático (TimerContador_Timer)",
+        "pseudocodigo": "Inicio TimerContador_Timer\n    cuentaActual <- cuentaActual + pasoIncremento\n    lblDisplay.Caption <- FormatearNumero(cuentaActual, \"0000\")\n    Si cuentaActual >= limiteSuperior Entonces\n        TimerContador.Enabled <- Falso\n        MostrarAviso \"Conteo finalizado.\"\n    FinSi\nFin TimerContador_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Inicio de Conteo (cmdIniciar_Click)",
+        "pseudocodigo": "Inicio cmdIniciar_Click\n    cuentaActual <- ConvertirANumero(txtInicio.Text)\n    pasoIncremento <- ConvertirANumero(txtPaso.Text)\n    TimerContador.Enabled <- Verdadero\n    lblDisplay.Caption <- FormatearNumero(cuentaActual, \"0000\")\nFin cmdIniciar_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Conversor Universal de Unidades",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Conversor Universal de Unidades",
+      "pdf_url": "docs/clase/Conversor%20Universal%20de%20Unidades/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Conversor Universal de Unidades/DOCUMENTACION.pdf",
+      "pdf_size": 119615,
+      "exe_nombre": "ConversorUniversal.exe",
+      "exe_url": "docs/clase/Conversor%20Universal%20de%20Unidades/ConversorUniversal.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Conversor Universal de Unidades/ConversorUniversal.exe",
+      "descripcion": "Transformar magnitudes físicas entre diversos sistemas métricos y anglosajones (longitud, masa, temperatura y capacidad) mediante factores de conversión matemática exactos.",
+      "puntos_clave": [
+        "Seleccionar la categoría de magnitud física mediante cuadros combinados.",
+        "Elegir la unidad de origen y la unidad de destino de la conversión.",
+        "Aplicar las fórmulas matemáticas y factores multiplicativos correspondientes.",
+        "Mostrar el resultado con formato de precisión decimal y notación científica si se requiere."
+      ],
+      "proceso_1": {
+        "nombre": "Conversión de Unidades (ConvertirMagnitud)",
+        "pseudocodigo": "Inicio ConvertirMagnitud(valor, deUnidad, aUnidad)\n    valorBase <- valor * ObtenerFactorABase(deUnidad)\n    resultado <- valorBase / ObtenerFactorABase(aUnidad)\n    txtResultado.Text <- FormatearDecimal(resultado)\nFin ConvertirMagnitud"
+      },
+      "proceso_2": {
+        "nombre": "Evento de Conversión (cmdConvertir_Click)",
+        "pseudocodigo": "Inicio cmdConvertir_Click\n    valOrigen <- ConvertirANumero(txtValorOrigen.Text)\n    Llamar ConvertirMagnitud(valOrigen, cboDeUnidad.Text, cboAUnidad.Text)\nFin cmdConvertir_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Conversor de Bases Numericas",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Conversor de Bases Numericas",
+      "pdf_url": "docs/clase/Conversor%20de%20Bases%20Numericas/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Conversor de Bases Numericas/DOCUMENTACION.pdf",
+      "pdf_size": 121217,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/clase/Conversor%20de%20Bases%20Numericas/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Conversor de Bases Numericas/Proyecto1.exe",
+      "descripcion": "Convertir valores numéricos enteros entre los sistemas de numeración más comunes en ciencias de la computación: Decimal, Binario, Octal y Hexadecimal, validando caracteres según la base.",
+      "puntos_clave": [
+        "Ingresar valores numéricos en cualquiera de las cuatro bases soportadas.",
+        "Validar que los caracteres ingresados correspondan a la base seleccionada (ej. sólo 0 y 1 en binario).",
+        "Aplicar el método de divisiones sucesivas para convertir de base 10 a base N.",
+        "Calcular el valor decimal a partir de polinomios de potencias de la base de origen."
+      ],
+      "proceso_1": {
+        "nombre": "Conversión Decimal a Binario (DecimalABinario)",
+        "pseudocodigo": "Inicio DecimalABinario(numero)\n    cadenaBinaria <- \"\"\n    Mientras numero > 0\n        residuo <- numero Mod 2\n        cadenaBinaria <- CStr(residuo) + cadenaBinaria\n        numero <- numero \\ 2\n    FinMientras\n    Retornar Si(cadenaBinaria = \"\", \"0\", cadenaBinaria)\nFin DecimalABinario"
+      },
+      "proceso_2": {
+        "nombre": "Ejecutar Conversiones Múltiples (cmdConvertir_Click)",
+        "pseudocodigo": "Inicio cmdConvertir_Click\n    numDec <- ConvertirANumero(txtDecimal.Text)\n    txtBinario.Text <- DecimalABinario(numDec)\n    txtOctal.Text <- Oct(numDec)\n    txtHexadecimal.Text <- Hex(numDec)\nFin cmdConvertir_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Enciclopedia Animales con Login",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Enciclopedia Animales con Login",
+      "pdf_url": "docs/clase/Enciclopedia%20Animales%20con%20Login/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Enciclopedia Animales con Login/DOCUMENTACION.pdf",
+      "pdf_size": 115582,
+      "exe_nombre": "EnciclopediaAnimales.exe",
+      "exe_url": "docs/clase/Enciclopedia%20Animales%20con%20Login/EnciclopediaAnimales.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Enciclopedia Animales con Login/EnciclopediaAnimales.exe",
+      "descripcion": "Proporcionar un sistema de consulta informativa sobre el reino animal con autenticación previa mediante usuario y contraseña, mostrando fichas biológicas completas e imágenes ilustrativas.",
+      "puntos_clave": [
+        "Validar credenciales de acceso (usuario y contraseña) antes de ingresar al catálogo principal.",
+        "Presentar un listado clasificado por especies (mamíferos, aves, reptiles, etc.).",
+        "Desplegar dinámicamente la fotografía, hábitat, dieta y características de la especie seleccionada.",
+        "Permitir la búsqueda rápida por nombre común o científico."
+      ],
+      "proceso_1": {
+        "nombre": "Autenticación de Usuario (cmdIngresar_Click)",
+        "pseudocodigo": "Inicio cmdIngresar_Click\n    Si txtUsuario.Text = \"admin\" Y txtClave.Text = \"1234\" Entonces\n        Unload Me\n        frmCatalogo.Show\n    Sino\n        MostrarError \"Usuario o contraseña incorrectos.\"\n        txtClave.Text <- \"\"\n        txtClave.SetFocus\n    FinSi\nFin cmdIngresar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Carga de Ficha Animal (lstAnimales_Click)",
+        "pseudocodigo": "Inicio lstAnimales_Click\n    especie <- lstAnimales.Text\n    txtDescripcion.Text <- ObtenerFichaTecnica(especie)\n    imgAnimal.Picture <- CargarImagen(RutaApp + \"\\\" + especie + \".jpg\")\nFin lstAnimales_Click"
+      },
+      "total_archivos": 16
+    },
+    {
+      "nombre": "Generador de Codigo y Edad",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Generador de Codigo y Edad",
+      "pdf_url": "docs/clase/Generador%20de%20Codigo%20y%20Edad/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Generador de Codigo y Edad/DOCUMENTACION.pdf",
+      "pdf_size": 111665,
+      "exe_nombre": "GeneradorCodigo.exe",
+      "exe_url": "docs/clase/Generador%20de%20Codigo%20y%20Edad/GeneradorCodigo.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Generador de Codigo y Edad/GeneradorCodigo.exe",
+      "descripcion": "Calcular la edad cronológica exacta a partir de la fecha de nacimiento y generar automáticamente una clave o código de identificación personal basado en los apellidos, nombre y fecha.",
+      "puntos_clave": [
+        "Validar la fecha de nacimiento mediante funciones de fecha (DateDiff, DatePart).",
+        "Calcular la edad exacta en años cumplidos considerando si el cumpleaños ya ocurrió este año.",
+        "Extraer iniciales del apellido paterno, apellido materno y nombre del usuario.",
+        "Concatenar los dígitos de año, mes y día para generar una clave única tipo RFC.",
+        "Mostrar la clave generada y la edad en etiquetas de salida formateadas."
+      ],
+      "proceso_1": {
+        "nombre": "Cálculo de Edad Exacta (CalcularEdad)",
+        "pseudocodigo": "Inicio CalcularEdad(fechaNac)\n    edad <- DateDiff(\"yyyy\", fechaNac, Date)\n    Si Date < DateSerial(Year(Date), Month(fechaNac), Day(fechaNac)) Entonces\n        edad <- edad - 1\n    FinSi\n    txtEdad.Text <- edad\nFin CalcularEdad"
+      },
+      "proceso_2": {
+        "nombre": "Generación de Clave Única (GenerarClave)",
+        "pseudocodigo": "Inicio GenerarClave\n    iniPat <- ExtraerCadena(txtApPaterno.Text, 1, 2)\n    iniMat <- ExtraerCadena(txtApMaterno.Text, 1, 1)\n    iniNom <- ExtraerCadena(txtNombre.Text, 1, 1)\n    fechaStr <- FormatearFecha(txtFechaNac.Text, \"yyMMdd\")\n    txtCodigo.Text <- UCase(iniPat + iniMat + iniNom + fechaStr)\nFin GenerarClave"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Gestion de Clientes",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Gestion de Clientes",
+      "pdf_url": "docs/clase/Gestion%20de%20Clientes/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Gestion de Clientes/DOCUMENTACION.pdf",
+      "pdf_size": 112327,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/clase/Gestion%20de%20Clientes/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Gestion de Clientes/Proyecto1.exe",
+      "descripcion": "Administrar un catálogo comercial de clientes, permitiendo capturar datos generales, consultar saldos, registrar compras y almacenar la información de forma persistente.",
+      "puntos_clave": [
+        "Registrar clientes con clave, razón social, dirección, teléfono y límite de crédito.",
+        "Permitir la edición y actualización de la información de clientes existentes.",
+        "Realizar búsquedas dinámicas por nombre o clave de cliente.",
+        "Calcular saldos pendientes y emitir reportes de cartera vencida."
+      ],
+      "proceso_1": {
+        "nombre": "Guardar Cliente (cmdGuardar_Click)",
+        "pseudocodigo": "Inicio cmdGuardar_Click\n    Si txtRazonSocial.Text = \"\" Entonces\n        MostrarAviso \"Ingrese la razón social del cliente.\"\n        Salir\n    FinSi\n    rsClientes.AddNew\n    rsClientes.Fields(\"Clave\") <- txtClave.Text\n    rsClientes.Fields(\"Nombre\") <- txtRazonSocial.Text\n    rsClientes.Fields(\"LimiteCredito\") <- Val(txtLimite.Text)\n    rsClientes.Update\n    MostrarMensaje \"Cliente registrado con éxito.\"\nFin cmdGuardar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Búsqueda de Cliente (cmdBuscar_Click)",
+        "pseudocodigo": "Inicio cmdBuscar_Click\n    criterio <- txtBuscar.Text\n    rsClientes.Find \"Nombre LIKE '%\" + criterio + \"%'\"\n    Si Not rsClientes.EOF Entonces\n        Llamar CargarDatosCliente()\n    Sino\n        MostrarAviso \"Cliente no encontrado.\"\n    FinSi\nFin cmdBuscar_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Gestor de Imagenes",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Gestor de Imagenes",
+      "pdf_url": "docs/clase/Gestor%20de%20Imagenes/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Gestor de Imagenes/DOCUMENTACION.pdf",
+      "pdf_size": 115700,
+      "exe_nombre": "test.exe",
+      "exe_url": "docs/clase/Gestor%20de%20Imagenes/test.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Gestor de Imagenes/test.exe",
+      "descripcion": "Explorar y previsualizar archivos de imagen en disco mediante los controles de navegación de archivos de Visual Basic (DriveListBox, DirListBox, FileListBox), aplicando opciones de zoom y ajuste.",
+      "puntos_clave": [
+        "Sincronizar la unidad de almacenamiento (Drive), directorio (Dir) y lista de archivos (File).",
+        "Filtrar archivos gráficos con extensiones compatibles (*.bmp, *.jpg, *.gif, *.ico).",
+        "Cargar la imagen seleccionada en un control Image o PictureBox.",
+        "Proveer controles de zoom (ampliar, reducir) y visualización en tamaño real."
+      ],
+      "proceso_1": {
+        "nombre": "Sincronización de Archivos (File1_Click)",
+        "pseudocodigo": "Inicio File1_Click\n    rutaCompleta <- Dir1.Path + Si(Right(Dir1.Path, 1) = \"\\\", \"\", \"\\\") + File1.FileName\n    imgVisor.Picture <- LoadPicture(rutaCompleta)\n    lblInfo.Caption <- \"Archivo: \" + File1.FileName\nFin File1_Click"
+      },
+      "proceso_2": {
+        "nombre": "Sincronización Drive-Dir (Drive1_Change)",
+        "pseudocodigo": "Inicio Drive1_Change\n    En Caso De Error Reanudar Siguiente\n    Dir1.Path <- Drive1.Drive\n    File1.Path <- Dir1.Path\nFin Drive1_Change"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Informe Tecnico Modular",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Informe Tecnico Modular",
+      "pdf_url": "docs/clase/Informe%20Tecnico%20Modular/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Informe Tecnico Modular/DOCUMENTACION.pdf",
+      "pdf_size": 110903,
+      "exe_nombre": "InformeModular.exe",
+      "exe_url": "docs/clase/Informe%20Tecnico%20Modular/InformeModular.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Informe Tecnico Modular/InformeModular.exe",
+      "descripcion": "Estructurar y generar informes técnicos computacionales divididos en módulos independientes y reutilizables, aplicando llamadas a procedimientos y funciones de formateo de texto.",
+      "puntos_clave": [
+        "Modularizar las secciones del informe mediante procedimientos Sub y funciones Function.",
+        "Recopilar parámetros del sistema, fecha, autor y cuerpo técnico del documento.",
+        "Formatear cadenas de texto con saltos de línea y tabuladores para simular un documento impreso.",
+        "Permitir la exportación o copiado del informe completo al portapapeles."
+      ],
+      "proceso_1": {
+        "nombre": "Construcción Modular del Informe (GenerarInforme)",
+        "pseudocodigo": "Inicio GenerarInforme\n    doc <- ObtenerEncabezado()\n    doc <- doc + ObtenerCuerpoTecnico()\n    doc <- doc + ObtenerFirmaYFecha()\n    txtDocumento.Text <- doc\nFin GenerarInforme"
+      },
+      "proceso_2": {
+        "nombre": "Copiar Informe (cmdCopiar_Click)",
+        "pseudocodigo": "Inicio cmdCopiar_Click\n    Clipboard.Clear\n    Clipboard.SetText txtDocumento.Text\n    MostrarMensaje \"Informe copiado al portapapeles.\"\nFin cmdCopiar_Click"
+      },
+      "total_archivos": 9
+    },
+    {
+      "nombre": "Juego Cubed Puzzle",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Juego Cubed Puzzle",
+      "pdf_url": "docs/clase/Juego%20Cubed%20Puzzle/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Juego Cubed Puzzle/DOCUMENTACION.pdf",
+      "pdf_size": 123496,
+      "exe_nombre": "Cubed.exe",
+      "exe_url": "docs/clase/Juego%20Cubed%20Puzzle/Cubed.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Juego Cubed Puzzle/Cubed.exe",
+      "descripcion": "Implementar un juego de lógica y ordenamiento espacial donde el usuario rota o desliza bloques tridimensionales para alcanzar un patrón o combinación objetivo.",
+      "puntos_clave": [
+        "Manejar una matriz de botones o imágenes que representan las caras de los cubos.",
+        "Detectar clics del usuario para rotar los colores o números de cada celda.",
+        "Verificar al finalizar cada movimiento si el patrón cumple la condición de victoria.",
+        "Llevar el conteo de movimientos realizados y el tiempo transcurrido."
+      ],
+      "proceso_1": {
+        "nombre": "Rotación de Bloque (cmdCubo_Click)",
+        "pseudocodigo": "Inicio cmdCubo_Click(Indice)\n    matrizCubos(Indice) <- (matrizCubos(Indice) + 1) Mod totalColores\n    Llamar ActualizarColorBoton(Indice, matrizCubos(Indice))\n    movimientos <- movimientos + 1\n    Llamar VerificarVictoria()\nFin cmdCubo_Click"
+      },
+      "proceso_2": {
+        "nombre": "Verificación de Victoria (VerificarVictoria)",
+        "pseudocodigo": "Inicio VerificarVictoria\n    victoria <- Verdadero\n    Para i <- 1 Hasta totalCubos - 1\n        Si matrizCubos(i) <> matrizCubos(0) Entonces victoria <- Falso\n    FinPara\n    Si victoria = Verdadero Entonces\n        MostrarMensaje \"¡Felicidades! Resolviste el cubo en \" + movimientos + \" movimientos.\"\n    FinSi\nFin VerificarVictoria"
+      },
+      "total_archivos": 8
+    },
+    {
+      "nombre": "Juego de Gato TicTacToe",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Juego de Gato TicTacToe",
+      "pdf_url": "docs/clase/Juego%20de%20Gato%20TicTacToe/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Juego de Gato TicTacToe/DOCUMENTACION.pdf",
+      "pdf_size": 124769,
+      "exe_nombre": "JuegoGato.exe",
+      "exe_url": "docs/clase/Juego%20de%20Gato%20TicTacToe/JuegoGato.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Juego de Gato TicTacToe/JuegoGato.exe",
+      "descripcion": "Implementar el clásico juego del Gato (Tic-Tac-Toe o Tres en Línea) para dos jugadores o contra la computadora, controlando turnos, detección automática de victorias y empates.",
+      "puntos_clave": [
+        "Manejar un arreglo de 9 botones representando el tablero de 3x3.",
+        "Alternar los turnos de los jugadores entre los símbolos 'X' y 'O'.",
+        "Verificar las 8 combinaciones posibles de victoria (3 filas, 3 columnas y 2 diagonales).",
+        "Registrar el marcador de partidas ganadas, perdidas y empatadas."
+      ],
+      "proceso_1": {
+        "nombre": "Marcación de Casilla (cmdCasilla_Click)",
+        "pseudocodigo": "Inicio cmdCasilla_Click(Indice)\n    Si cmdCasilla(Indice).Caption = \"\" Y juegoActivo = Verdadero Entonces\n        cmdCasilla(Indice).Caption <- turnoActual\n        Si VerificarGanador(turnoActual) Entonces\n            MostrarMensaje \"¡Jugador \" + turnoActual + \" ha ganado!\"\n            juegoActivo <- Falso\n        Sino Si TableroLleno() Entonces\n            MostrarMensaje \"¡Partida empatada!\"\n            juegoActivo <- Falso\n        Sino\n            turnoActual <- Si(turnoActual = \"X\", \"O\", \"X\")\n        FinSi\n    FinSi\nFin cmdCasilla_Click"
+      },
+      "proceso_2": {
+        "nombre": "Verificar Ganador (VerificarGanador)",
+        "pseudocodigo": "Inicio VerificarGanador(simbolo)\n    Si (c(0)=s Y c(1)=s Y c(2)=s) O (c(3)=s Y c(4)=s Y c(5)=s) O (c(6)=s Y c(7)=s Y c(8)=s) Entonces Retornar Verdadero\n    Si (c(0)=s Y c(3)=s Y c(6)=s) O (c(1)=s Y c(4)=s Y c(7)=s) O (c(2)=s Y c(5)=s Y c(8)=s) Entonces Retornar Verdadero\n    Si (c(0)=s Y c(4)=s Y c(8)=s) O (c(2)=s Y c(4)=s Y c(6)=s) Entonces Retornar Verdadero\n    Retornar Falso\nFin VerificarGanador"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Juego de Memoria",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Juego de Memoria",
+      "pdf_url": "docs/clase/Juego%20de%20Memoria/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Juego de Memoria/DOCUMENTACION.pdf",
+      "pdf_size": 125304,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/clase/Juego%20de%20Memoria/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Juego de Memoria/Proyecto1.exe",
+      "descripcion": "Desarrollar un juego de memoria visual (Memorama) con una cuadrícula de cartas boca abajo, donde el usuario debe encontrar todos los pares idénticos mediante turnos de dos selecciones.",
+      "puntos_clave": [
+        "Desordenar aleatoriamente los pares de imágenes al iniciar la partida.",
+        "Controlar la lógica de volteo de dos tarjetas consecutivas.",
+        "Comparar si las dos tarjetas seleccionadas forman un par idéntico.",
+        "Mantener visibles los pares acertados o volver a ocultar las tarjetas no coincidentes tras un breve retardo."
+      ],
+      "proceso_1": {
+        "nombre": "Seleccionar Tarjeta (cmdCarta_Click)",
+        "pseudocodigo": "Inicio cmdCarta_Click(Indice)\n    Si cartasVolteadas = 0 Entonces\n        primeraCarta <- Indice\n        MostrarImagen(Indice)\n        cartasVolteadas <- 1\n    Sino Si cartasVolteadas = 1 Y Indice <> primeraCarta Entonces\n        segundaCarta <- Indice\n        MostrarImagen(Indice)\n        cartasVolteadas <- 2\n        TimerPausa.Enabled <- Verdadero\n    FinSi\nFin cmdCarta_Click"
+      },
+      "proceso_2": {
+        "nombre": "Evaluación del Par (TimerPausa_Timer)",
+        "pseudocodigo": "Inicio TimerPausa_Timer\n    TimerPausa.Enabled <- Falso\n    Si valorCarta(primeraCarta) = valorCarta(segundaCarta) Entonces\n        paresEncontrados <- paresEncontrados + 1\n        cmdCarta(primeraCarta).Enabled <- Falso\n        cmdCarta(segundaCarta).Enabled <- Falso\n    Sino\n        OcultarImagen(primeraCarta)\n        OcultarImagen(segundaCarta)\n    FinSi\n    cartasVolteadas <- 0\nFin TimerPausa_Timer"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Juego de Tiro al Blanco",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Juego de Tiro al Blanco",
+      "pdf_url": "docs/clase/Juego%20de%20Tiro%20al%20Blanco/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Juego de Tiro al Blanco/DOCUMENTACION.pdf",
+      "pdf_size": 121315,
+      "exe_nombre": "TiroAlBlanco.exe",
+      "exe_url": "docs/clase/Juego%20de%20Tiro%20al%20Blanco/TiroAlBlanco.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Juego de Tiro al Blanco/TiroAlBlanco.exe",
+      "descripcion": "Simular un juego de puntería y reflejos donde un objetivo o blanco se desplaza aleatoriamente por la pantalla con un temporizador, acumulando puntos al acertar con el puntero del ratón.",
+      "puntos_clave": [
+        "Mover el objetivo a coordenadas X e Y aleatorias mediante un control Timer.",
+        "Capturar el evento Click sobre el objetivo para registrar el acierto.",
+        "Incrementar el puntaje y reducir el intervalo del Timer para aumentar la dificultad progresivamente.",
+        "Finalizar el juego tras cumplirse un límite de tiempo o número de intentos."
+      ],
+      "proceso_1": {
+        "nombre": "Movimiento del Objetivo (TimerMovimiento_Timer)",
+        "pseudocodigo": "Inicio TimerMovimiento_Timer\n    imgBlanco.Left <- Int(Rnd * (Me.ScaleWidth - imgBlanco.Width))\n    imgBlanco.Top <- Int(Rnd * (Me.ScaleHeight - imgBlanco.Height))\nFin TimerMovimiento_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Acierto de Disparo (imgBlanco_Click)",
+        "pseudocodigo": "Inicio imgBlanco_Click\n    puntuacion <- puntuacion + 10\n    lblPuntuacion.Caption <- \"Puntuación: \" + puntuacion\n    Llamar ReproducirSonidoDisparo()\n    Llamar TimerMovimiento_Timer()\nFin imgBlanco_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Juego de la Viborita",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Juego de la Viborita",
+      "pdf_url": "docs/clase/Juego%20de%20la%20Viborita/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Juego de la Viborita/DOCUMENTACION.pdf",
+      "pdf_size": 123100,
+      "exe_nombre": "VIBORITA.exe",
+      "exe_url": "docs/clase/Juego%20de%20la%20Viborita/VIBORITA.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Juego de la Viborita/VIBORITA.exe",
+      "descripcion": "Recrear el clásico juego Snake (Viborita), donde el usuario controla una serpiente en un plano bidimensional que crece al comer manzanas, evitando chocar contra las paredes o consigo misma.",
+      "puntos_clave": [
+        "Controlar el movimiento continuo de la serpiente mediante las teclas de dirección (flechas).",
+        "Manejar arreglos con las coordenadas de cada segmento del cuerpo de la víbora.",
+        "Generar aleatoriamente la comida en posiciones libres del tablero.",
+        "Detectar colisiones contra los límites del formulario o colisiones del cuerpo (Game Over)."
+      ],
+      "proceso_1": {
+        "nombre": "Avance de la Serpiente (TimerJuego_Timer)",
+        "pseudocodigo": "Inicio TimerJuego_Timer\n    Para i <- longitudVibora Hasta 1 Con Paso -1\n        posicionX(i) <- posicionX(i - 1)\n        posicionY(i) <- posicionY(i - 1)\n    FinPara\n    posicionX(0) <- posicionX(0) + direccionX\n    posicionY(0) <- posicionY(0) + direccionY\n    Si ColisionPared() O ColisionCuerpo() Entonces\n        TimerJuego.Enabled <- Falso\n        MostrarMensaje \"¡Fin del Juego!\"\n    Sino Si ComeManzana() Entonces\n        longitudVibora <- longitudVibora + 1\n        Llamar GenerarComida()\n    FinSi\n    Llamar RedibujarTablero()\nFin TimerJuego_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Control por Teclado (Form_KeyDown)",
+        "pseudocodigo": "Inicio Form_KeyDown(CodigoTecla)\n    Segun CodigoTecla\n        Caso vbKeyLeft:  Si dirActual <> \"DERECHA\" Entonces direccionX <- -1: direccionY <- 0\n        Caso vbKeyRight: Si dirActual <> \"IZQUIERDA\" Entonces direccionX <- 1: direccionY <- 0\n        Caso vbKeyUp:    Si dirActual <> \"ABAJO\" Entonces direccionX <- 0: direccionY <- -1\n        Caso vbKeyDown:  Si dirActual <> \"ARRIBA\" Entonces direccionX <- 0: direccionY <- 1\n    FinSegun\nFin Form_KeyDown"
+      },
+      "total_archivos": 10
+    },
+    {
+      "nombre": "Lanzador Maestro de Proyectos",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Lanzador Maestro de Proyectos",
+      "pdf_url": "docs/clase/Lanzador%20Maestro%20de%20Proyectos/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Lanzador Maestro de Proyectos/DOCUMENTACION.pdf",
+      "pdf_size": 116904,
+      "exe_nombre": "LanzadorProyectos.exe",
+      "exe_url": "docs/clase/Lanzador%20Maestro%20de%20Proyectos/LanzadorProyectos.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Lanzador Maestro de Proyectos/LanzadorProyectos.exe",
+      "descripcion": "Servir como panel central o lanzador maestro interactivo para ejecutar y abrir de forma organizada todos los proyectos y prácticas de informática desarrollados en el curso.",
+      "puntos_clave": [
+        "Presentar una lista o botones de acceso rápido a cada uno de los proyectos del semestre.",
+        "Utilizar la función Shell o llamadas a la API de Windows para lanzar los ejecutables correspondientes.",
+        "Verificar la existencia de los archivos ejecutables antes de intentar abrirlos.",
+        "Proveer información descriptiva de cada práctica seleccionada antes de su lanzamiento."
+      ],
+      "proceso_1": {
+        "nombre": "Lanzar Ejecutable (EjecutarProyecto)",
+        "pseudocodigo": "Inicio EjecutarProyecto(rutaExe)\n    Si ArchivoExiste(rutaExe) Entonces\n        Llamar Shell(rutaExe, vbNormalFocus)\n    Sino\n        MostrarError \"El archivo ejecutable no fue encontrado: \" + rutaExe\n    FinSi\nFin EjecutarProyecto"
+      },
+      "proceso_2": {
+        "nombre": "Selección de Proyecto (lstProyectos_DblClick)",
+        "pseudocodigo": "Inicio lstProyectos_DblClick\n    nombreProg <- lstProyectos.Text\n    rutaProg <- ObtenerRuta(nombreProg)\n    Llamar EjecutarProyecto(rutaProg)\nFin lstProyectos_DblClick"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Lista de Frutas e Inventario",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Lista de Frutas e Inventario",
+      "pdf_url": "docs/clase/Lista%20de%20Frutas%20e%20Inventario/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Lista de Frutas e Inventario/DOCUMENTACION.pdf",
+      "pdf_size": 110584,
+      "exe_nombre": "InventarioFrutas.exe",
+      "exe_url": "docs/clase/Lista%20de%20Frutas%20e%20Inventario/InventarioFrutas.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Lista de Frutas e Inventario/InventarioFrutas.exe",
+      "descripcion": "Gestionar una lista dinámica de artículos de almacén o frutas mediante un control ListBox, permitiendo agregar elementos, eliminarlos, ordenarlos alfabéticamente y contar las existencias.",
+      "puntos_clave": [
+        "Capturar nuevos elementos mediante caja de texto y agregarlos a la lista con AddItem.",
+        "Eliminar el elemento seleccionado mediante el método RemoveItem.",
+        "Vaciar por completo la lista mediante el método Clear.",
+        "Desplegar un contador en tiempo real con el total de elementos registrados (ListCount)."
+      ],
+      "proceso_1": {
+        "nombre": "Agregar Elemento a Lista (cmdAgregar_Click)",
+        "pseudocodigo": "Inicio cmdAgregar_Click\n    Si Trim(txtElemento.Text) <> \"\" Entonces\n        lstArticulos.AddItem txtElemento.Text\n        txtElemento.Text <- \"\"\n        lblTotal.Caption <- \"Total Artículos: \" + lstArticulos.ListCount\n    FinSi\nFin cmdAgregar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Eliminar Elemento Seleccionado (cmdEliminar_Click)",
+        "pseudocodigo": "Inicio cmdEliminar_Click\n    Si lstArticulos.ListIndex >= 0 Entonces\n        lstArticulos.RemoveItem lstArticulos.ListIndex\n        lblTotal.Caption <- \"Total Artículos: \" + lstArticulos.ListCount\n    Sino\n        MostrarAviso \"Seleccione un elemento de la lista para eliminar.\"\n    FinSi\nFin cmdEliminar_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Lista y Combo Sincronizados",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Lista y Combo Sincronizados",
+      "pdf_url": "docs/clase/Lista%20y%20Combo%20Sincronizados/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Lista y Combo Sincronizados/DOCUMENTACION.pdf",
+      "pdf_size": 111264,
+      "exe_nombre": "ComboListBox.exe",
+      "exe_url": "docs/clase/Lista%20y%20Combo%20Sincronizados/ComboListBox.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Lista y Combo Sincronizados/ComboListBox.exe",
+      "descripcion": "Demostrar la sincronización de datos entre controles de lista dependientes (ComboBox y ListBox), donde la selección de una categoría en el combo filtra los elementos mostrados en la lista.",
+      "puntos_clave": [
+        "Cargar las categorías principales en el ComboBox al inicializar el formulario.",
+        "Detectar el evento Click del ComboBox para identificar la categoría elegida.",
+        "Limpiar el ListBox y poblarlo únicamente con los elementos correspondientes a la categoría.",
+        "Mostrar los detalles del elemento seleccionado en etiquetas informativas."
+      ],
+      "proceso_1": {
+        "nombre": "Filtrado por Categoría (cboCategorias_Click)",
+        "pseudocodigo": "Inicio cboCategorias_Click\n    lstSubElementos.Clear\n    Segun cboCategorias.Text\n        Caso \"Frutas\":   lstSubElementos.AddItem \"Manzana\": lstSubElementos.AddItem \"Plátano\"\n        Caso \"Verduras\": lstSubElementos.AddItem \"Zanahoria\": lstSubElementos.AddItem \"Lechuga\"\n        Caso \"Lácteos\":  lstSubElementos.AddItem \"Leche\": lstSubElementos.AddItem \"Queso\"\n    FinSegun\nFin cboCategorias_Click"
+      },
+      "proceso_2": {
+        "nombre": "Selección de Elemento (lstSubElementos_Click)",
+        "pseudocodigo": "Inicio lstSubElementos_Click\n    lblSeleccion.Caption <- \"Seleccionado: \" + lstSubElementos.Text + \" (Categoría: \" + cboCategorias.Text + \")\"\nFin lstSubElementos_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Menu de Navegacion",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Menu de Navegacion",
+      "pdf_url": "docs/clase/Menu%20de%20Navegacion/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Menu de Navegacion/DOCUMENTACION.pdf",
+      "pdf_size": 111934,
+      "exe_nombre": "MenuNavegacion.exe",
+      "exe_url": "docs/clase/Menu%20de%20Navegacion/MenuNavegacion.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Menu de Navegacion/MenuNavegacion.exe",
+      "descripcion": "Implementar una barra de menú profesional mediante el Editor de Menús (Menu Editor) de Visual Basic, facilitando el acceso a múltiples ventanas, operaciones del sistema y opciones de ayuda.",
+      "puntos_clave": [
+        "Diseñar menús jerárquicos con opciones desplegables, separadores y teclas de acceso directo (Shortcuts).",
+        "Navegar entre diferentes formularios del proyecto abriendo y cerrando ventanas.",
+        "Controlar opciones marcables mediante la propiedad Checked (activar/desactivar funciones).",
+        "Proveer cuadros de diálogo estándar de 'Acerca de...' y confirmación de salida."
+      ],
+      "proceso_1": {
+        "nombre": "Abrir Formulario Secundario (mnuVentana_Click)",
+        "pseudocodigo": "Inicio mnuVentana_Click\n    frmSecundario.Show\nFin mnuVentana_Click"
+      },
+      "proceso_2": {
+        "nombre": "Salir del Sistema con Confirmación (mnuSalir_Click)",
+        "pseudocodigo": "Inicio mnuSalir_Click\n    Si Confirmar(\"¿Desea cerrar el sistema?\") = Verdadero Entonces\n        Unload Me\n    FinSi\nFin mnuSalir_Click"
+      },
+      "total_archivos": 9
+    },
+    {
+      "nombre": "Mezclador RGB",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Mezclador RGB",
+      "pdf_url": "docs/clase/Mezclador%20RGB/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Mezclador RGB/DOCUMENTACION.pdf",
+      "pdf_size": 111363,
+      "exe_nombre": "MezcladorRGB.exe",
+      "exe_url": "docs/clase/Mezclador%20RGB/MezcladorRGB.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Mezclador RGB/MezcladorRGB.exe",
+      "descripcion": "Mezclar de forma interactiva los tres canales de color primario aditivo (Rojo, Verde y Azul) mediante barras de desplazamiento, visualizando el color resultante y sus códigos RGB y hexadecimal.",
+      "puntos_clave": [
+        "Configurar tres barras de desplazamiento (HScrollBar) con rangos de 0 a 255.",
+        "Capturar el evento Change y Scroll de cada barra para actualizar los canales R, G y B.",
+        "Aplicar la función RGB(r, g, b) para colorear el fondo de un panel de previsualización.",
+        "Desplegar el valor numérico en base 10 y su correspondiente código hexadecimal (#RRGGBB)."
+      ],
+      "proceso_1": {
+        "nombre": "Actualización de Color RGB (ActualizarColor)",
+        "pseudocodigo": "Inicio ActualizarColor\n    r <- hsbRojo.Value\n    g <- hsbVerde.Value\n    b <- hsbAzul.Value\n    picColor.BackColor <- RGB(r, g, b)\n    lblHex.Caption <- \"Hex: #\" + FormatoHex(r) + FormatoHex(g) + FormatoHex(b)\n    lblValores.Caption <- \"R:\" + r + \" G:\" + g + \" B:\" + b\nFin ActualizarColor"
+      },
+      "proceso_2": {
+        "nombre": "Evento de Barra Roja (hsbRojo_Change)",
+        "pseudocodigo": "Inicio hsbRojo_Change\n    Llamar ActualizarColor()\nFin hsbRojo_Change"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Mini Paint Digital",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Mini Paint Digital",
+      "pdf_url": "docs/clase/Mini%20Paint%20Digital/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Mini Paint Digital/DOCUMENTACION.pdf",
+      "pdf_size": 119483,
+      "exe_nombre": "MiniPaint.exe",
+      "exe_url": "docs/clase/Mini%20Paint%20Digital/MiniPaint.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Mini Paint Digital/MiniPaint.exe",
+      "descripcion": "Ofrecer un entorno básico de dibujo gráfico digital sobre un control PictureBox, permitiendo pintar a mano alzada con el ratón, seleccionar colores de trazo, cambiar el grosor y borrar.",
+      "puntos_clave": [
+        "Capturar las coordenadas del cursor en los eventos MouseDown, MouseMove y MouseUp.",
+        "Trazar líneas continuas mediante el método Line del PictureBox entre la coordenada previa y la actual.",
+        "Seleccionar colores de pintura mediante una paleta interactiva.",
+        "Permitir borrar o limpiar por completo el lienzo de dibujo mediante el método Cls."
+      ],
+      "proceso_1": {
+        "nombre": "Trazo a Mano Alzada (picLienzo_MouseMove)",
+        "pseudocodigo": "Inicio picLienzo_MouseMove(Boton, Shift, X, Y)\n    Si Boton = 1 Entonces\n        picLienzo.Line (prevX, prevY)-(X, Y), colorPincel\n        prevX <- X\n        prevY <- Y\n    FinSi\nFin picLienzo_MouseMove"
+      },
+      "proceso_2": {
+        "nombre": "Limpiar Lienzo (cmdLimpiar_Click)",
+        "pseudocodigo": "Inicio cmdLimpiar_Click\n    picLienzo.Cls\nFin cmdLimpiar_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Movimiento y Escala de Imagen",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Movimiento y Escala de Imagen",
+      "pdf_url": "docs/clase/Movimiento%20y%20Escala%20de%20Imagen/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Movimiento y Escala de Imagen/DOCUMENTACION.pdf",
+      "pdf_size": 111715,
+      "exe_nombre": "MoverRedimensionar.exe",
+      "exe_url": "docs/clase/Movimiento%20y%20Escala%20de%20Imagen/MoverRedimensionar.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Movimiento y Escala de Imagen/MoverRedimensionar.exe",
+      "descripcion": "Animar y transformar propiedades espaciales de una imagen en tiempo de ejecución, controlando su posición (Left, Top), dimensiones (Width, Height) y velocidad mediante un temporizador.",
+      "puntos_clave": [
+        "Desplazar la imagen sumando o restando incrementos en los ejes X e Y.",
+        "Detectar rebotes contra los cuatro bordes del área visible del formulario.",
+        "Aumentar o reducir la escala de la imagen mediante botones de zoom.",
+        "Ajustar la velocidad de desplazamiento modificando el intervalo del Timer."
+      ],
+      "proceso_1": {
+        "nombre": "Desplazamiento y Rebote (TimerMov_Timer)",
+        "pseudocodigo": "Inicio TimerMov_Timer\n    imgFigura.Left <- imgFigura.Left + deltaX\n    imgFigura.Top <- imgFigura.Top + deltaY\n    Si imgFigura.Left <= 0 O imgFigura.Left + imgFigura.Width >= Me.ScaleWidth Entonces deltaX <- -deltaX\n    Si imgFigura.Top <= 0 O imgFigura.Top + imgFigura.Height >= Me.ScaleHeight Entonces deltaY <- -deltaY\nFin TimerMov_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Escalar Imagen (cmdAumentar_Click)",
+        "pseudocodigo": "Inicio cmdAumentar_Click\n    imgFigura.Width <- imgFigura.Width * 1.1\n    imgFigura.Height <- imgFigura.Height * 1.1\nFin cmdAumentar_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Navegador Web",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Navegador Web",
+      "pdf_url": "docs/clase/Navegador%20Web/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Navegador Web/DOCUMENTACION.pdf",
+      "pdf_size": 112494,
+      "exe_nombre": "NavegadorWeb.exe",
+      "exe_url": "docs/clase/Navegador%20Web/NavegadorWeb.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Navegador Web/NavegadorWeb.exe",
+      "descripcion": "Integrar un navegador de internet funcional dentro de Visual Basic 6.0 utilizando el componente Microsoft Internet Controls (WebBrowser), con barra de direcciones y botones de navegación.",
+      "puntos_clave": [
+        "Cargar direcciones URL mediante el método Navigate del control WebBrowser.",
+        "Implementar los botones de navegación estándar: Atrás (GoBack), Adelante (GoForward) y Detener (Stop).",
+        "Actualizar la página web mediante el método Refresh.",
+        "Mostrar el título de la página y el estado de carga en una barra de estado."
+      ],
+      "proceso_1": {
+        "nombre": "Navegar a URL (cmdIr_Click)",
+        "pseudocodigo": "Inicio cmdIr_Click\n    url <- txtDireccion.Text\n    Si InStr(url, \"://\") = 0 Entonces url <- \"http://\" + url\n    WebBrowser1.Navigate url\nFin cmdIr_Click"
+      },
+      "proceso_2": {
+        "nombre": "Retroceder Página (cmdAtras_Click)",
+        "pseudocodigo": "Inicio cmdAtras_Click\n    En Caso De Error Reanudar Siguiente\n    WebBrowser1.GoBack\nFin cmdAtras_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Paleta y Muestreo de Color",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Paleta y Muestreo de Color",
+      "pdf_url": "docs/clase/Paleta%20y%20Muestreo%20de%20Color/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Paleta y Muestreo de Color/DOCUMENTACION.pdf",
+      "pdf_size": 112405,
+      "exe_nombre": "PaletaColores.exe",
+      "exe_url": "docs/clase/Paleta%20y%20Muestreo%20de%20Color/PaletaColores.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Paleta y Muestreo de Color/PaletaColores.exe",
+      "descripcion": "Proporcionar una paleta gráfica para la selección y muestreo de colores, visualizando los componentes RGB y permitiendo capturar el color de cualquier punto del lienzo con un cuentagotas.",
+      "puntos_clave": [
+        "Mostrar una matriz de colores predefinidos listos para su selección inmediata.",
+        "Capturar el color del píxel bajo el cursor utilizando la función Point(X, Y).",
+        "Desglosar el color seleccionado en sus componentes primarios Rojo, Verde y Azul.",
+        "Copiar el código de color generado para su uso en otras aplicaciones."
+      ],
+      "proceso_1": {
+        "nombre": "Muestreo con Cuentagotas (picMuestra_MouseDown)",
+        "pseudocodigo": "Inicio picMuestra_MouseDown(Boton, Shift, X, Y)\n    colorPixel <- picMuestra.Point(X, Y)\n    r <- colorPixel Mod 256\n    g <- (colorPixel \\ 256) Mod 256\n    b <- (colorPixel \\ 65536) Mod 256\n    picResultado.BackColor <- colorPixel\n    lblRGB.Caption <- \"R:\" + r + \" G:\" + g + \" B:\" + b\nFin picMuestra_MouseDown"
+      },
+      "proceso_2": {
+        "nombre": "Selección de Color Predefinido (cmdColor_Click)",
+        "pseudocodigo": "Inicio cmdColor_Click(Indice)\n    picResultado.BackColor <- cmdColor(Indice).BackColor\nFin cmdColor_Click"
+      },
+      "total_archivos": 8
+    },
+    {
+      "nombre": "Piano MIDI Virtual",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Piano MIDI Virtual",
+      "pdf_url": "docs/clase/Piano%20MIDI%20Virtual/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Piano MIDI Virtual/DOCUMENTACION.pdf",
+      "pdf_size": 121435,
+      "exe_nombre": "MIDIPIANO.exe",
+      "exe_url": "docs/clase/Piano%20MIDI%20Virtual/MIDIPIANO.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Piano MIDI Virtual/MIDIPIANO.exe",
+      "descripcion": "Simular un teclado musical o piano interactivo en pantalla que reproduce notas y melodías mediante llamadas a la API de sonido de Windows o sintetizador MIDI al pulsar teclas digitales.",
+      "puntos_clave": [
+        "Presentar un conjunto de teclas blancas (notas naturales) y negras (sostenidos).",
+        "Mapear cada tecla a su valor numérico de nota MIDI correspondiente (ej. Do = 60).",
+        "Enviar mensajes MIDI NoteOn y NoteOff a través de la función midiOutShortMsg de winmm.dll.",
+        "Permitir tocar las teclas tanto con clics del ratón como mediante el teclado de la computadora."
+      ],
+      "proceso_1": {
+        "nombre": "Reproducir Nota MIDI (TocarNota)",
+        "pseudocodigo": "Inicio TocarNota(notaMIDI, volumen)\n    mensaje <- &H90 Or (notaMIDI * &H100) Or (volumen * &H10000)\n    midiOutShortMsg hMidi, mensaje\nFin TocarNota"
+      },
+      "proceso_2": {
+        "nombre": "Pulsar Tecla en Pantalla (cmdTecla_MouseDown)",
+        "pseudocodigo": "Inicio cmdTecla_MouseDown(Indice)\n    nota <- 60 + Indice\n    Llamar TocarNota(nota, 127)\nFin cmdTecla_MouseDown"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Protector de Pantalla Estelas",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Protector de Pantalla Estelas",
+      "pdf_url": "docs/clase/Protector%20de%20Pantalla%20Estelas/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Protector de Pantalla Estelas/DOCUMENTACION.pdf",
+      "pdf_size": 114373,
+      "exe_nombre": "ESDTELAS.exe",
+      "exe_url": "docs/clase/Protector%20de%20Pantalla%20Estelas/ESDTELAS.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Protector de Pantalla Estelas/ESDTELAS.exe",
+      "descripcion": "Crear una animación gráfica continua y fluida a pantalla completa con efectos de estelas geométricas o partículas luminosas en movimiento, cerrándose automáticamente al detectar actividad del usuario.",
+      "puntos_clave": [
+        "Configurar el formulario sin bordes (BorderStyle = 0) y maximizado al tamaño total del monitor.",
+        "Generar trayectorias de partículas o líneas con coordenadas matemáticas y colores cambiantes.",
+        "Dibujar los efectos sobre un fondo oscuro simulando estelas continuas.",
+        "Detectar cualquier movimiento del ratón o pulsación de tecla para finalizar el protector de inmediato."
+      ],
+      "proceso_1": {
+        "nombre": "Animación de Estelas (TimerAnimacion_Timer)",
+        "pseudocodigo": "Inicio TimerAnimacion_Timer\n    posX <- posX + velX\n    posY <- posY + velY\n    Me.Line (prevX, prevY)-(posX, posY), RGB(Rnd*255, Rnd*255, Rnd*255)\n    prevX <- posX: prevY <- posY\n    Si posX <= 0 O posX >= Me.ScaleWidth Entonces velX <- -velX\n    Si posY <= 0 O posY >= Me.ScaleHeight Entonces velY <- -velY\nFin TimerAnimacion_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Detección de Interacción (Form_MouseMove)",
+        "pseudocodigo": "Inicio Form_MouseMove(Boton, Shift, X, Y)\n    Si movimientos > 5 Entonces Unload Me\n    movimientos <- movimientos + 1\nFin Form_MouseMove"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Proyecto 01 - Tabla Periodica Interactiva",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Proyecto 01 - Tabla Periodica Interactiva",
+      "pdf_url": "docs/clase/Proyecto%2001%20-%20Tabla%20Periodica%20Interactiva/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Proyecto 01 - Tabla Periodica Interactiva/DOCUMENTACION.pdf",
+      "pdf_size": 128254,
+      "exe_nombre": "TablaPeriodica.exe",
+      "exe_url": "docs/clase/Proyecto%2001%20-%20Tabla%20Periodica%20Interactiva/TablaPeriodica.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Proyecto 01 - Tabla Periodica Interactiva/TablaPeriodica.exe",
+      "descripcion": "Desarrollar una aplicación educativa interactiva sobre los elementos de la tabla periódica, mostrando número atómico, masa, configuración electrónica y aplicaciones de cada elemento.",
+      "puntos_clave": [
+        "Organizar los elementos químicos clasificados por familias (metales, no metales, gases nobles).",
+        "Mostrar la ficha técnica completa y modelo atómico al hacer clic en cualquier elemento.",
+        "Permitir la búsqueda rápida por símbolo, nombre o número atómico.",
+        "Incluir un modo interactivo de cuestionario o autoevaluación de conocimientos químicos."
+      ],
+      "proceso_1": {
+        "nombre": "Selección de Elemento Químico (cmdElemento_Click)",
+        "pseudocodigo": "Inicio cmdElemento_Click(Simbolo)\n    elem <- BuscarElemento(Simbolo)\n    lblNombre.Caption <- elem.Nombre\n    lblNumAtomico.Caption <- elem.Numero\n    lblMasa.Caption <- elem.Masa\n    txtPropiedades.Text <- elem.Descripcion\n    imgElemento.Picture <- CargarImagen(elem.FotoRuta)\nFin cmdElemento_Click"
+      },
+      "proceso_2": {
+        "nombre": "Búsqueda por Nombre (cmdBuscar_Click)",
+        "pseudocodigo": "Inicio cmdBuscar_Click\n    simbolo <- ObtenerSimboloPorNombre(txtBusqueda.Text)\n    Si simbolo <> \"\" Entonces\n        Llamar cmdElemento_Click(simbolo)\n    Sino\n        MostrarAviso \"Elemento no encontrado en la tabla periódica.\"\n    FinSi\nFin cmdBuscar_Click"
+      },
+      "total_archivos": 9
+    },
+    {
+      "nombre": "Proyecto 02 - Rockola Multimedia Jukebox",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Proyecto 02 - Rockola Multimedia Jukebox",
+      "pdf_url": "docs/clase/Proyecto%2002%20-%20Rockola%20Multimedia%20Jukebox/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Proyecto 02 - Rockola Multimedia Jukebox/DOCUMENTACION.pdf",
+      "pdf_size": 138341,
+      "exe_nombre": "RockolaMultimedia.exe",
+      "exe_url": "docs/clase/Proyecto%2002%20-%20Rockola%20Multimedia%20Jukebox/RockolaMultimedia.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Proyecto 02 - Rockola Multimedia Jukebox/RockolaMultimedia.exe",
+      "descripcion": "Simular una sinfonola o rockola digital multimedia, permitiendo reproducir pistas musicales, gestionar listas de reproducción, controlar volumen y mostrar carátulas de álbumes.",
+      "puntos_clave": [
+        "Explorar y cargar archivos de audio (MP3, WAV, MIDI) en una lista de reproducción interactiva.",
+        "Controlar la reproducción mediante botones de Play, Pause, Stop, Siguiente y Anterior.",
+        "Ajustar el volumen y el balance de sonido en tiempo real.",
+        "Desplegar la carátula del disco, nombre del artista y tiempo transcurrido de la pista."
+      ],
+      "proceso_1": {
+        "nombre": "Reproducir Pista Seleccionada (cmdPlay_Click)",
+        "pseudocodigo": "Inicio cmdPlay_Click\n    Si lstCanciones.ListIndex >= 0 Entonces\n        archivoAudio <- listaRutas(lstCanciones.ListIndex)\n        MediaPlayer.URL <- archivoAudio\n        lblTitulo.Caption <- \"Reproduciendo: \" + lstCanciones.Text\n        TimerProgreso.Enabled <- Verdadero\n    FinSi\nFin cmdPlay_Click"
+      },
+      "proceso_2": {
+        "nombre": "Control de Tiempo (TimerProgreso_Timer)",
+        "pseudocodigo": "Inicio TimerProgreso_Timer\n    lblTiempo.Caption <- FormatoTiempo(MediaPlayer.Controls.CurrentPosition) + \" / \" + FormatoTiempo(MediaPlayer.CurrentMedia.Duration)\nFin TimerProgreso_Timer"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Puntero Tipo Mira",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Puntero Tipo Mira",
+      "pdf_url": "docs/clase/Puntero%20Tipo%20Mira/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Puntero Tipo Mira/DOCUMENTACION.pdf",
+      "pdf_size": 111816,
+      "exe_nombre": "Alan.exe",
+      "exe_url": "docs/clase/Puntero%20Tipo%20Mira/Alan.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Puntero Tipo Mira/Alan.exe",
+      "descripcion": "Reemplazar el cursor estándar de Windows por una retícula gráfica de francotirador o mira telescópica que sigue en tiempo real las coordenadas del puntero sobre el lienzo.",
+      "puntos_clave": [
+        "Ocultar el cursor estándar del ratón dentro del área del formulario.",
+        "Dibujar o desplazar un control gráfico con la imagen de la retícula siguiendo los eventos MouseMove.",
+        "Mostrar en pantalla las coordenadas X e Y en píxeles y twips en tiempo real.",
+        "Simular efectos de disparo con clic y animación de retroceso."
+      ],
+      "proceso_1": {
+        "nombre": "Seguimiento de la Mira (Form_MouseMove)",
+        "pseudocodigo": "Inicio Form_MouseMove(Boton, Shift, X, Y)\n    imgMira.Left <- X - (imgMira.Width / 2)\n    imgMira.Top <- Y - (imgMira.Height / 2)\n    lblCoord.Caption <- \"Mira X=\" + X + \" Y=\" + Y\nFin Form_MouseMove"
+      },
+      "proceso_2": {
+        "nombre": "Disparo de Mira (Form_MouseDown)",
+        "pseudocodigo": "Inicio Form_MouseDown(Boton, Shift, X, Y)\n    Llamar ReproducirSonidoDisparo()\n    imgImpacto.Left <- X - 10\n    imgImpacto.Top <- Y - 10\n    imgImpacto.Visible <- Verdadero\nFin Form_MouseDown"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Punto de Venta SellPoint",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Punto de Venta SellPoint",
+      "pdf_url": "docs/clase/Punto%20de%20Venta%20SellPoint/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Punto de Venta SellPoint/DOCUMENTACION.pdf",
+      "pdf_size": 128781,
+      "exe_nombre": "sellpoint.exe",
+      "exe_url": "docs/clase/Punto%20de%20Venta%20SellPoint/sellpoint.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Punto de Venta SellPoint/sellpoint.exe",
+      "descripcion": "Simular un sistema de caja registradora y punto de venta para comercio minorista, registrando artículos vendidos, calculando subtotales, IVA, descuentos, total a pagar y emitiendo ticket.",
+      "puntos_clave": [
+        "Capturar productos por código de barras o selección manual con cantidad y precio unitario.",
+        "Calcular el subtotal por artículo y acumular el subtotal general de la venta.",
+        "Aplicar la tasa reglamentaria de IVA (16%) y calcular el total neto de la compra.",
+        "Calcular el cambio a devolver según el pago del cliente y emitir ticket de compra."
+      ],
+      "proceso_1": {
+        "nombre": "Agregar Artículo a Venta (cmdAgregarProducto_Click)",
+        "pseudocodigo": "Inicio cmdAgregarProducto_Click\n    cant <- Val(txtCantidad.Text)\n    precio <- Val(txtPrecio.Text)\n    subtotItem <- cant * precio\n    lstTicket.AddItem txtDescripcion.Text + \" x\" + cant + \" = $\" + subtotItem\n    totalVenta <- totalVenta + subtotItem\n    iva <- totalVenta * 0.16\n    totalConIVA <- totalVenta + iva\n    lblTotal.Caption <- \"TOTAL: $\" + Format(totalConIVA, \"0.00\")\nFin cmdAgregarProducto_Click"
+      },
+      "proceso_2": {
+        "nombre": "Cobro y Cambio (cmdCobrar_Click)",
+        "pseudocodigo": "Inicio cmdCobrar_Click\n    pago <- Val(txtPagoCliente.Text)\n    Si pago < totalConIVA Entonces\n        MostrarAviso \"El monto pagado es insuficiente.\"\n    Sino\n        cambio <- pago - totalConIVA\n        lblCambio.Caption <- \"Cambio: $\" + Format(cambio, \"0.00\")\n        Llamar ImprimirTicket()\n    FinSi\nFin cmdCobrar_Click"
+      },
+      "total_archivos": 16
+    },
+    {
+      "nombre": "Reloj en Movimiento",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Reloj en Movimiento",
+      "pdf_url": "docs/clase/Reloj%20en%20Movimiento/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Reloj en Movimiento/DOCUMENTACION.pdf",
+      "pdf_size": 115215,
+      "exe_nombre": "RelojMovimiento.exe",
+      "exe_url": "docs/clase/Reloj%20en%20Movimiento/RelojMovimiento.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Reloj en Movimiento/RelojMovimiento.exe",
+      "descripcion": "Crear un reloj digital animado que muestra la hora exacta del sistema mientras se desplaza continuamente rebotando en los bordes del formulario con trayectoria fluida.",
+      "puntos_clave": [
+        "Obtener la hora actual con formato de 12 o 24 horas mediante las funciones Time y Format.",
+        "Desplazar el control del reloj en las direcciones X e Y dentro del formulario.",
+        "Detectar colisiones en los límites superior, inferior, izquierdo y derecho para invertir la velocidad.",
+        "Permitir pausar el movimiento y cambiar el color o fuente tipográfica del reloj."
+      ],
+      "proceso_1": {
+        "nombre": "Movimiento y Hora (TimerReloj_Timer)",
+        "pseudocodigo": "Inicio TimerReloj_Timer\n    lblReloj.Caption <- Format(Time, \"hh:mm:ss AM/PM\")\n    lblReloj.Left <- lblReloj.Left + pasoX\n    lblReloj.Top <- lblReloj.Top + pasoY\n    Si lblReloj.Left <= 0 O lblReloj.Left + lblReloj.Width >= Me.ScaleWidth Entonces pasoX <- -pasoX\n    Si lblReloj.Top <= 0 O lblReloj.Top + lblReloj.Height >= Me.ScaleHeight Entonces pasoY <- -pasoY\nFin TimerReloj_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Pausar Animación (cmdPausa_Click)",
+        "pseudocodigo": "Inicio cmdPausa_Click\n    TimerReloj.Enabled <- Not TimerReloj.Enabled\nFin cmdPausa_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Reloj y Fecha",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Reloj y Fecha",
+      "pdf_url": "docs/clase/Reloj%20y%20Fecha/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Reloj y Fecha/DOCUMENTACION.pdf",
+      "pdf_size": 110033,
+      "exe_nombre": "RelojFecha.exe",
+      "exe_url": "docs/clase/Reloj%20y%20Fecha/RelojFecha.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Reloj y Fecha/RelojFecha.exe",
+      "descripcion": "Desplegar un panel completo con la hora actual en tiempo real y la fecha del sistema en formato largo y corto, permitiendo alternar formatos y zonas horarias.",
+      "puntos_clave": [
+        "Actualizar el reloj cada segundo mediante un control Timer.",
+        "Mostrar la fecha completa en español incluyendo día de la semana, día, mes y año.",
+        "Permitir alternar entre formato de 12 horas con indicador AM/PM y formato de 24 horas militar.",
+        "Mostrar el tiempo transcurrido desde el inicio de la aplicación en modo cronómetro."
+      ],
+      "proceso_1": {
+        "nombre": "Actualización de Fecha y Hora (Timer1_Timer)",
+        "pseudocodigo": "Inicio Timer1_Timer\n    lblHora.Caption <- Format(Now, \"hh:mm:ss AM/PM\")\n    lblFecha.Caption <- Format(Date, \"dddd, d 'de' mmmm 'de' yyyy\")\nFin Timer1_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Cambio de Formato (cmdFormato_Click)",
+        "pseudocodigo": "Inicio cmdFormato_Click\n    formato24Horas <- Not formato24Horas\n    Llamar Timer1_Timer()\nFin cmdFormato_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Reproductor Multimedia",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Reproductor Multimedia",
+      "pdf_url": "docs/clase/Reproductor%20Multimedia/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Reproductor Multimedia/DOCUMENTACION.pdf",
+      "pdf_size": 114492,
+      "exe_nombre": "ReproductorMultimedia.exe",
+      "exe_url": "docs/clase/Reproductor%20Multimedia/ReproductorMultimedia.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Reproductor Multimedia/ReproductorMultimedia.exe",
+      "descripcion": "Implementar un reproductor de audio y video completo utilizando el componente de Windows Media Player o comandos MCI de la API de Windows, con barra de progreso y control de volumen.",
+      "puntos_clave": [
+        "Abrir archivos multimedia mediante el control CommonDialog.",
+        "Controlar las acciones de reproducción: Play, Pause, Stop y silenciar.",
+        "Sincronizar una barra de desplazamiento (Slider) con la posición actual del archivo.",
+        "Mostrar la duración total y el tiempo transcurrido de la pista."
+      ],
+      "proceso_1": {
+        "nombre": "Cargar y Reproducir (cmdAbrir_Click)",
+        "pseudocodigo": "Inicio cmdAbrir_Click\n    CommonDialog1.Filter <- \"Archivos Multimedia|*.mp3;*.wav;*.avi;*.wmv\"\n    CommonDialog1.ShowOpen\n    Si CommonDialog1.FileName <> \"\" Entonces\n        wmpPlayer.URL <- CommonDialog1.FileName\n        lblArchivo.Caption <- CommonDialog1.FileTitle\n    FinSi\nFin cmdAbrir_Click"
+      },
+      "proceso_2": {
+        "nombre": "Pausa y Reanudación (cmdPausa_Click)",
+        "pseudocodigo": "Inicio cmdPausa_Click\n    Si wmpPlayer.playState = 3 Entonces\n        wmpPlayer.Controls.pause\n    Sino\n        wmpPlayer.Controls.play\n    FinSi\nFin cmdPausa_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Rompecabezas Deslizante 8-Puzzle",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Rompecabezas Deslizante 8-Puzzle",
+      "pdf_url": "docs/clase/Rompecabezas%20Deslizante%208-Puzzle/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Rompecabezas Deslizante 8-Puzzle/DOCUMENTACION.pdf",
+      "pdf_size": 115735,
+      "exe_nombre": "Rompecabezas8Puzzle.exe",
+      "exe_url": "docs/clase/Rompecabezas%20Deslizante%208-Puzzle/Rompecabezas8Puzzle.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Rompecabezas Deslizante 8-Puzzle/Rompecabezas8Puzzle.exe",
+      "descripcion": "Recrear el juego lógico 8-Puzzle (rompecabezas deslizante) con una cuadrícula de 3x3 compuesta por 8 fichas numeradas y un espacio vacío, permitiendo deslizar fichas adyacentes para ordenarlas.",
+      "puntos_clave": [
+        "Manejar el tablero de 3x3 como un arreglo unidimensional o bidimensional de botones.",
+        "Identificar la posición de la casilla vacía y validar que sólo se muevan fichas adyacentes.",
+        "Intercambiar la posición y etiqueta de la ficha presionada con el espacio vacío.",
+        "Verificar si la secuencia numérica 1 a 8 ha quedado ordenada para declarar la victoria."
+      ],
+      "proceso_1": {
+        "nombre": "Movimiento de Ficha (cmdFicha_Click)",
+        "pseudocodigo": "Inicio cmdFicha_Click(Indice)\n    Si EsAdyacente(Indice, posVacia) Entonces\n        cmdFicha(posVacia).Caption <- cmdFicha(Indice).Caption\n        cmdFicha(Indice).Caption <- \"\"\n        posVacia <- Indice\n        movimientos <- movimientos + 1\n        Si TableroOrdenado() Entonces MostrarMensaje \"¡Rompecabezas resuelto!\"\n    FinSi\nFin cmdFicha_Click"
+      },
+      "proceso_2": {
+        "nombre": "Revolver Tablero (cmdRevolver_Click)",
+        "pseudocodigo": "Inicio cmdRevolver_Click\n    Llamar MezclarFichasAleatoriamente()\n    movimientos <- 0\nFin cmdRevolver_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Semaforo con Temporizadores",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Semaforo con Temporizadores",
+      "pdf_url": "docs/clase/Semaforo%20con%20Temporizadores/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Semaforo con Temporizadores/DOCUMENTACION.pdf",
+      "pdf_size": 110644,
+      "exe_nombre": "SemaforoControl.exe",
+      "exe_url": "docs/clase/Semaforo%20con%20Temporizadores/SemaforoControl.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Semaforo con Temporizadores/SemaforoControl.exe",
+      "descripcion": "Simular el funcionamiento automático de un semáforo de control vial mediante temporizadores independientes, alternando secuencialmente entre las luces verde, ámbar y roja con tiempos reglamentarios.",
+      "puntos_clave": [
+        "Encender la luz verde durante un periodo prolongado de paso seguro.",
+        "Alternar a luz ámbar de precaución durante un tiempo breve.",
+        "Cambiar a luz roja de alto absoluto durante el tiempo reglamentario de detención.",
+        "Permitir el cambio a modo nocturno o intermitente preventivo."
+      ],
+      "proceso_1": {
+        "nombre": "Ciclo del Semáforo (TimerSemaforo_Timer)",
+        "pseudocodigo": "Inicio TimerSemaforo_Timer\n    Segun estadoActual\n        Caso 1: ' Verde\n            Llamar EncenderVerde()\n            TimerSemaforo.Interval <- 5000: estadoActual <- 2\n        Caso 2: ' Ámbar\n            Llamar EncenderAmbar()\n            TimerSemaforo.Interval <- 2000: estadoActual <- 3\n        Caso 3: ' Rojo\n            Llamar EncenderRojo()\n            TimerSemaforo.Interval <- 6000: estadoActual <- 1\n    FinSegun\nFin TimerSemaforo_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Modo Intermitente (cmdIntermitente_Click)",
+        "pseudocodigo": "Inicio cmdIntermitente_Click\n    modoIntermitente <- Not modoIntermitente\n    Si modoIntermitente Entonces Llamar ActivarAmbarParpadeo()\nFin cmdIntermitente_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Simulador de Cajero Automatico ATM",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Simulador de Cajero Automatico ATM",
+      "pdf_url": "docs/clase/Simulador%20de%20Cajero%20Automatico%20ATM/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Simulador de Cajero Automatico ATM/DOCUMENTACION.pdf",
+      "pdf_size": 120552,
+      "exe_nombre": "CajeroATM.exe",
+      "exe_url": "docs/clase/Simulador%20de%20Cajero%20Automatico%20ATM/CajeroATM.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Simulador de Cajero Automatico ATM/CajeroATM.exe",
+      "descripcion": "Simular las operaciones financieras de un Cajero Automático (ATM bancario), incluyendo autenticación por NIP, consulta de saldo, retiros de efectivo en múltiplos válidos y depósitos.",
+      "puntos_clave": [
+        "Validar el NIP de seguridad del cliente con límite de intentos para evitar bloqueos.",
+        "Desplegar un menú principal con las operaciones: Consulta de Saldo, Retiro y Depósito.",
+        "Validar que el monto de retiro no exceda el saldo disponible ni exceda el límite del cajero.",
+        "Desglosar la entrega de efectivo en billetes de denominaciones oficiales y emitir recibo."
+      ],
+      "proceso_1": {
+        "nombre": "Retiro de Efectivo (cmdRetirar_Click)",
+        "pseudocodigo": "Inicio cmdRetirar_Click\n    monto <- Val(txtMontoRetiro.Text)\n    Si monto Mod 100 <> 0 Entonces\n        MostrarAviso \"El monto debe ser múltiplo de $100.\"\n        Salir\n    FinSi\n    Si monto > saldoActual Entonces\n        MostrarError \"Saldo insuficiente en su cuenta.\"\n    Sino\n        saldoActual <- saldoActual - monto\n        MostrarMensaje \"Retiro exitoso. Tome su dinero: $\" + monto\n        Llamar DesglosarBilletes(monto)\n    FinSi\nFin cmdRetirar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Autenticación de NIP (cmdValidarNIP_Click)",
+        "pseudocodigo": "Inicio cmdValidarNIP_Click\n    Si txtNIP.Text = nipCorrecto Entonces\n        frmMenuATM.Show\n        Unload Me\n    Sino\n        intentos <- intentos + 1\n        Si intentos >= 3 Entonces MostrarError \"Tarjeta bloqueada por seguridad.\"\n    FinSi\nFin cmdValidarNIP_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Sistema de Inventarios",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Sistema de Inventarios",
+      "pdf_url": "docs/clase/Sistema%20de%20Inventarios/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Sistema de Inventarios/DOCUMENTACION.pdf",
+      "pdf_size": 118310,
+      "exe_nombre": "SistemaInventarios.exe",
+      "exe_url": "docs/clase/Sistema%20de%20Inventarios/SistemaInventarios.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Sistema de Inventarios/SistemaInventarios.exe",
+      "descripcion": "Gestionar las existencias físicas y monetarias de un almacén comercial, registrando entradas, salidas de mercancía, cálculo de costo promedio y detección de existencias mínimas de seguridad.",
+      "puntos_clave": [
+        "Dar de alta productos con código de barras, descripción, precio de compra y precio de venta.",
+        "Registrar entradas de almacén incrementando el stock físico y actualizando el costo.",
+        "Registrar salidas por ventas o traspasos reduciendo el inventario y validando no dejar existencias negativas.",
+        "Generar alertas automáticas de reorden cuando el producto alcance su stock mínimo."
+      ],
+      "proceso_1": {
+        "nombre": "Registrar Entrada de Mercancía (cmdEntrada_Click)",
+        "pseudocodigo": "Inicio cmdEntrada_Click\n    cant <- Val(txtCantidad.Text)\n    Si cant <= 0 Entonces MostrarAviso \"Cantidad inválida\": Salir\n    stockActual <- stockActual + cant\n    rsProductos.Fields(\"Existencia\") <- stockActual\n    rsProductos.Update\n    MostrarMensaje \"Inventario actualizado con éxito.\"\nFin cmdEntrada_Click"
+      },
+      "proceso_2": {
+        "nombre": "Registrar Salida de Mercancía (cmdSalida_Click)",
+        "pseudocodigo": "Inicio cmdSalida_Click\n    cant <- Val(txtCantidad.Text)\n    Si cant > stockActual Entonces\n        MostrarError \"Existencias insuficientes para realizar la salida.\"\n    Sino\n        stockActual <- stockActual - cant\n        rsProductos.Fields(\"Existencia\") <- stockActual\n        rsProductos.Update\n    FinSi\nFin cmdSalida_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Tablas de Multiplicar",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Tablas de Multiplicar",
+      "pdf_url": "docs/clase/Tablas%20de%20Multiplicar/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Tablas de Multiplicar/DOCUMENTACION.pdf",
+      "pdf_size": 109202,
+      "exe_nombre": "TablasMultiplicar.exe",
+      "exe_url": "docs/clase/Tablas%20de%20Multiplicar/TablasMultiplicar.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Tablas de Multiplicar/TablasMultiplicar.exe",
+      "descripcion": "Generar de forma dinámica y didáctica las tablas de multiplicar para cualquier número base ingresado por el usuario, mostrando la tabla completa y ofreciendo un módulo de práctica interactiva.",
+      "puntos_clave": [
+        "Capturar el número de la tabla a generar mediante caja de texto o control numérico.",
+        "Generar iterativamente del 1 al 10 (o rango personalizado) con un ciclo For-Next.",
+        "Presentar la tabla estructurada en una lista o cuadro de texto multilínea.",
+        "Ofrecer un módulo de evaluación donde el usuario ingresa respuestas y se evalúa el puntaje."
+      ],
+      "proceso_1": {
+        "nombre": "Generar Tabla (cmdGenerar_Click)",
+        "pseudocodigo": "Inicio cmdGenerar_Click\n    baseNum <- Val(txtNumero.Text)\n    lstTabla.Clear\n    Para i <- 1 Hasta 10\n        producto <- baseNum * i\n        lstTabla.AddItem baseNum + \" x \" + i + \" = \" + producto\n    FinPara\nFin cmdGenerar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Limpiar Tabla (cmdLimpiar_Click)",
+        "pseudocodigo": "Inicio cmdLimpiar_Click\n    lstTabla.Clear\n    txtNumero.Text <- \"\"\n    txtNumero.SetFocus\nFin cmdLimpiar_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Temporizador de Apagado",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Temporizador de Apagado",
+      "pdf_url": "docs/clase/Temporizador%20de%20Apagado/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Temporizador de Apagado/DOCUMENTACION.pdf",
+      "pdf_size": 112419,
+      "exe_nombre": "TemporizadorApagado.exe",
+      "exe_url": "docs/clase/Temporizador%20de%20Apagado/TemporizadorApagado.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Temporizador de Apagado/TemporizadorApagado.exe",
+      "descripcion": "Programar el apagado automático, reinicio o suspensión del equipo de cómputo en un tiempo determinado en minutos o segundos, invocando utilidades del sistema operativo mediante comandos de consola.",
+      "puntos_clave": [
+        "Permitir al usuario ingresar el tiempo de espera en minutos o seleccionar una hora fija.",
+        "Seleccionar la acción deseada: Apagar, Reiniciar o Cancelar apagado previo.",
+        "Ejecutar el comando del sistema 'shutdown -s -t <segundos>' mediante la función Shell.",
+        "Desplegar un temporizador regresivo visual indicando el tiempo restante antes del apagado."
+      ],
+      "proceso_1": {
+        "nombre": "Programar Apagado (cmdApagar_Click)",
+        "pseudocodigo": "Inicio cmdApagar_Click\n    minutos <- Val(txtMinutos.Text)\n    segundos <- minutos * 60\n    comando <- \"shutdown -s -t \" + segundos\n    Llamar Shell(comando, vbHide)\n    lblEstado.Caption <- \"El equipo se apagará en: \" + minutos + \" minutos.\"\nFin cmdApagar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Cancelar Apagado (cmdCancelar_Click)",
+        "pseudocodigo": "Inicio cmdCancelar_Click\n    Llamar Shell(\"shutdown -a\", vbHide)\n    lblEstado.Caption <- \"Apagado automático cancelado.\"\nFin cmdCancelar_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Texto 3D Modificable",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Texto 3D Modificable",
+      "pdf_url": "docs/clase/Texto%203D%20Modificable/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Texto 3D Modificable/DOCUMENTACION.pdf",
+      "pdf_size": 117018,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/clase/Texto%203D%20Modificable/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Texto 3D Modificable/Proyecto1.exe",
+      "descripcion": "Generar rótulos tipográficos con efectos tridimensionales y sombras personalizables, permitiendo al usuario modificar el texto, color frontal, color de sombra, profundidad y ángulo en tiempo real.",
+      "puntos_clave": [
+        "Capturar el texto ingresado en una caja de texto y redibujarlo sobre un PictureBox.",
+        "Dibujar capas de texto superpuestas con un desfase gradual de píxeles (offset) para simular volumen 3D.",
+        "Permitir seleccionar el color del texto principal y el color de las sombras de relieve.",
+        "Ajustar la profundidad del efecto mediante una barra de desplazamiento numérico."
+      ],
+      "proceso_1": {
+        "nombre": "Renderizar Texto 3D (DibujarTexto3D)",
+        "pseudocodigo": "Inicio DibujarTexto3D\n    picCanvas.Cls\n    texto <- txtEntrada.Text\n    profundidad <- hsbProfundidad.Value\n    Para i <- profundidad Hasta 1 Con Paso -1\n        picCanvas.CurrentX <- posX + i: picCanvas.CurrentY <- posY + i\n        picCanvas.ForeColor <- colorSombra\n        picCanvas.Print texto\n    FinPara\n    picCanvas.CurrentX <- posX: picCanvas.CurrentY <- posY\n    picCanvas.ForeColor <- colorFrontal\n    picCanvas.Print texto\nFin DibujarTexto3D"
+      },
+      "proceso_2": {
+        "nombre": "Cambio de Texto (txtEntrada_Change)",
+        "pseudocodigo": "Inicio txtEntrada_Change\n    Llamar DibujarTexto3D()\nFin txtEntrada_Change"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Texto en 3D",
+      "categoria": "Programas Realizados en Clase",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica\\Texto en 3D",
+      "pdf_url": "docs/clase/Texto%20en%203D/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Texto en 3D/DOCUMENTACION.pdf",
+      "pdf_size": 112174,
+      "exe_nombre": "Texto3D.exe",
+      "exe_url": "docs/clase/Texto%20en%203D/Texto3D.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica/Texto en 3D/Texto3D.exe",
+      "descripcion": "Crear rótulos con efecto de relieve tridimensional estático o dinámico sobre el lienzo mediante la técnica de capas decaladas con contrastes de luz y sombra.",
+      "puntos_clave": [
+        "Establecer la fuente, tamaño y estilo de negrita para maximizar la percepción del relieve.",
+        "Trazar una sombra oscura desfasada hacia abajo y hacia la derecha.",
+        "Trazar un brillo claro o blanco desfasado hacia arriba y hacia la izquierda.",
+        "Imprimir la capa principal del texto en el centro exacto para consolidar el efecto tridimensional."
+      ],
+      "proceso_1": {
+        "nombre": "Impresión de Relieve (ImprimirRelieve)",
+        "pseudocodigo": "Inicio ImprimirRelieve\n    picCanvas.Cls\n    ' Sombra oscura\n    picCanvas.CurrentX <- 102: picCanvas.CurrentY <- 102\n    picCanvas.ForeColor <- RGB(64, 64, 64)\n    picCanvas.Print txtTexto.Text\n    ' Capa frontal clara\n    picCanvas.CurrentX <- 100: picCanvas.CurrentY <- 100\n    picCanvas.ForeColor <- RGB(255, 255, 255)\n    picCanvas.Print txtTexto.Text\nFin ImprimirRelieve"
+      },
+      "proceso_2": {
+        "nombre": "Actualizar Efecto (Form_Load)",
+        "pseudocodigo": "Inicio Form_Load\n    Llamar ImprimirRelieve()\nFin Form_Load"
+      },
+      "total_archivos": 5
+    }
+  ],
+  "programas_b": [
+    {
+      "nombre": "Alarma Musical",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Alarma Musical",
+      "pdf_url": "docs/version_b/Alarma%20Musical/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Alarma Musical/DOCUMENTACION.pdf",
+      "pdf_size": 116555,
+      "exe_nombre": "AlarmaMusical.exe",
+      "exe_url": "docs/version_b/Alarma%20Musical/AlarmaMusical.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Alarma Musical/AlarmaMusical.exe",
+      "descripcion": "Permitir al usuario programar una hora y minuto específicos para activar una alarma sonora o musical mediante la sincronización continua con el reloj interno del sistema.",
+      "puntos_clave": [
+        "Configurar la hora y minutos deseados para el disparo de la alarma.",
+        "Monitorear segundo a segundo la hora del sistema a través del control Timer.",
+        "Ejecutar la reproducción del archivo de audio o tono al coincidir la hora programada.",
+        "Permitir detener, silenciar o reiniciar la alarma mediante botones de control."
+      ],
+      "proceso_1": {
+        "nombre": "Verificación del Reloj (Timer_Timer)",
+        "pseudocodigo": "Inicio Timer_Timer\n    horaActual <- ObtenerHoraSistema()\n    lblHora.Caption <- horaActual\n    Si alarmaActivada = Verdadero Entonces\n        Si horaActual >= horaAlarma Entonces\n            alarmaActivada <- Falso\n            Llamar ReproducirSonidoAlarma()\n            MostrarAviso \"¡Alarma Activada!\"\n        FinSi\n    FinSi\nFin Timer_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Programación de Alarma (cmdActivar_Click)",
+        "pseudocodigo": "Inicio cmdActivar_Click\n    Si txtHora.Text = \"\" O txtMinuto.Text = \"\" Entonces\n        MostrarAviso \"Ingrese hora y minuto válidos.\"\n        Salir\n    FinSi\n    horaAlarma <- FormatearHora(txtHora.Text, txtMinuto.Text)\n    alarmaActivada <- Verdadero\n    lblEstado.Caption <- \"Alarma fijada: \" + horaAlarma\nFin cmdActivar_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Arrastrar y Soltar Imagen",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Arrastrar y Soltar Imagen",
+      "pdf_url": "docs/version_b/Arrastrar%20y%20Soltar%20Imagen/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Arrastrar y Soltar Imagen/DOCUMENTACION.pdf",
+      "pdf_size": 111979,
+      "exe_nombre": "Alan.exe",
+      "exe_url": "docs/version_b/Arrastrar%20y%20Soltar%20Imagen/Alan.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Arrastrar y Soltar Imagen/Alan.exe",
+      "descripcion": "Demostrar el funcionamiento de los eventos Drag & Drop (arrastre y soltado) en Visual Basic 6.0, permitiendo al usuario mover controles gráficos libremente sobre el área del formulario.",
+      "puntos_clave": [
+        "Habilitar el modo de arrastre (DragMode) manual o automático en el control de imagen.",
+        "Detectar el desplazamiento del objeto sobre el lienzo mediante el evento DragOver.",
+        "Calcular las coordenadas finales X e Y en el evento DragDrop y reubicar la imagen.",
+        "Ofrecer un botón para restablecer la imagen a su posición original."
+      ],
+      "proceso_1": {
+        "nombre": "Ubicación del Objeto al Soltar (Form_DragDrop)",
+        "pseudocodigo": "Inicio Form_DragDrop(Origen, X, Y)\n    Origen.Left <- X - (Origen.Width / 2)\n    Origen.Top <- Y - (Origen.Height / 2)\n    lblCoordenadas.Caption <- \"Posición: X=\" + X + \" Y=\" + Y\nFin Form_DragDrop"
+      },
+      "proceso_2": {
+        "nombre": "Restablecer Posición Inicial (cmdRestablecer_Click)",
+        "pseudocodigo": "Inicio cmdRestablecer_Click\n    imgObjeto.Left <- posInicialX\n    imgObjeto.Top <- posInicialY\n    lblCoordenadas.Caption <- \"Posición: Original\"\nFin cmdRestablecer_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Barras de Desplazamiento",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Barras de Desplazamiento",
+      "pdf_url": "docs/version_b/Barras%20de%20Desplazamiento/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Barras de Desplazamiento/DOCUMENTACION.pdf",
+      "pdf_size": 112566,
+      "exe_nombre": "ScrollbarsControl.exe",
+      "exe_url": "docs/version_b/Barras%20de%20Desplazamiento/ScrollbarsControl.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Barras de Desplazamiento/ScrollbarsControl.exe",
+      "descripcion": "Controlar de forma dinámica valores numéricos, dimensiones o propiedades visuales de elementos en pantalla mediante el uso de barras de desplazamiento horizontal (HScrollBar) y vertical (VScrollBar).",
+      "puntos_clave": [
+        "Configurar los límites mínimo (Min) y máximo (Max) de las barras de desplazamiento.",
+        "Capturar el evento Change y Scroll para actualizar en tiempo real los valores numéricos.",
+        "Modificar dinámicamente las dimensiones (Width, Height) o la posición de un objeto en pantalla.",
+        "Desplegar etiquetas con los valores numéricos actuales de desplazamiento."
+      ],
+      "proceso_1": {
+        "nombre": "Ajuste Horizontal (HScroll1_Change)",
+        "pseudocodigo": "Inicio HScroll1_Change\n    valorH <- HScroll1.Value\n    picCuadro.Width <- valorH\n    lblValorH.Caption <- \"Ancho: \" + valorH + \" px\"\nFin HScroll1_Change"
+      },
+      "proceso_2": {
+        "nombre": "Ajuste Vertical (VScroll1_Change)",
+        "pseudocodigo": "Inicio VScroll1_Change\n    valorV <- VScroll1.Value\n    picCuadro.Height <- valorV\n    lblValorV.Caption <- \"Alto: \" + valorV + \" px\"\nFin VScroll1_Change"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Base De Datos",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Base De Datos",
+      "pdf_url": "docs/version_b/Base%20De%20Datos/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Base De Datos/DOCUMENTACION.pdf",
+      "pdf_size": 120153,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/version_b/Base%20De%20Datos/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Base De Datos/Proyecto1.exe",
+      "descripcion": "Conectar el formulario a una base de datos relacional Microsoft Access mediante el control intrínseco Data (DAO) para consultar, navegar y dar de alta registros de clientes de forma interactiva.",
+      "puntos_clave": [
+        "Enlazar cajas de texto a las columnas de la tabla (Nombre del Cliente, Dirección, Teléfono, Edad).",
+        "Navegar secuencialmente entre registros utilizando los controles de desplazamiento del control Data.",
+        "Validar la integridad de los datos ingresados antes de confirmar cambios en la base de datos.",
+        "Ofrecer una interfaz limpia y estructurada para la gestión de expedientes de clientes."
+      ],
+      "proceso_1": {
+        "nombre": "Navegación y Carga de Registro (Data1_Reposition)",
+        "pseudocodigo": "Inicio Data1_Reposition\n    Si Not Data1.Recordset.EOF Y Not Data1.Recordset.BOF Entonces\n        lblRegistro.Caption <- \"Registro: \" + Data1.Recordset.AbsolutePosition + \" de \" + Data1.Recordset.RecordCount\n    FinSi\nFin Data1_Reposition"
+      },
+      "proceso_2": {
+        "nombre": "Agregar Nuevo Cliente (cmdNuevo_Click)",
+        "pseudocodigo": "Inicio cmdNuevo_Click\n    Data1.Recordset.AddNew\n    txtNombre.SetFocus\n    lblRegistro.Caption <- \"Capturando nuevo registro...\"\nFin cmdNuevo_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Base de Datos Plana",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Base de Datos Plana",
+      "pdf_url": "docs/version_b/Base%20de%20Datos%20Plana/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Base de Datos Plana/DOCUMENTACION.pdf",
+      "pdf_size": 114155,
+      "exe_nombre": "BaseDatosPlana.exe",
+      "exe_url": "docs/version_b/Base%20de%20Datos%20Plana/BaseDatosPlana.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Base de Datos Plana/BaseDatosPlana.exe",
+      "descripcion": "Almacenar y consultar registros de información estructurada en archivos secuenciales de texto plano (.txt o .dat), implementando operaciones de lectura, escritura y búsqueda secuencial.",
+      "puntos_clave": [
+        "Abrir archivos secuenciales en modo Append para agregar registros sin sobreescribir los previos.",
+        "Leer línea por línea en modo Input para cargar los registros existentes en controles de lista.",
+        "Separar los campos de cada registro mediante delimitadores o formato de longitud fija.",
+        "Permitir la búsqueda rápida de registros a través de comparaciones de cadenas de texto."
+      ],
+      "proceso_1": {
+        "nombre": "Guardar en Archivo Secuencial (cmdGuardar_Click)",
+        "pseudocodigo": "Inicio cmdGuardar_Click\n    canal <- ObtenerCanalLibre()\n    Abrir \"datos.txt\" Para Agregar Como canal\n    EscribirLinea canal, txtNombre.Text + \",\" + txtDireccion.Text + \",\" + txtTelefono.Text\n    Cerrar canal\n    MostrarMensaje \"Registro guardado exitosamente en archivo plano.\"\nFin cmdGuardar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Cargar Registros a Lista (cmdCargar_Click)",
+        "pseudocodigo": "Inicio cmdCargar_Click\n    lstRegistros.Limpiar\n    canal <- ObtenerCanalLibre()\n    Abrir \"datos.txt\" Para Lectura Como canal\n    Mientras Not FinDeArchivo(canal)\n        LeerLinea canal, linea\n        lstRegistros.AgregarItem linea\n    FinMientras\n    Cerrar canal\nFin cmdCargar_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Base de Datos con Imagen",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Base de Datos con Imagen",
+      "pdf_url": "docs/version_b/Base%20de%20Datos%20con%20Imagen/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Base de Datos con Imagen/DOCUMENTACION.pdf",
+      "pdf_size": 117975,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/version_b/Base%20de%20Datos%20con%20Imagen/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Base de Datos con Imagen/Proyecto1.exe",
+      "descripcion": "Gestionar expedientes de datos vinculando información textual con imágenes gráficas (fotografías o credenciales), cargando las fotos desde disco en un control Image según la clave del registro.",
+      "puntos_clave": [
+        "Conectar a la base de datos para almacenar datos del empleado o alumno junto con la ruta de su fotografía.",
+        "Cargar dinámicamente imágenes mediante la función LoadPicture al navegar entre registros.",
+        "Controlar excepciones en caso de que el archivo gráfico no se encuentre en la ruta especificada.",
+        "Proveer botones de navegación completa y alta de nuevos registros con selección de fotografía."
+      ],
+      "proceso_1": {
+        "nombre": "Cargar Fotografía Asociada (MostrarFoto)",
+        "pseudocodigo": "Inicio MostrarFoto(rutaArchivo)\n    Si ArchivoExiste(rutaArchivo) Entonces\n        imgFoto.Picture <- CargarImagen(rutaArchivo)\n    Sino\n        imgFoto.Picture <- CargarImagen(rutaFotoPredeterminada)\n    FinSi\nFin MostrarFoto"
+      },
+      "proceso_2": {
+        "nombre": "Navegar y Sincronizar Registro (cmdSiguiente_Click)",
+        "pseudocodigo": "Inicio cmdSiguiente_Click\n    rs.MoveNext\n    Si rs.EOF Entonces rs.MoveLast\n    txtNombre.Text <- rs.Fields(\"Nombre\")\n    txtMatricula.Text <- rs.Fields(\"Matricula\")\n    Llamar MostrarFoto(rs.Fields(\"RutaFoto\"))\nFin cmdSiguiente_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Base de Datos-ADODC",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Base de Datos-ADODC",
+      "pdf_url": "docs/version_b/Base%20de%20Datos-ADODC/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Base de Datos-ADODC/DOCUMENTACION.pdf",
+      "pdf_size": 116018,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/version_b/Base%20de%20Datos-ADODC/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Base de Datos-ADODC/Proyecto1.exe",
+      "descripcion": "Implementar un sistema de gestión de base de datos utilizando el control Microsoft ADO Data Control 6.0 (ADODC) para administrar registros con operaciones completas de consulta, inserción y desplazamiento.",
+      "puntos_clave": [
+        "Configurar la cadena de conexión OLE DB hacia la base de datos Access.",
+        "Vincular cajas de texto a las columnas: Clave, Dirección, Teléfono y Nombre Completo.",
+        "Programar botones de navegación personalizados (Primero, Anterior, Siguiente, Último).",
+        "Ejecutar los métodos AddNew y Update del Recordset para dar de alta nuevos registros de forma segura."
+      ],
+      "proceso_1": {
+        "nombre": "Inserción de Nuevo Registro (cmdNuevo_Click)",
+        "pseudocodigo": "Inicio cmdNuevo_Click\n    Adodc1.Recordset.AddNew\n    txtClave.SetFocus\n    lblEstado.Caption <- \"Modo inserción: Capture los datos\"\nFin cmdNuevo_Click"
+      },
+      "proceso_2": {
+        "nombre": "Guardar Registro Actual (cmdGuardar_Click)",
+        "pseudocodigo": "Inicio cmdGuardar_Click\n    Si txtClave.Text = \"\" O txtNombreCompleto.Text = \"\" Entonces\n        MostrarAviso \"Debe ingresar clave y nombre completo.\"\n        Salir\n    FinSi\n    Adodc1.Recordset.Update\n    MostrarMensaje \"Registro guardado exitosamente en ADODC.\"\nFin cmdGuardar_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Calculadora Completa",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Calculadora Completa",
+      "pdf_url": "docs/version_b/Calculadora%20Completa/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Calculadora Completa/DOCUMENTACION.pdf",
+      "pdf_size": 124407,
+      "exe_nombre": "Calculadora.exe",
+      "exe_url": "docs/version_b/Calculadora%20Completa/Calculadora.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Calculadora Completa/Calculadora.exe",
+      "descripcion": "Simular una calculadora aritmética y científica completa con interfaz de botones digitales en pantalla, permitiendo operaciones básicas, cálculo de porcentajes, raíz cuadrada, cambio de signo y manejo de memoria.",
+      "puntos_clave": [
+        "Manejar el ingreso secuencial de dígitos numéricos y punto decimal mediante una matriz de botones.",
+        "Almacenar el primer operando y el operador seleccionado (+, -, *, /).",
+        "Calcular el resultado final al presionar el botón igual (=) y validar divisiones entre cero.",
+        "Implementar funciones adicionales como raíz cuadrada (Sqr), inverso (1/x) y borrado total (C) o parcial (CE)."
+      ],
+      "proceso_1": {
+        "nombre": "Presionar Dígito Numérico (cmdNumero_Click)",
+        "pseudocodigo": "Inicio cmdNumero_Click(Indice)\n    Si nuevaOperacion = Verdadero Entonces\n        txtDisplay.Text <- Indice\n        nuevaOperacion <- Falso\n    Sino\n        txtDisplay.Text <- txtDisplay.Text + Indice\n    FinSi\nFin cmdNumero_Click"
+      },
+      "proceso_2": {
+        "nombre": "Calcular Resultado (cmdIgual_Click)",
+        "pseudocodigo": "Inicio cmdIgual_Click\n    op2 <- ConvertirANumero(txtDisplay.Text)\n    Segun operador\n        Caso \"+\": resultado <- op1 + op2\n        Caso \"-\": resultado <- op1 - op2\n        Caso \"*\": resultado <- op1 * op2\n        Caso \"/\":\n            Si op2 = 0 Entonces\n                txtDisplay.Text <- \"Error\"\n                Salir\n            Sino\n                resultado <- op1 / op2\n            FinSi\n    FinSegun\n    txtDisplay.Text <- resultado\n    nuevaOperacion <- Verdadero\nFin cmdIgual_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Calculadora Simple",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Calculadora Simple",
+      "pdf_url": "docs/version_b/Calculadora%20Simple/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Calculadora Simple/DOCUMENTACION.pdf",
+      "pdf_size": 117263,
+      "exe_nombre": "CalculadoraSimple.exe",
+      "exe_url": "docs/version_b/Calculadora%20Simple/CalculadoraSimple.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Calculadora Simple/CalculadoraSimple.exe",
+      "descripcion": "Realizar cálculos aritméticos básicos (suma, resta, multiplicación y división) entre dos valores numéricos ingresados por el usuario, previniendo errores por división entre cero.",
+      "puntos_clave": [
+        "Capturar dos valores numéricos a través de cajas de texto con validación de tipo de dato.",
+        "Ejecutar sumas, restas, multiplicaciones y divisiones según la operación elegida.",
+        "Prevenir errores en tiempo de ejecución validando que el divisor no sea cero.",
+        "Limpiar los campos de entrada y restablecer la calculadora para nuevas operaciones."
+      ],
+      "proceso_1": {
+        "nombre": "Cálculo de Operación (cmdOperar_Click)",
+        "pseudocodigo": "Inicio cmdOperar_Click\n    val1 <- ConvertirANumero(txtNum1.Text)\n    val2 <- ConvertirANumero(txtNum2.Text)\n    Segun operacion\n        Caso \"Suma\": resultado <- val1 + val2\n        Caso \"Resta\": resultado <- val1 - val2\n        Caso \"Multiplicacion\": resultado <- val1 * val2\n        Caso \"Division\":\n            Si val2 = 0 Entonces\n                MostrarError \"No es posible dividir entre cero.\"\n                Salir\n            Sino\n                resultado <- val1 / val2\n            FinSi\n    FinSegun\n    txtResultado.Text <- resultado\nFin cmdOperar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Limpieza de Controles (cmdLimpiar_Click)",
+        "pseudocodigo": "Inicio cmdLimpiar_Click\n    txtNum1.Text <- \"\"\n    txtNum2.Text <- \"\"\n    txtResultado.Text <- \"\"\n    txtNum1.SetFocus\nFin cmdLimpiar_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Calculo de Nomina de Empleados",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Calculo de Nomina de Empleados",
+      "pdf_url": "docs/version_b/Calculo%20de%20Nomina%20de%20Empleados/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Calculo de Nomina de Empleados/DOCUMENTACION.pdf",
+      "pdf_size": 131888,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/version_b/Calculo%20de%20Nomina%20de%20Empleados/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Calculo de Nomina de Empleados/Proyecto1.exe",
+      "descripcion": "Automatizar el cálculo de nómina semanal de empleados, computando horas normales, horas extras al 200%, bono de antigüedad y retenciones de seguridad social (IMSS) e impuestos (ISR), con persistencia en Access.",
+      "puntos_clave": [
+        "Calcular las horas ordinarias (hasta 40 horas) y horas extras dobles (>40 horas).",
+        "Aplicar un bono de antigüedad del 2.5% por cada año laborado.",
+        "Descontar deducciones legales: IMSS (5.0%), ISR/ISPT (4.5%) y Fondo de Ahorro (2.0%).",
+        "Guardar y navegar registros en base de datos Access (nomina.mdb) y emitir recibos de pago."
+      ],
+      "proceso_1": {
+        "nombre": "Algoritmo de Cálculo Salarial (CalcularSueldo)",
+        "pseudocodigo": "Inicio CalcularSueldo\n    horas <- Val(txtHorasTrabajadas.Text)\n    precio <- Val(txtPrecioHora.Text)\n    anios <- Val(txtAntiguedad.Text)\n    Si horas > 40 Entonces\n        hNormales <- 40\n        hExtras <- horas - 40\n    Sino\n        hNormales <- horas\n        hExtras <- 0\n    FinSi\n    sueldoBase <- (hNormales * precio) + (hExtras * precio * 2)\n    bonoAntig <- sueldoBase * (anios * 0.025)\n    sueldoBruto <- sueldoBase + bonoAntig\n    imss <- sueldoBruto * 0.05\n    ispt <- sueldoBruto * 0.045\n    fondo <- sueldoBruto * 0.02\n    sueldoNeto <- sueldoBruto - (imss + ispt + fondo)\nFin CalcularSueldo"
+      },
+      "proceso_2": {
+        "nombre": "Guardado en Base de Datos (cmdGuardar_Click)",
+        "pseudocodigo": "Inicio cmdGuardar_Click\n    Llamar CalcularSueldo()\n    rs.AddNew\n    rs.Fields(\"Nombre\") <- txtNombre.Text\n    rs.Fields(\"HorasTrabajadas\") <- Val(txtHorasTrabajadas.Text)\n    rs.Fields(\"SueldoNeto\") <- Val(txtSueldoNeto.Text)\n    rs.Update\n    MostrarMensaje \"Expediente guardado exitosamente.\"\nFin cmdGuardar_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Ciclos y Estadistica",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Ciclos y Estadistica",
+      "pdf_url": "docs/version_b/Ciclos%20y%20Estadistica/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Ciclos y Estadistica/DOCUMENTACION.pdf",
+      "pdf_size": 117254,
+      "exe_nombre": "CiclosEstadistica.exe",
+      "exe_url": "docs/version_b/Ciclos%20y%20Estadistica/CiclosEstadistica.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Ciclos y Estadistica/CiclosEstadistica.exe",
+      "descripcion": "Aplicar estructuras de control iterativas (bucles For-Next y Do-While) para procesar conjuntos de valores numéricos, calculando sumatorias, promedios, valores máximos y mínimos con generación de estadísticas.",
+      "puntos_clave": [
+        "Capturar una serie de números ingresados por el usuario o generados dinámicamente.",
+        "Recorrer la colección numérica mediante ciclos para acumular sumatorias.",
+        "Determinar el promedio aritmético y los valores extremos (máximo y mínimo).",
+        "Desplegar los resultados estadísticos ordenados en una lista interactiva."
+      ],
+      "proceso_1": {
+        "nombre": "Cálculo Estadístico (cmdCalcular_Click)",
+        "pseudocodigo": "Inicio cmdCalcular_Click\n    suma <- 0\n    maximo <- -999999\n    minimo <- 999999\n    Para i <- 0 Hasta lstNumeros.ListCount - 1\n        valor <- ConvertirANumero(lstNumeros.List(i))\n        suma <- suma + valor\n        Si valor > maximo Entonces maximo <- valor\n        Si valor < minimo Entonces minimo <- valor\n    FinPara\n    promedio <- suma / lstNumeros.ListCount\n    lblPromedio.Caption <- \"Promedio: \" + promedio\n    lblMaximo.Caption <- \"Máximo: \" + maximo\n    lblMinimo.Caption <- \"Mínimo: \" + minimo\nFin cmdCalcular_Click"
+      },
+      "proceso_2": {
+        "nombre": "Agregar Valor Numérico (cmdAgregar_Click)",
+        "pseudocodigo": "Inicio cmdAgregar_Click\n    Si txtNumero.Text <> \"\" Entonces\n        lstNumeros.AddItem txtNumero.Text\n        txtNumero.Text <- \"\"\n        txtNumero.SetFocus\n    FinSi\nFin cmdAgregar_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Codigo de Barras Code 39",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Codigo de Barras Code 39",
+      "pdf_url": "docs/version_b/Codigo%20de%20Barras%20Code%2039/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Codigo de Barras Code 39/DOCUMENTACION.pdf",
+      "pdf_size": 122688,
+      "exe_nombre": "CodigoDeBarras.exe",
+      "exe_url": "docs/version_b/Codigo%20de%20Barras%20Code%2039/CodigoDeBarras.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Codigo de Barras Code 39/CodigoDeBarras.exe",
+      "descripcion": "Generar y dibujar de forma gráfica códigos de barras bajo el estándar industrial Code 39 en un control PictureBox, convirtiendo texto alfanumérico en patrones de líneas de barras y espacios anchos y estrechos.",
+      "puntos_clave": [
+        "Validar que el texto a codificar contenga caracteres alfanuméricos válidos.",
+        "Agregar los delimitadores de inicio y fin de código (*).",
+        "Mapear cada carácter a su correspondiente patrón binario de 9 elementos (barras y espacios).",
+        "Dibujar mediante el método Line del PictureBox las barras verticales proporcionales."
+      ],
+      "proceso_1": {
+        "nombre": "Generación de Código de Barras (GenerarCode39)",
+        "pseudocodigo": "Inicio GenerarCode39(cadena)\n    textoCodificado <- \"*\" + UCase(cadena) + \"*\"\n    picBarras.Cls\n    posicionX <- 100\n    Para i <- 1 Hasta Longitud(textoCodificado)\n        caracter <- ExtraerCaracter(textoCodificado, i)\n        patron <- ObtenerPatronBinario(caracter)\n        Llamar DibujarPatron(patron, posicionX)\n    FinPara\nFin GenerarCode39"
+      },
+      "proceso_2": {
+        "nombre": "Dibujo de Patrón (DibujarPatron)",
+        "pseudocodigo": "Inicio DibujarPatron(patron, posRef)\n    Para bit <- 1 Hasta Longitud(patron)\n        Si EsBarra(bit) Entonces\n            ancho <- Si(BitValor(bit) = 1, anchoGrueso, anchoFino)\n            picBarras.Line (posRef, 10)-(posRef + ancho, altoBarra), colorNegro, BF\n        FinSi\n        posRef <- posRef + ancho\n    FinPara\nFin DibujarPatron"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Contador y Secuencia Numerica",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Contador y Secuencia Numerica",
+      "pdf_url": "docs/version_b/Contador%20y%20Secuencia%20Numerica/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Contador y Secuencia Numerica/DOCUMENTACION.pdf",
+      "pdf_size": 116318,
+      "exe_nombre": "SecuenciaNumerica.exe",
+      "exe_url": "docs/version_b/Contador%20y%20Secuencia%20Numerica/SecuenciaNumerica.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Contador y Secuencia Numerica/SecuenciaNumerica.exe",
+      "descripcion": "Controlar progresiones y secuencias numéricas (ascendentes y descendentes) con intervalos configurables, utilizando un control Timer para simular contadores y cronómetros digitales.",
+      "puntos_clave": [
+        "Establecer valores de inicio, límite y paso de incremento o decremento.",
+        "Controlar la velocidad de conteo mediante la propiedad Interval del Timer.",
+        "Proveer botones de arranque (Start), pausa (Pause) y reinicio (Reset).",
+        "Mostrar el valor numérico en una pantalla digital con formato de dígitos."
+      ],
+      "proceso_1": {
+        "nombre": "Incremento Automático (TimerContador_Timer)",
+        "pseudocodigo": "Inicio TimerContador_Timer\n    cuentaActual <- cuentaActual + pasoIncremento\n    lblDisplay.Caption <- FormatearNumero(cuentaActual, \"0000\")\n    Si cuentaActual >= limiteSuperior Entonces\n        TimerContador.Enabled <- Falso\n        MostrarAviso \"Conteo finalizado.\"\n    FinSi\nFin TimerContador_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Inicio de Conteo (cmdIniciar_Click)",
+        "pseudocodigo": "Inicio cmdIniciar_Click\n    cuentaActual <- ConvertirANumero(txtInicio.Text)\n    pasoIncremento <- ConvertirANumero(txtPaso.Text)\n    TimerContador.Enabled <- Verdadero\n    lblDisplay.Caption <- FormatearNumero(cuentaActual, \"0000\")\nFin cmdIniciar_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Conversor Universal de Unidades",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Conversor Universal de Unidades",
+      "pdf_url": "docs/version_b/Conversor%20Universal%20de%20Unidades/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Conversor Universal de Unidades/DOCUMENTACION.pdf",
+      "pdf_size": 120420,
+      "exe_nombre": "ConversorUniversal.exe",
+      "exe_url": "docs/version_b/Conversor%20Universal%20de%20Unidades/ConversorUniversal.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Conversor Universal de Unidades/ConversorUniversal.exe",
+      "descripcion": "Transformar magnitudes físicas entre diversos sistemas métricos y anglosajones (longitud, masa, temperatura y capacidad) mediante factores de conversión matemática exactos.",
+      "puntos_clave": [
+        "Seleccionar la categoría de magnitud física mediante cuadros combinados.",
+        "Elegir la unidad de origen y la unidad de destino de la conversión.",
+        "Aplicar las fórmulas matemáticas y factores multiplicativos correspondientes.",
+        "Mostrar el resultado con formato de precisión decimal y notación científica si se requiere."
+      ],
+      "proceso_1": {
+        "nombre": "Conversión de Unidades (ConvertirMagnitud)",
+        "pseudocodigo": "Inicio ConvertirMagnitud(valor, deUnidad, aUnidad)\n    valorBase <- valor * ObtenerFactorABase(deUnidad)\n    resultado <- valorBase / ObtenerFactorABase(aUnidad)\n    txtResultado.Text <- FormatearDecimal(resultado)\nFin ConvertirMagnitud"
+      },
+      "proceso_2": {
+        "nombre": "Evento de Conversión (cmdConvertir_Click)",
+        "pseudocodigo": "Inicio cmdConvertir_Click\n    valOrigen <- ConvertirANumero(txtValorOrigen.Text)\n    Llamar ConvertirMagnitud(valOrigen, cboDeUnidad.Text, cboAUnidad.Text)\nFin cmdConvertir_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Conversor de Bases Numericas",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Conversor de Bases Numericas",
+      "pdf_url": "docs/version_b/Conversor%20de%20Bases%20Numericas/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Conversor de Bases Numericas/DOCUMENTACION.pdf",
+      "pdf_size": 123229,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/version_b/Conversor%20de%20Bases%20Numericas/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Conversor de Bases Numericas/Proyecto1.exe",
+      "descripcion": "Convertir valores numéricos enteros entre los sistemas de numeración más comunes en ciencias de la computación: Decimal, Binario, Octal y Hexadecimal, validando caracteres según la base.",
+      "puntos_clave": [
+        "Ingresar valores numéricos en cualquiera de las cuatro bases soportadas.",
+        "Validar que los caracteres ingresados correspondan a la base seleccionada (ej. sólo 0 y 1 en binario).",
+        "Aplicar el método de divisiones sucesivas para convertir de base 10 a base N.",
+        "Calcular el valor decimal a partir de polinomios de potencias de la base de origen."
+      ],
+      "proceso_1": {
+        "nombre": "Conversión Decimal a Binario (DecimalABinario)",
+        "pseudocodigo": "Inicio DecimalABinario(numero)\n    cadenaBinaria <- \"\"\n    Mientras numero > 0\n        residuo <- numero Mod 2\n        cadenaBinaria <- CStr(residuo) + cadenaBinaria\n        numero <- numero \\ 2\n    FinMientras\n    Retornar Si(cadenaBinaria = \"\", \"0\", cadenaBinaria)\nFin DecimalABinario"
+      },
+      "proceso_2": {
+        "nombre": "Ejecutar Conversiones Múltiples (cmdConvertir_Click)",
+        "pseudocodigo": "Inicio cmdConvertir_Click\n    numDec <- ConvertirANumero(txtDecimal.Text)\n    txtBinario.Text <- DecimalABinario(numDec)\n    txtOctal.Text <- Oct(numDec)\n    txtHexadecimal.Text <- Hex(numDec)\nFin cmdConvertir_Click"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Enciclopedia Animales con Login",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Enciclopedia Animales con Login",
+      "pdf_url": "docs/version_b/Enciclopedia%20Animales%20con%20Login/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Enciclopedia Animales con Login/DOCUMENTACION.pdf",
+      "pdf_size": 117647,
+      "exe_nombre": "EnciclopediaAnimales.exe",
+      "exe_url": "docs/version_b/Enciclopedia%20Animales%20con%20Login/EnciclopediaAnimales.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Enciclopedia Animales con Login/EnciclopediaAnimales.exe",
+      "descripcion": "Proporcionar un sistema de consulta informativa sobre el reino animal con autenticación previa mediante usuario y contraseña, mostrando fichas biológicas completas e imágenes ilustrativas.",
+      "puntos_clave": [
+        "Validar credenciales de acceso (usuario y contraseña) antes de ingresar al catálogo principal.",
+        "Presentar un listado clasificado por especies (mamíferos, aves, reptiles, etc.).",
+        "Desplegar dinámicamente la fotografía, hábitat, dieta y características de la especie seleccionada.",
+        "Permitir la búsqueda rápida por nombre común o científico."
+      ],
+      "proceso_1": {
+        "nombre": "Autenticación de Usuario (cmdIngresar_Click)",
+        "pseudocodigo": "Inicio cmdIngresar_Click\n    Si txtUsuario.Text = \"admin\" Y txtClave.Text = \"1234\" Entonces\n        Unload Me\n        frmCatalogo.Show\n    Sino\n        MostrarError \"Usuario o contraseña incorrectos.\"\n        txtClave.Text <- \"\"\n        txtClave.SetFocus\n    FinSi\nFin cmdIngresar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Carga de Ficha Animal (lstAnimales_Click)",
+        "pseudocodigo": "Inicio lstAnimales_Click\n    especie <- lstAnimales.Text\n    txtDescripcion.Text <- ObtenerFichaTecnica(especie)\n    imgAnimal.Picture <- CargarImagen(RutaApp + \"\\\" + especie + \".jpg\")\nFin lstAnimales_Click"
+      },
+      "total_archivos": 14
+    },
+    {
+      "nombre": "Generador de Codigo y Edad",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Generador de Codigo y Edad",
+      "pdf_url": "docs/version_b/Generador%20de%20Codigo%20y%20Edad/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Generador de Codigo y Edad/DOCUMENTACION.pdf",
+      "pdf_size": 113510,
+      "exe_nombre": "GeneradorCodigo.exe",
+      "exe_url": "docs/version_b/Generador%20de%20Codigo%20y%20Edad/GeneradorCodigo.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Generador de Codigo y Edad/GeneradorCodigo.exe",
+      "descripcion": "Calcular la edad cronológica exacta a partir de la fecha de nacimiento y generar automáticamente una clave o código de identificación personal basado en los apellidos, nombre y fecha.",
+      "puntos_clave": [
+        "Validar la fecha de nacimiento mediante funciones de fecha (DateDiff, DatePart).",
+        "Calcular la edad exacta en años cumplidos considerando si el cumpleaños ya ocurrió este año.",
+        "Extraer iniciales del apellido paterno, apellido materno y nombre del usuario.",
+        "Concatenar los dígitos de año, mes y día para generar una clave única tipo RFC.",
+        "Mostrar la clave generada y la edad en etiquetas de salida formateadas."
+      ],
+      "proceso_1": {
+        "nombre": "Cálculo de Edad Exacta (CalcularEdad)",
+        "pseudocodigo": "Inicio CalcularEdad(fechaNac)\n    edad <- DateDiff(\"yyyy\", fechaNac, Date)\n    Si Date < DateSerial(Year(Date), Month(fechaNac), Day(fechaNac)) Entonces\n        edad <- edad - 1\n    FinSi\n    txtEdad.Text <- edad\nFin CalcularEdad"
+      },
+      "proceso_2": {
+        "nombre": "Generación de Clave Única (GenerarClave)",
+        "pseudocodigo": "Inicio GenerarClave\n    iniPat <- ExtraerCadena(txtApPaterno.Text, 1, 2)\n    iniMat <- ExtraerCadena(txtApMaterno.Text, 1, 1)\n    iniNom <- ExtraerCadena(txtNombre.Text, 1, 1)\n    fechaStr <- FormatearFecha(txtFechaNac.Text, \"yyMMdd\")\n    txtCodigo.Text <- UCase(iniPat + iniMat + iniNom + fechaStr)\nFin GenerarClave"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Gestion de Clientes",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Gestion de Clientes",
+      "pdf_url": "docs/version_b/Gestion%20de%20Clientes/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Gestion de Clientes/DOCUMENTACION.pdf",
+      "pdf_size": 121880,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/version_b/Gestion%20de%20Clientes/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Gestion de Clientes/Proyecto1.exe",
+      "descripcion": "Administrar un catálogo comercial de clientes, permitiendo capturar datos generales, consultar saldos, registrar compras y almacenar la información de forma persistente.",
+      "puntos_clave": [
+        "Registrar clientes con clave, razón social, dirección, teléfono y límite de crédito.",
+        "Permitir la edición y actualización de la información de clientes existentes.",
+        "Realizar búsquedas dinámicas por nombre o clave de cliente.",
+        "Calcular saldos pendientes y emitir reportes de cartera vencida."
+      ],
+      "proceso_1": {
+        "nombre": "Guardar Cliente (cmdGuardar_Click)",
+        "pseudocodigo": "Inicio cmdGuardar_Click\n    Si txtRazonSocial.Text = \"\" Entonces\n        MostrarAviso \"Ingrese la razón social del cliente.\"\n        Salir\n    FinSi\n    rsClientes.AddNew\n    rsClientes.Fields(\"Clave\") <- txtClave.Text\n    rsClientes.Fields(\"Nombre\") <- txtRazonSocial.Text\n    rsClientes.Fields(\"LimiteCredito\") <- Val(txtLimite.Text)\n    rsClientes.Update\n    MostrarMensaje \"Cliente registrado con éxito.\"\nFin cmdGuardar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Búsqueda de Cliente (cmdBuscar_Click)",
+        "pseudocodigo": "Inicio cmdBuscar_Click\n    criterio <- txtBuscar.Text\n    rsClientes.Find \"Nombre LIKE '%\" + criterio + \"%'\"\n    Si Not rsClientes.EOF Entonces\n        Llamar CargarDatosCliente()\n    Sino\n        MostrarAviso \"Cliente no encontrado.\"\n    FinSi\nFin cmdBuscar_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Gestor de Imagenes",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Gestor de Imagenes",
+      "pdf_url": "docs/version_b/Gestor%20de%20Imagenes/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Gestor de Imagenes/DOCUMENTACION.pdf",
+      "pdf_size": 116193,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/version_b/Gestor%20de%20Imagenes/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Gestor de Imagenes/Proyecto1.exe",
+      "descripcion": "Explorar y previsualizar archivos de imagen en disco mediante los controles de navegación de archivos de Visual Basic (DriveListBox, DirListBox, FileListBox), aplicando opciones de zoom y ajuste.",
+      "puntos_clave": [
+        "Sincronizar la unidad de almacenamiento (Drive), directorio (Dir) y lista de archivos (File).",
+        "Filtrar archivos gráficos con extensiones compatibles (*.bmp, *.jpg, *.gif, *.ico).",
+        "Cargar la imagen seleccionada en un control Image o PictureBox.",
+        "Proveer controles de zoom (ampliar, reducir) y visualización en tamaño real."
+      ],
+      "proceso_1": {
+        "nombre": "Sincronización de Archivos (File1_Click)",
+        "pseudocodigo": "Inicio File1_Click\n    rutaCompleta <- Dir1.Path + Si(Right(Dir1.Path, 1) = \"\\\", \"\", \"\\\") + File1.FileName\n    imgVisor.Picture <- LoadPicture(rutaCompleta)\n    lblInfo.Caption <- \"Archivo: \" + File1.FileName\nFin File1_Click"
+      },
+      "proceso_2": {
+        "nombre": "Sincronización Drive-Dir (Drive1_Change)",
+        "pseudocodigo": "Inicio Drive1_Change\n    En Caso De Error Reanudar Siguiente\n    Dir1.Path <- Drive1.Drive\n    File1.Path <- Dir1.Path\nFin Drive1_Change"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Informe Tecnico Modular",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Informe Tecnico Modular",
+      "pdf_url": "docs/version_b/Informe%20Tecnico%20Modular/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Informe Tecnico Modular/DOCUMENTACION.pdf",
+      "pdf_size": 110837,
+      "exe_nombre": "InformeModular.exe",
+      "exe_url": "docs/version_b/Informe%20Tecnico%20Modular/InformeModular.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Informe Tecnico Modular/InformeModular.exe",
+      "descripcion": "Estructurar y generar informes técnicos computacionales divididos en módulos independientes y reutilizables, aplicando llamadas a procedimientos y funciones de formateo de texto.",
+      "puntos_clave": [
+        "Modularizar las secciones del informe mediante procedimientos Sub y funciones Function.",
+        "Recopilar parámetros del sistema, fecha, autor y cuerpo técnico del documento.",
+        "Formatear cadenas de texto con saltos de línea y tabuladores para simular un documento impreso.",
+        "Permitir la exportación o copiado del informe completo al portapapeles."
+      ],
+      "proceso_1": {
+        "nombre": "Construcción Modular del Informe (GenerarInforme)",
+        "pseudocodigo": "Inicio GenerarInforme\n    doc <- ObtenerEncabezado()\n    doc <- doc + ObtenerCuerpoTecnico()\n    doc <- doc + ObtenerFirmaYFecha()\n    txtDocumento.Text <- doc\nFin GenerarInforme"
+      },
+      "proceso_2": {
+        "nombre": "Copiar Informe (cmdCopiar_Click)",
+        "pseudocodigo": "Inicio cmdCopiar_Click\n    Clipboard.Clear\n    Clipboard.SetText txtDocumento.Text\n    MostrarMensaje \"Informe copiado al portapapeles.\"\nFin cmdCopiar_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Juego Cubed Puzzle",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Juego Cubed Puzzle",
+      "pdf_url": "docs/version_b/Juego%20Cubed%20Puzzle/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Juego Cubed Puzzle/DOCUMENTACION.pdf",
+      "pdf_size": 130903,
+      "exe_nombre": "Cubed.exe",
+      "exe_url": "docs/version_b/Juego%20Cubed%20Puzzle/Cubed.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Juego Cubed Puzzle/Cubed.exe",
+      "descripcion": "Implementar un juego de lógica y ordenamiento espacial donde el usuario rota o desliza bloques tridimensionales para alcanzar un patrón o combinación objetivo.",
+      "puntos_clave": [
+        "Manejar una matriz de botones o imágenes que representan las caras de los cubos.",
+        "Detectar clics del usuario para rotar los colores o números de cada celda.",
+        "Verificar al finalizar cada movimiento si el patrón cumple la condición de victoria.",
+        "Llevar el conteo de movimientos realizados y el tiempo transcurrido."
+      ],
+      "proceso_1": {
+        "nombre": "Rotación de Bloque (cmdCubo_Click)",
+        "pseudocodigo": "Inicio cmdCubo_Click(Indice)\n    matrizCubos(Indice) <- (matrizCubos(Indice) + 1) Mod totalColores\n    Llamar ActualizarColorBoton(Indice, matrizCubos(Indice))\n    movimientos <- movimientos + 1\n    Llamar VerificarVictoria()\nFin cmdCubo_Click"
+      },
+      "proceso_2": {
+        "nombre": "Verificación de Victoria (VerificarVictoria)",
+        "pseudocodigo": "Inicio VerificarVictoria\n    victoria <- Verdadero\n    Para i <- 1 Hasta totalCubos - 1\n        Si matrizCubos(i) <> matrizCubos(0) Entonces victoria <- Falso\n    FinPara\n    Si victoria = Verdadero Entonces\n        MostrarMensaje \"¡Felicidades! Resolviste el cubo en \" + movimientos + \" movimientos.\"\n    FinSi\nFin VerificarVictoria"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Juego de Gato TicTacToe",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Juego de Gato TicTacToe",
+      "pdf_url": "docs/version_b/Juego%20de%20Gato%20TicTacToe/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Juego de Gato TicTacToe/DOCUMENTACION.pdf",
+      "pdf_size": 125001,
+      "exe_nombre": "JuegoGato.exe",
+      "exe_url": "docs/version_b/Juego%20de%20Gato%20TicTacToe/JuegoGato.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Juego de Gato TicTacToe/JuegoGato.exe",
+      "descripcion": "Implementar el clásico juego del Gato (Tic-Tac-Toe o Tres en Línea) para dos jugadores o contra la computadora, controlando turnos, detección automática de victorias y empates.",
+      "puntos_clave": [
+        "Manejar un arreglo de 9 botones representando el tablero de 3x3.",
+        "Alternar los turnos de los jugadores entre los símbolos 'X' y 'O'.",
+        "Verificar las 8 combinaciones posibles de victoria (3 filas, 3 columnas y 2 diagonales).",
+        "Registrar el marcador de partidas ganadas, perdidas y empatadas."
+      ],
+      "proceso_1": {
+        "nombre": "Marcación de Casilla (cmdCasilla_Click)",
+        "pseudocodigo": "Inicio cmdCasilla_Click(Indice)\n    Si cmdCasilla(Indice).Caption = \"\" Y juegoActivo = Verdadero Entonces\n        cmdCasilla(Indice).Caption <- turnoActual\n        Si VerificarGanador(turnoActual) Entonces\n            MostrarMensaje \"¡Jugador \" + turnoActual + \" ha ganado!\"\n            juegoActivo <- Falso\n        Sino Si TableroLleno() Entonces\n            MostrarMensaje \"¡Partida empatada!\"\n            juegoActivo <- Falso\n        Sino\n            turnoActual <- Si(turnoActual = \"X\", \"O\", \"X\")\n        FinSi\n    FinSi\nFin cmdCasilla_Click"
+      },
+      "proceso_2": {
+        "nombre": "Verificar Ganador (VerificarGanador)",
+        "pseudocodigo": "Inicio VerificarGanador(simbolo)\n    Si (c(0)=s Y c(1)=s Y c(2)=s) O (c(3)=s Y c(4)=s Y c(5)=s) O (c(6)=s Y c(7)=s Y c(8)=s) Entonces Retornar Verdadero\n    Si (c(0)=s Y c(3)=s Y c(6)=s) O (c(1)=s Y c(4)=s Y c(7)=s) O (c(2)=s Y c(5)=s Y c(8)=s) Entonces Retornar Verdadero\n    Si (c(0)=s Y c(4)=s Y c(8)=s) O (c(2)=s Y c(4)=s Y c(6)=s) Entonces Retornar Verdadero\n    Retornar Falso\nFin VerificarGanador"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Juego de Memoria",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Juego de Memoria",
+      "pdf_url": "docs/version_b/Juego%20de%20Memoria/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Juego de Memoria/DOCUMENTACION.pdf",
+      "pdf_size": 122084,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/version_b/Juego%20de%20Memoria/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Juego de Memoria/Proyecto1.exe",
+      "descripcion": "Desarrollar un juego de memoria visual (Memorama) con una cuadrícula de cartas boca abajo, donde el usuario debe encontrar todos los pares idénticos mediante turnos de dos selecciones.",
+      "puntos_clave": [
+        "Desordenar aleatoriamente los pares de imágenes al iniciar la partida.",
+        "Controlar la lógica de volteo de dos tarjetas consecutivas.",
+        "Comparar si las dos tarjetas seleccionadas forman un par idéntico.",
+        "Mantener visibles los pares acertados o volver a ocultar las tarjetas no coincidentes tras un breve retardo."
+      ],
+      "proceso_1": {
+        "nombre": "Seleccionar Tarjeta (cmdCarta_Click)",
+        "pseudocodigo": "Inicio cmdCarta_Click(Indice)\n    Si cartasVolteadas = 0 Entonces\n        primeraCarta <- Indice\n        MostrarImagen(Indice)\n        cartasVolteadas <- 1\n    Sino Si cartasVolteadas = 1 Y Indice <> primeraCarta Entonces\n        segundaCarta <- Indice\n        MostrarImagen(Indice)\n        cartasVolteadas <- 2\n        TimerPausa.Enabled <- Verdadero\n    FinSi\nFin cmdCarta_Click"
+      },
+      "proceso_2": {
+        "nombre": "Evaluación del Par (TimerPausa_Timer)",
+        "pseudocodigo": "Inicio TimerPausa_Timer\n    TimerPausa.Enabled <- Falso\n    Si valorCarta(primeraCarta) = valorCarta(segundaCarta) Entonces\n        paresEncontrados <- paresEncontrados + 1\n        cmdCarta(primeraCarta).Enabled <- Falso\n        cmdCarta(segundaCarta).Enabled <- Falso\n    Sino\n        OcultarImagen(primeraCarta)\n        OcultarImagen(segundaCarta)\n    FinSi\n    cartasVolteadas <- 0\nFin TimerPausa_Timer"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Juego de Tiro al Blanco",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Juego de Tiro al Blanco",
+      "pdf_url": "docs/version_b/Juego%20de%20Tiro%20al%20Blanco/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Juego de Tiro al Blanco/DOCUMENTACION.pdf",
+      "pdf_size": 125144,
+      "exe_nombre": "TiroAlBlanco.exe",
+      "exe_url": "docs/version_b/Juego%20de%20Tiro%20al%20Blanco/TiroAlBlanco.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Juego de Tiro al Blanco/TiroAlBlanco.exe",
+      "descripcion": "Simular un juego de puntería y reflejos donde un objetivo o blanco se desplaza aleatoriamente por la pantalla con un temporizador, acumulando puntos al acertar con el puntero del ratón.",
+      "puntos_clave": [
+        "Mover el objetivo a coordenadas X e Y aleatorias mediante un control Timer.",
+        "Capturar el evento Click sobre el objetivo para registrar el acierto.",
+        "Incrementar el puntaje y reducir el intervalo del Timer para aumentar la dificultad progresivamente.",
+        "Finalizar el juego tras cumplirse un límite de tiempo o número de intentos."
+      ],
+      "proceso_1": {
+        "nombre": "Movimiento del Objetivo (TimerMovimiento_Timer)",
+        "pseudocodigo": "Inicio TimerMovimiento_Timer\n    imgBlanco.Left <- Int(Rnd * (Me.ScaleWidth - imgBlanco.Width))\n    imgBlanco.Top <- Int(Rnd * (Me.ScaleHeight - imgBlanco.Height))\nFin TimerMovimiento_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Acierto de Disparo (imgBlanco_Click)",
+        "pseudocodigo": "Inicio imgBlanco_Click\n    puntuacion <- puntuacion + 10\n    lblPuntuacion.Caption <- \"Puntuación: \" + puntuacion\n    Llamar ReproducirSonidoDisparo()\n    Llamar TimerMovimiento_Timer()\nFin imgBlanco_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Juego de la Viborita",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Juego de la Viborita",
+      "pdf_url": "docs/version_b/Juego%20de%20la%20Viborita/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Juego de la Viborita/DOCUMENTACION.pdf",
+      "pdf_size": 126117,
+      "exe_nombre": "VIBORITA.exe",
+      "exe_url": "docs/version_b/Juego%20de%20la%20Viborita/VIBORITA.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Juego de la Viborita/VIBORITA.exe",
+      "descripcion": "Recrear el clásico juego Snake (Viborita), donde el usuario controla una serpiente en un plano bidimensional que crece al comer manzanas, evitando chocar contra las paredes o consigo misma.",
+      "puntos_clave": [
+        "Controlar el movimiento continuo de la serpiente mediante las teclas de dirección (flechas).",
+        "Manejar arreglos con las coordenadas de cada segmento del cuerpo de la víbora.",
+        "Generar aleatoriamente la comida en posiciones libres del tablero.",
+        "Detectar colisiones contra los límites del formulario o colisiones del cuerpo (Game Over)."
+      ],
+      "proceso_1": {
+        "nombre": "Avance de la Serpiente (TimerJuego_Timer)",
+        "pseudocodigo": "Inicio TimerJuego_Timer\n    Para i <- longitudVibora Hasta 1 Con Paso -1\n        posicionX(i) <- posicionX(i - 1)\n        posicionY(i) <- posicionY(i - 1)\n    FinPara\n    posicionX(0) <- posicionX(0) + direccionX\n    posicionY(0) <- posicionY(0) + direccionY\n    Si ColisionPared() O ColisionCuerpo() Entonces\n        TimerJuego.Enabled <- Falso\n        MostrarMensaje \"¡Fin del Juego!\"\n    Sino Si ComeManzana() Entonces\n        longitudVibora <- longitudVibora + 1\n        Llamar GenerarComida()\n    FinSi\n    Llamar RedibujarTablero()\nFin TimerJuego_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Control por Teclado (Form_KeyDown)",
+        "pseudocodigo": "Inicio Form_KeyDown(CodigoTecla)\n    Segun CodigoTecla\n        Caso vbKeyLeft:  Si dirActual <> \"DERECHA\" Entonces direccionX <- -1: direccionY <- 0\n        Caso vbKeyRight: Si dirActual <> \"IZQUIERDA\" Entonces direccionX <- 1: direccionY <- 0\n        Caso vbKeyUp:    Si dirActual <> \"ABAJO\" Entonces direccionX <- 0: direccionY <- -1\n        Caso vbKeyDown:  Si dirActual <> \"ARRIBA\" Entonces direccionX <- 0: direccionY <- 1\n    FinSegun\nFin Form_KeyDown"
+      },
+      "total_archivos": 9
+    },
+    {
+      "nombre": "Lanzador Maestro de Proyectos",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Lanzador Maestro de Proyectos",
+      "pdf_url": "docs/version_b/Lanzador%20Maestro%20de%20Proyectos/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Lanzador Maestro de Proyectos/DOCUMENTACION.pdf",
+      "pdf_size": 120520,
+      "exe_nombre": "LanzadorProyectos.exe",
+      "exe_url": "docs/version_b/Lanzador%20Maestro%20de%20Proyectos/LanzadorProyectos.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Lanzador Maestro de Proyectos/LanzadorProyectos.exe",
+      "descripcion": "Servir como panel central o lanzador maestro interactivo para ejecutar y abrir de forma organizada todos los proyectos y prácticas de informática desarrollados en el curso.",
+      "puntos_clave": [
+        "Presentar una lista o botones de acceso rápido a cada uno de los proyectos del semestre.",
+        "Utilizar la función Shell o llamadas a la API de Windows para lanzar los ejecutables correspondientes.",
+        "Verificar la existencia de los archivos ejecutables antes de intentar abrirlos.",
+        "Proveer información descriptiva de cada práctica seleccionada antes de su lanzamiento."
+      ],
+      "proceso_1": {
+        "nombre": "Lanzar Ejecutable (EjecutarProyecto)",
+        "pseudocodigo": "Inicio EjecutarProyecto(rutaExe)\n    Si ArchivoExiste(rutaExe) Entonces\n        Llamar Shell(rutaExe, vbNormalFocus)\n    Sino\n        MostrarError \"El archivo ejecutable no fue encontrado: \" + rutaExe\n    FinSi\nFin EjecutarProyecto"
+      },
+      "proceso_2": {
+        "nombre": "Selección de Proyecto (lstProyectos_DblClick)",
+        "pseudocodigo": "Inicio lstProyectos_DblClick\n    nombreProg <- lstProyectos.Text\n    rutaProg <- ObtenerRuta(nombreProg)\n    Llamar EjecutarProyecto(rutaProg)\nFin lstProyectos_DblClick"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Lista de Frutas e Inventario",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Lista de Frutas e Inventario",
+      "pdf_url": "docs/version_b/Lista%20de%20Frutas%20e%20Inventario/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Lista de Frutas e Inventario/DOCUMENTACION.pdf",
+      "pdf_size": 115576,
+      "exe_nombre": "InventarioFrutas.exe",
+      "exe_url": "docs/version_b/Lista%20de%20Frutas%20e%20Inventario/InventarioFrutas.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Lista de Frutas e Inventario/InventarioFrutas.exe",
+      "descripcion": "Gestionar una lista dinámica de artículos de almacén o frutas mediante un control ListBox, permitiendo agregar elementos, eliminarlos, ordenarlos alfabéticamente y contar las existencias.",
+      "puntos_clave": [
+        "Capturar nuevos elementos mediante caja de texto y agregarlos a la lista con AddItem.",
+        "Eliminar el elemento seleccionado mediante el método RemoveItem.",
+        "Vaciar por completo la lista mediante el método Clear.",
+        "Desplegar un contador en tiempo real con el total de elementos registrados (ListCount)."
+      ],
+      "proceso_1": {
+        "nombre": "Agregar Elemento a Lista (cmdAgregar_Click)",
+        "pseudocodigo": "Inicio cmdAgregar_Click\n    Si Trim(txtElemento.Text) <> \"\" Entonces\n        lstArticulos.AddItem txtElemento.Text\n        txtElemento.Text <- \"\"\n        lblTotal.Caption <- \"Total Artículos: \" + lstArticulos.ListCount\n    FinSi\nFin cmdAgregar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Eliminar Elemento Seleccionado (cmdEliminar_Click)",
+        "pseudocodigo": "Inicio cmdEliminar_Click\n    Si lstArticulos.ListIndex >= 0 Entonces\n        lstArticulos.RemoveItem lstArticulos.ListIndex\n        lblTotal.Caption <- \"Total Artículos: \" + lstArticulos.ListCount\n    Sino\n        MostrarAviso \"Seleccione un elemento de la lista para eliminar.\"\n    FinSi\nFin cmdEliminar_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Lista y Combo Sincronizados",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Lista y Combo Sincronizados",
+      "pdf_url": "docs/version_b/Lista%20y%20Combo%20Sincronizados/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Lista y Combo Sincronizados/DOCUMENTACION.pdf",
+      "pdf_size": 114221,
+      "exe_nombre": "ComboListBox.exe",
+      "exe_url": "docs/version_b/Lista%20y%20Combo%20Sincronizados/ComboListBox.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Lista y Combo Sincronizados/ComboListBox.exe",
+      "descripcion": "Demostrar la sincronización de datos entre controles de lista dependientes (ComboBox y ListBox), donde la selección de una categoría en el combo filtra los elementos mostrados en la lista.",
+      "puntos_clave": [
+        "Cargar las categorías principales en el ComboBox al inicializar el formulario.",
+        "Detectar el evento Click del ComboBox para identificar la categoría elegida.",
+        "Limpiar el ListBox y poblarlo únicamente con los elementos correspondientes a la categoría.",
+        "Mostrar los detalles del elemento seleccionado en etiquetas informativas."
+      ],
+      "proceso_1": {
+        "nombre": "Filtrado por Categoría (cboCategorias_Click)",
+        "pseudocodigo": "Inicio cboCategorias_Click\n    lstSubElementos.Clear\n    Segun cboCategorias.Text\n        Caso \"Frutas\":   lstSubElementos.AddItem \"Manzana\": lstSubElementos.AddItem \"Plátano\"\n        Caso \"Verduras\": lstSubElementos.AddItem \"Zanahoria\": lstSubElementos.AddItem \"Lechuga\"\n        Caso \"Lácteos\":  lstSubElementos.AddItem \"Leche\": lstSubElementos.AddItem \"Queso\"\n    FinSegun\nFin cboCategorias_Click"
+      },
+      "proceso_2": {
+        "nombre": "Selección de Elemento (lstSubElementos_Click)",
+        "pseudocodigo": "Inicio lstSubElementos_Click\n    lblSeleccion.Caption <- \"Seleccionado: \" + lstSubElementos.Text + \" (Categoría: \" + cboCategorias.Text + \")\"\nFin lstSubElementos_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Menu de Navegacion",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Menu de Navegacion",
+      "pdf_url": "docs/version_b/Menu%20de%20Navegacion/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Menu de Navegacion/DOCUMENTACION.pdf",
+      "pdf_size": 112135,
+      "exe_nombre": "MenuNavegacion.exe",
+      "exe_url": "docs/version_b/Menu%20de%20Navegacion/MenuNavegacion.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Menu de Navegacion/MenuNavegacion.exe",
+      "descripcion": "Implementar una barra de menú profesional mediante el Editor de Menús (Menu Editor) de Visual Basic, facilitando el acceso a múltiples ventanas, operaciones del sistema y opciones de ayuda.",
+      "puntos_clave": [
+        "Diseñar menús jerárquicos con opciones desplegables, separadores y teclas de acceso directo (Shortcuts).",
+        "Navegar entre diferentes formularios del proyecto abriendo y cerrando ventanas.",
+        "Controlar opciones marcables mediante la propiedad Checked (activar/desactivar funciones).",
+        "Proveer cuadros de diálogo estándar de 'Acerca de...' y confirmación de salida."
+      ],
+      "proceso_1": {
+        "nombre": "Abrir Formulario Secundario (mnuVentana_Click)",
+        "pseudocodigo": "Inicio mnuVentana_Click\n    frmSecundario.Show\nFin mnuVentana_Click"
+      },
+      "proceso_2": {
+        "nombre": "Salir del Sistema con Confirmación (mnuSalir_Click)",
+        "pseudocodigo": "Inicio mnuSalir_Click\n    Si Confirmar(\"¿Desea cerrar el sistema?\") = Verdadero Entonces\n        Unload Me\n    FinSi\nFin mnuSalir_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Mezclador RGB",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Mezclador RGB",
+      "pdf_url": "docs/version_b/Mezclador%20RGB/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Mezclador RGB/DOCUMENTACION.pdf",
+      "pdf_size": 114841,
+      "exe_nombre": "MezcladorRGB.exe",
+      "exe_url": "docs/version_b/Mezclador%20RGB/MezcladorRGB.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Mezclador RGB/MezcladorRGB.exe",
+      "descripcion": "Mezclar de forma interactiva los tres canales de color primario aditivo (Rojo, Verde y Azul) mediante barras de desplazamiento, visualizando el color resultante y sus códigos RGB y hexadecimal.",
+      "puntos_clave": [
+        "Configurar tres barras de desplazamiento (HScrollBar) con rangos de 0 a 255.",
+        "Capturar el evento Change y Scroll de cada barra para actualizar los canales R, G y B.",
+        "Aplicar la función RGB(r, g, b) para colorear el fondo de un panel de previsualización.",
+        "Desplegar el valor numérico en base 10 y su correspondiente código hexadecimal (#RRGGBB)."
+      ],
+      "proceso_1": {
+        "nombre": "Actualización de Color RGB (ActualizarColor)",
+        "pseudocodigo": "Inicio ActualizarColor\n    r <- hsbRojo.Value\n    g <- hsbVerde.Value\n    b <- hsbAzul.Value\n    picColor.BackColor <- RGB(r, g, b)\n    lblHex.Caption <- \"Hex: #\" + FormatoHex(r) + FormatoHex(g) + FormatoHex(b)\n    lblValores.Caption <- \"R:\" + r + \" G:\" + g + \" B:\" + b\nFin ActualizarColor"
+      },
+      "proceso_2": {
+        "nombre": "Evento de Barra Roja (hsbRojo_Change)",
+        "pseudocodigo": "Inicio hsbRojo_Change\n    Llamar ActualizarColor()\nFin hsbRojo_Change"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Mini Paint Digital",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Mini Paint Digital",
+      "pdf_url": "docs/version_b/Mini%20Paint%20Digital/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Mini Paint Digital/DOCUMENTACION.pdf",
+      "pdf_size": 117983,
+      "exe_nombre": "MiniPaint.exe",
+      "exe_url": "docs/version_b/Mini%20Paint%20Digital/MiniPaint.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Mini Paint Digital/MiniPaint.exe",
+      "descripcion": "Ofrecer un entorno básico de dibujo gráfico digital sobre un control PictureBox, permitiendo pintar a mano alzada con el ratón, seleccionar colores de trazo, cambiar el grosor y borrar.",
+      "puntos_clave": [
+        "Capturar las coordenadas del cursor en los eventos MouseDown, MouseMove y MouseUp.",
+        "Trazar líneas continuas mediante el método Line del PictureBox entre la coordenada previa y la actual.",
+        "Seleccionar colores de pintura mediante una paleta interactiva.",
+        "Permitir borrar o limpiar por completo el lienzo de dibujo mediante el método Cls."
+      ],
+      "proceso_1": {
+        "nombre": "Trazo a Mano Alzada (picLienzo_MouseMove)",
+        "pseudocodigo": "Inicio picLienzo_MouseMove(Boton, Shift, X, Y)\n    Si Boton = 1 Entonces\n        picLienzo.Line (prevX, prevY)-(X, Y), colorPincel\n        prevX <- X\n        prevY <- Y\n    FinSi\nFin picLienzo_MouseMove"
+      },
+      "proceso_2": {
+        "nombre": "Limpiar Lienzo (cmdLimpiar_Click)",
+        "pseudocodigo": "Inicio cmdLimpiar_Click\n    picLienzo.Cls\nFin cmdLimpiar_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Movimiento y Escala de Imagen",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Movimiento y Escala de Imagen",
+      "pdf_url": "docs/version_b/Movimiento%20y%20Escala%20de%20Imagen/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Movimiento y Escala de Imagen/DOCUMENTACION.pdf",
+      "pdf_size": 115934,
+      "exe_nombre": "MoverRedimensionar.exe",
+      "exe_url": "docs/version_b/Movimiento%20y%20Escala%20de%20Imagen/MoverRedimensionar.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Movimiento y Escala de Imagen/MoverRedimensionar.exe",
+      "descripcion": "Animar y transformar propiedades espaciales de una imagen en tiempo de ejecución, controlando su posición (Left, Top), dimensiones (Width, Height) y velocidad mediante un temporizador.",
+      "puntos_clave": [
+        "Desplazar la imagen sumando o restando incrementos en los ejes X e Y.",
+        "Detectar rebotes contra los cuatro bordes del área visible del formulario.",
+        "Aumentar o reducir la escala de la imagen mediante botones de zoom.",
+        "Ajustar la velocidad de desplazamiento modificando el intervalo del Timer."
+      ],
+      "proceso_1": {
+        "nombre": "Desplazamiento y Rebote (TimerMov_Timer)",
+        "pseudocodigo": "Inicio TimerMov_Timer\n    imgFigura.Left <- imgFigura.Left + deltaX\n    imgFigura.Top <- imgFigura.Top + deltaY\n    Si imgFigura.Left <= 0 O imgFigura.Left + imgFigura.Width >= Me.ScaleWidth Entonces deltaX <- -deltaX\n    Si imgFigura.Top <= 0 O imgFigura.Top + imgFigura.Height >= Me.ScaleHeight Entonces deltaY <- -deltaY\nFin TimerMov_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Escalar Imagen (cmdAumentar_Click)",
+        "pseudocodigo": "Inicio cmdAumentar_Click\n    imgFigura.Width <- imgFigura.Width * 1.1\n    imgFigura.Height <- imgFigura.Height * 1.1\nFin cmdAumentar_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Navegador Web",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Navegador Web",
+      "pdf_url": "docs/version_b/Navegador%20Web/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Navegador Web/DOCUMENTACION.pdf",
+      "pdf_size": 116390,
+      "exe_nombre": "NavegadorWeb.exe",
+      "exe_url": "docs/version_b/Navegador%20Web/NavegadorWeb.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Navegador Web/NavegadorWeb.exe",
+      "descripcion": "Integrar un navegador de internet funcional dentro de Visual Basic 6.0 utilizando el componente Microsoft Internet Controls (WebBrowser), con barra de direcciones y botones de navegación.",
+      "puntos_clave": [
+        "Cargar direcciones URL mediante el método Navigate del control WebBrowser.",
+        "Implementar los botones de navegación estándar: Atrás (GoBack), Adelante (GoForward) y Detener (Stop).",
+        "Actualizar la página web mediante el método Refresh.",
+        "Mostrar el título de la página y el estado de carga en una barra de estado."
+      ],
+      "proceso_1": {
+        "nombre": "Navegar a URL (cmdIr_Click)",
+        "pseudocodigo": "Inicio cmdIr_Click\n    url <- txtDireccion.Text\n    Si InStr(url, \"://\") = 0 Entonces url <- \"http://\" + url\n    WebBrowser1.Navigate url\nFin cmdIr_Click"
+      },
+      "proceso_2": {
+        "nombre": "Retroceder Página (cmdAtras_Click)",
+        "pseudocodigo": "Inicio cmdAtras_Click\n    En Caso De Error Reanudar Siguiente\n    WebBrowser1.GoBack\nFin cmdAtras_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Paleta y Muestreo de Color",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Paleta y Muestreo de Color",
+      "pdf_url": "docs/version_b/Paleta%20y%20Muestreo%20de%20Color/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Paleta y Muestreo de Color/DOCUMENTACION.pdf",
+      "pdf_size": 116096,
+      "exe_nombre": "PaletaColores.exe",
+      "exe_url": "docs/version_b/Paleta%20y%20Muestreo%20de%20Color/PaletaColores.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Paleta y Muestreo de Color/PaletaColores.exe",
+      "descripcion": "Proporcionar una paleta gráfica para la selección y muestreo de colores, visualizando los componentes RGB y permitiendo capturar el color de cualquier punto del lienzo con un cuentagotas.",
+      "puntos_clave": [
+        "Mostrar una matriz de colores predefinidos listos para su selección inmediata.",
+        "Capturar el color del píxel bajo el cursor utilizando la función Point(X, Y).",
+        "Desglosar el color seleccionado en sus componentes primarios Rojo, Verde y Azul.",
+        "Copiar el código de color generado para su uso en otras aplicaciones."
+      ],
+      "proceso_1": {
+        "nombre": "Muestreo con Cuentagotas (picMuestra_MouseDown)",
+        "pseudocodigo": "Inicio picMuestra_MouseDown(Boton, Shift, X, Y)\n    colorPixel <- picMuestra.Point(X, Y)\n    r <- colorPixel Mod 256\n    g <- (colorPixel \\ 256) Mod 256\n    b <- (colorPixel \\ 65536) Mod 256\n    picResultado.BackColor <- colorPixel\n    lblRGB.Caption <- \"R:\" + r + \" G:\" + g + \" B:\" + b\nFin picMuestra_MouseDown"
+      },
+      "proceso_2": {
+        "nombre": "Selección de Color Predefinido (cmdColor_Click)",
+        "pseudocodigo": "Inicio cmdColor_Click(Indice)\n    picResultado.BackColor <- cmdColor(Indice).BackColor\nFin cmdColor_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Piano MIDI Virtual",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Piano MIDI Virtual",
+      "pdf_url": "docs/version_b/Piano%20MIDI%20Virtual/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Piano MIDI Virtual/DOCUMENTACION.pdf",
+      "pdf_size": 126570,
+      "exe_nombre": "MIDIPIANO.exe",
+      "exe_url": "docs/version_b/Piano%20MIDI%20Virtual/MIDIPIANO.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Piano MIDI Virtual/MIDIPIANO.exe",
+      "descripcion": "Simular un teclado musical o piano interactivo en pantalla que reproduce notas y melodías mediante llamadas a la API de sonido de Windows o sintetizador MIDI al pulsar teclas digitales.",
+      "puntos_clave": [
+        "Presentar un conjunto de teclas blancas (notas naturales) y negras (sostenidos).",
+        "Mapear cada tecla a su valor numérico de nota MIDI correspondiente (ej. Do = 60).",
+        "Enviar mensajes MIDI NoteOn y NoteOff a través de la función midiOutShortMsg de winmm.dll.",
+        "Permitir tocar las teclas tanto con clics del ratón como mediante el teclado de la computadora."
+      ],
+      "proceso_1": {
+        "nombre": "Reproducir Nota MIDI (TocarNota)",
+        "pseudocodigo": "Inicio TocarNota(notaMIDI, volumen)\n    mensaje <- &H90 Or (notaMIDI * &H100) Or (volumen * &H10000)\n    midiOutShortMsg hMidi, mensaje\nFin TocarNota"
+      },
+      "proceso_2": {
+        "nombre": "Pulsar Tecla en Pantalla (cmdTecla_MouseDown)",
+        "pseudocodigo": "Inicio cmdTecla_MouseDown(Indice)\n    nota <- 60 + Indice\n    Llamar TocarNota(nota, 127)\nFin cmdTecla_MouseDown"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Protector de Pantalla Estelas",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Protector de Pantalla Estelas",
+      "pdf_url": "docs/version_b/Protector%20de%20Pantalla%20Estelas/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Protector de Pantalla Estelas/DOCUMENTACION.pdf",
+      "pdf_size": 116582,
+      "exe_nombre": "ESDTELAS.exe",
+      "exe_url": "docs/version_b/Protector%20de%20Pantalla%20Estelas/ESDTELAS.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Protector de Pantalla Estelas/ESDTELAS.exe",
+      "descripcion": "Crear una animación gráfica continua y fluida a pantalla completa con efectos de estelas geométricas o partículas luminosas en movimiento, cerrándose automáticamente al detectar actividad del usuario.",
+      "puntos_clave": [
+        "Configurar el formulario sin bordes (BorderStyle = 0) y maximizado al tamaño total del monitor.",
+        "Generar trayectorias de partículas o líneas con coordenadas matemáticas y colores cambiantes.",
+        "Dibujar los efectos sobre un fondo oscuro simulando estelas continuas.",
+        "Detectar cualquier movimiento del ratón o pulsación de tecla para finalizar el protector de inmediato."
+      ],
+      "proceso_1": {
+        "nombre": "Animación de Estelas (TimerAnimacion_Timer)",
+        "pseudocodigo": "Inicio TimerAnimacion_Timer\n    posX <- posX + velX\n    posY <- posY + velY\n    Me.Line (prevX, prevY)-(posX, posY), RGB(Rnd*255, Rnd*255, Rnd*255)\n    prevX <- posX: prevY <- posY\n    Si posX <= 0 O posX >= Me.ScaleWidth Entonces velX <- -velX\n    Si posY <= 0 O posY >= Me.ScaleHeight Entonces velY <- -velY\nFin TimerAnimacion_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Detección de Interacción (Form_MouseMove)",
+        "pseudocodigo": "Inicio Form_MouseMove(Boton, Shift, X, Y)\n    Si movimientos > 5 Entonces Unload Me\n    movimientos <- movimientos + 1\nFin Form_MouseMove"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Puntero Tipo Mira",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Puntero Tipo Mira",
+      "pdf_url": "docs/version_b/Puntero%20Tipo%20Mira/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Puntero Tipo Mira/DOCUMENTACION.pdf",
+      "pdf_size": 114486,
+      "exe_nombre": "Alan.exe",
+      "exe_url": "docs/version_b/Puntero%20Tipo%20Mira/Alan.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Puntero Tipo Mira/Alan.exe",
+      "descripcion": "Reemplazar el cursor estándar de Windows por una retícula gráfica de francotirador o mira telescópica que sigue en tiempo real las coordenadas del puntero sobre el lienzo.",
+      "puntos_clave": [
+        "Ocultar el cursor estándar del ratón dentro del área del formulario.",
+        "Dibujar o desplazar un control gráfico con la imagen de la retícula siguiendo los eventos MouseMove.",
+        "Mostrar en pantalla las coordenadas X e Y en píxeles y twips en tiempo real.",
+        "Simular efectos de disparo con clic y animación de retroceso."
+      ],
+      "proceso_1": {
+        "nombre": "Seguimiento de la Mira (Form_MouseMove)",
+        "pseudocodigo": "Inicio Form_MouseMove(Boton, Shift, X, Y)\n    imgMira.Left <- X - (imgMira.Width / 2)\n    imgMira.Top <- Y - (imgMira.Height / 2)\n    lblCoord.Caption <- \"Mira X=\" + X + \" Y=\" + Y\nFin Form_MouseMove"
+      },
+      "proceso_2": {
+        "nombre": "Disparo de Mira (Form_MouseDown)",
+        "pseudocodigo": "Inicio Form_MouseDown(Boton, Shift, X, Y)\n    Llamar ReproducirSonidoDisparo()\n    imgImpacto.Left <- X - 10\n    imgImpacto.Top <- Y - 10\n    imgImpacto.Visible <- Verdadero\nFin Form_MouseDown"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Punto de Venta SellPoint",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Punto de Venta SellPoint",
+      "pdf_url": "docs/version_b/Punto%20de%20Venta%20SellPoint/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Punto de Venta SellPoint/DOCUMENTACION.pdf",
+      "pdf_size": 139558,
+      "exe_nombre": "sellpoint.exe",
+      "exe_url": "docs/version_b/Punto%20de%20Venta%20SellPoint/sellpoint.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Punto de Venta SellPoint/sellpoint.exe",
+      "descripcion": "Simular un sistema de caja registradora y punto de venta para comercio minorista, registrando artículos vendidos, calculando subtotales, IVA, descuentos, total a pagar y emitiendo ticket.",
+      "puntos_clave": [
+        "Capturar productos por código de barras o selección manual con cantidad y precio unitario.",
+        "Calcular el subtotal por artículo y acumular el subtotal general de la venta.",
+        "Aplicar la tasa reglamentaria de IVA (16%) y calcular el total neto de la compra.",
+        "Calcular el cambio a devolver según el pago del cliente y emitir ticket de compra."
+      ],
+      "proceso_1": {
+        "nombre": "Agregar Artículo a Venta (cmdAgregarProducto_Click)",
+        "pseudocodigo": "Inicio cmdAgregarProducto_Click\n    cant <- Val(txtCantidad.Text)\n    precio <- Val(txtPrecio.Text)\n    subtotItem <- cant * precio\n    lstTicket.AddItem txtDescripcion.Text + \" x\" + cant + \" = $\" + subtotItem\n    totalVenta <- totalVenta + subtotItem\n    iva <- totalVenta * 0.16\n    totalConIVA <- totalVenta + iva\n    lblTotal.Caption <- \"TOTAL: $\" + Format(totalConIVA, \"0.00\")\nFin cmdAgregarProducto_Click"
+      },
+      "proceso_2": {
+        "nombre": "Cobro y Cambio (cmdCobrar_Click)",
+        "pseudocodigo": "Inicio cmdCobrar_Click\n    pago <- Val(txtPagoCliente.Text)\n    Si pago < totalConIVA Entonces\n        MostrarAviso \"El monto pagado es insuficiente.\"\n    Sino\n        cambio <- pago - totalConIVA\n        lblCambio.Caption <- \"Cambio: $\" + Format(cambio, \"0.00\")\n        Llamar ImprimirTicket()\n    FinSi\nFin cmdCobrar_Click"
+      },
+      "total_archivos": 15
+    },
+    {
+      "nombre": "Reloj en Movimiento",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Reloj en Movimiento",
+      "pdf_url": "docs/version_b/Reloj%20en%20Movimiento/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Reloj en Movimiento/DOCUMENTACION.pdf",
+      "pdf_size": 117921,
+      "exe_nombre": "RelojMovimiento.exe",
+      "exe_url": "docs/version_b/Reloj%20en%20Movimiento/RelojMovimiento.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Reloj en Movimiento/RelojMovimiento.exe",
+      "descripcion": "Crear un reloj digital animado que muestra la hora exacta del sistema mientras se desplaza continuamente rebotando en los bordes del formulario con trayectoria fluida.",
+      "puntos_clave": [
+        "Obtener la hora actual con formato de 12 o 24 horas mediante las funciones Time y Format.",
+        "Desplazar el control del reloj en las direcciones X e Y dentro del formulario.",
+        "Detectar colisiones en los límites superior, inferior, izquierdo y derecho para invertir la velocidad.",
+        "Permitir pausar el movimiento y cambiar el color o fuente tipográfica del reloj."
+      ],
+      "proceso_1": {
+        "nombre": "Movimiento y Hora (TimerReloj_Timer)",
+        "pseudocodigo": "Inicio TimerReloj_Timer\n    lblReloj.Caption <- Format(Time, \"hh:mm:ss AM/PM\")\n    lblReloj.Left <- lblReloj.Left + pasoX\n    lblReloj.Top <- lblReloj.Top + pasoY\n    Si lblReloj.Left <= 0 O lblReloj.Left + lblReloj.Width >= Me.ScaleWidth Entonces pasoX <- -pasoX\n    Si lblReloj.Top <= 0 O lblReloj.Top + lblReloj.Height >= Me.ScaleHeight Entonces pasoY <- -pasoY\nFin TimerReloj_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Pausar Animación (cmdPausa_Click)",
+        "pseudocodigo": "Inicio cmdPausa_Click\n    TimerReloj.Enabled <- Not TimerReloj.Enabled\nFin cmdPausa_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Reloj y Fecha",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Reloj y Fecha",
+      "pdf_url": "docs/version_b/Reloj%20y%20Fecha/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Reloj y Fecha/DOCUMENTACION.pdf",
+      "pdf_size": 115791,
+      "exe_nombre": "RelojFecha.exe",
+      "exe_url": "docs/version_b/Reloj%20y%20Fecha/RelojFecha.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Reloj y Fecha/RelojFecha.exe",
+      "descripcion": "Desplegar un panel completo con la hora actual en tiempo real y la fecha del sistema en formato largo y corto, permitiendo alternar formatos y zonas horarias.",
+      "puntos_clave": [
+        "Actualizar el reloj cada segundo mediante un control Timer.",
+        "Mostrar la fecha completa en español incluyendo día de la semana, día, mes y año.",
+        "Permitir alternar entre formato de 12 horas con indicador AM/PM y formato de 24 horas militar.",
+        "Mostrar el tiempo transcurrido desde el inicio de la aplicación en modo cronómetro."
+      ],
+      "proceso_1": {
+        "nombre": "Actualización de Fecha y Hora (Timer1_Timer)",
+        "pseudocodigo": "Inicio Timer1_Timer\n    lblHora.Caption <- Format(Now, \"hh:mm:ss AM/PM\")\n    lblFecha.Caption <- Format(Date, \"dddd, d 'de' mmmm 'de' yyyy\")\nFin Timer1_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Cambio de Formato (cmdFormato_Click)",
+        "pseudocodigo": "Inicio cmdFormato_Click\n    formato24Horas <- Not formato24Horas\n    Llamar Timer1_Timer()\nFin cmdFormato_Click"
+      },
+      "total_archivos": 6
+    },
+    {
+      "nombre": "Reproductor Multimedia",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Reproductor Multimedia",
+      "pdf_url": "docs/version_b/Reproductor%20Multimedia/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Reproductor Multimedia/DOCUMENTACION.pdf",
+      "pdf_size": 116744,
+      "exe_nombre": "ReproductorMultimedia.exe",
+      "exe_url": "docs/version_b/Reproductor%20Multimedia/ReproductorMultimedia.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Reproductor Multimedia/ReproductorMultimedia.exe",
+      "descripcion": "Implementar un reproductor de audio y video completo utilizando el componente de Windows Media Player o comandos MCI de la API de Windows, con barra de progreso y control de volumen.",
+      "puntos_clave": [
+        "Abrir archivos multimedia mediante el control CommonDialog.",
+        "Controlar las acciones de reproducción: Play, Pause, Stop y silenciar.",
+        "Sincronizar una barra de desplazamiento (Slider) con la posición actual del archivo.",
+        "Mostrar la duración total y el tiempo transcurrido de la pista."
+      ],
+      "proceso_1": {
+        "nombre": "Cargar y Reproducir (cmdAbrir_Click)",
+        "pseudocodigo": "Inicio cmdAbrir_Click\n    CommonDialog1.Filter <- \"Archivos Multimedia|*.mp3;*.wav;*.avi;*.wmv\"\n    CommonDialog1.ShowOpen\n    Si CommonDialog1.FileName <> \"\" Entonces\n        wmpPlayer.URL <- CommonDialog1.FileName\n        lblArchivo.Caption <- CommonDialog1.FileTitle\n    FinSi\nFin cmdAbrir_Click"
+      },
+      "proceso_2": {
+        "nombre": "Pausa y Reanudación (cmdPausa_Click)",
+        "pseudocodigo": "Inicio cmdPausa_Click\n    Si wmpPlayer.playState = 3 Entonces\n        wmpPlayer.Controls.pause\n    Sino\n        wmpPlayer.Controls.play\n    FinSi\nFin cmdPausa_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Rompecabezas Deslizante 8-Puzzle",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Rompecabezas Deslizante 8-Puzzle",
+      "pdf_url": "docs/version_b/Rompecabezas%20Deslizante%208-Puzzle/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Rompecabezas Deslizante 8-Puzzle/DOCUMENTACION.pdf",
+      "pdf_size": 118514,
+      "exe_nombre": "Rompecabezas8Puzzle.exe",
+      "exe_url": "docs/version_b/Rompecabezas%20Deslizante%208-Puzzle/Rompecabezas8Puzzle.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Rompecabezas Deslizante 8-Puzzle/Rompecabezas8Puzzle.exe",
+      "descripcion": "Recrear el juego lógico 8-Puzzle (rompecabezas deslizante) con una cuadrícula de 3x3 compuesta por 8 fichas numeradas y un espacio vacío, permitiendo deslizar fichas adyacentes para ordenarlas.",
+      "puntos_clave": [
+        "Manejar el tablero de 3x3 como un arreglo unidimensional o bidimensional de botones.",
+        "Identificar la posición de la casilla vacía y validar que sólo se muevan fichas adyacentes.",
+        "Intercambiar la posición y etiqueta de la ficha presionada con el espacio vacío.",
+        "Verificar si la secuencia numérica 1 a 8 ha quedado ordenada para declarar la victoria."
+      ],
+      "proceso_1": {
+        "nombre": "Movimiento de Ficha (cmdFicha_Click)",
+        "pseudocodigo": "Inicio cmdFicha_Click(Indice)\n    Si EsAdyacente(Indice, posVacia) Entonces\n        cmdFicha(posVacia).Caption <- cmdFicha(Indice).Caption\n        cmdFicha(Indice).Caption <- \"\"\n        posVacia <- Indice\n        movimientos <- movimientos + 1\n        Si TableroOrdenado() Entonces MostrarMensaje \"¡Rompecabezas resuelto!\"\n    FinSi\nFin cmdFicha_Click"
+      },
+      "proceso_2": {
+        "nombre": "Revolver Tablero (cmdRevolver_Click)",
+        "pseudocodigo": "Inicio cmdRevolver_Click\n    Llamar MezclarFichasAleatoriamente()\n    movimientos <- 0\nFin cmdRevolver_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Semaforo con Temporizadores",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Semaforo con Temporizadores",
+      "pdf_url": "docs/version_b/Semaforo%20con%20Temporizadores/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Semaforo con Temporizadores/DOCUMENTACION.pdf",
+      "pdf_size": 116161,
+      "exe_nombre": "SemaforoControl.exe",
+      "exe_url": "docs/version_b/Semaforo%20con%20Temporizadores/SemaforoControl.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Semaforo con Temporizadores/SemaforoControl.exe",
+      "descripcion": "Simular el funcionamiento automático de un semáforo de control vial mediante temporizadores independientes, alternando secuencialmente entre las luces verde, ámbar y roja con tiempos reglamentarios.",
+      "puntos_clave": [
+        "Encender la luz verde durante un periodo prolongado de paso seguro.",
+        "Alternar a luz ámbar de precaución durante un tiempo breve.",
+        "Cambiar a luz roja de alto absoluto durante el tiempo reglamentario de detención.",
+        "Permitir el cambio a modo nocturno o intermitente preventivo."
+      ],
+      "proceso_1": {
+        "nombre": "Ciclo del Semáforo (TimerSemaforo_Timer)",
+        "pseudocodigo": "Inicio TimerSemaforo_Timer\n    Segun estadoActual\n        Caso 1: ' Verde\n            Llamar EncenderVerde()\n            TimerSemaforo.Interval <- 5000: estadoActual <- 2\n        Caso 2: ' Ámbar\n            Llamar EncenderAmbar()\n            TimerSemaforo.Interval <- 2000: estadoActual <- 3\n        Caso 3: ' Rojo\n            Llamar EncenderRojo()\n            TimerSemaforo.Interval <- 6000: estadoActual <- 1\n    FinSegun\nFin TimerSemaforo_Timer"
+      },
+      "proceso_2": {
+        "nombre": "Modo Intermitente (cmdIntermitente_Click)",
+        "pseudocodigo": "Inicio cmdIntermitente_Click\n    modoIntermitente <- Not modoIntermitente\n    Si modoIntermitente Entonces Llamar ActivarAmbarParpadeo()\nFin cmdIntermitente_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Simulador de Cajero Automatico ATM",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Simulador de Cajero Automatico ATM",
+      "pdf_url": "docs/version_b/Simulador%20de%20Cajero%20Automatico%20ATM/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Simulador de Cajero Automatico ATM/DOCUMENTACION.pdf",
+      "pdf_size": 123890,
+      "exe_nombre": "CajeroATM.exe",
+      "exe_url": "docs/version_b/Simulador%20de%20Cajero%20Automatico%20ATM/CajeroATM.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Simulador de Cajero Automatico ATM/CajeroATM.exe",
+      "descripcion": "Simular las operaciones financieras de un Cajero Automático (ATM bancario), incluyendo autenticación por NIP, consulta de saldo, retiros de efectivo en múltiplos válidos y depósitos.",
+      "puntos_clave": [
+        "Validar el NIP de seguridad del cliente con límite de intentos para evitar bloqueos.",
+        "Desplegar un menú principal con las operaciones: Consulta de Saldo, Retiro y Depósito.",
+        "Validar que el monto de retiro no exceda el saldo disponible ni exceda el límite del cajero.",
+        "Desglosar la entrega de efectivo en billetes de denominaciones oficiales y emitir recibo."
+      ],
+      "proceso_1": {
+        "nombre": "Retiro de Efectivo (cmdRetirar_Click)",
+        "pseudocodigo": "Inicio cmdRetirar_Click\n    monto <- Val(txtMontoRetiro.Text)\n    Si monto Mod 100 <> 0 Entonces\n        MostrarAviso \"El monto debe ser múltiplo de $100.\"\n        Salir\n    FinSi\n    Si monto > saldoActual Entonces\n        MostrarError \"Saldo insuficiente en su cuenta.\"\n    Sino\n        saldoActual <- saldoActual - monto\n        MostrarMensaje \"Retiro exitoso. Tome su dinero: $\" + monto\n        Llamar DesglosarBilletes(monto)\n    FinSi\nFin cmdRetirar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Autenticación de NIP (cmdValidarNIP_Click)",
+        "pseudocodigo": "Inicio cmdValidarNIP_Click\n    Si txtNIP.Text = nipCorrecto Entonces\n        frmMenuATM.Show\n        Unload Me\n    Sino\n        intentos <- intentos + 1\n        Si intentos >= 3 Entonces MostrarError \"Tarjeta bloqueada por seguridad.\"\n    FinSi\nFin cmdValidarNIP_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Sistema de Inventarios",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Sistema de Inventarios",
+      "pdf_url": "docs/version_b/Sistema%20de%20Inventarios/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Sistema de Inventarios/DOCUMENTACION.pdf",
+      "pdf_size": 122331,
+      "exe_nombre": "SistemaInventarios.exe",
+      "exe_url": "docs/version_b/Sistema%20de%20Inventarios/SistemaInventarios.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Sistema de Inventarios/SistemaInventarios.exe",
+      "descripcion": "Gestionar las existencias físicas y monetarias de un almacén comercial, registrando entradas, salidas de mercancía, cálculo de costo promedio y detección de existencias mínimas de seguridad.",
+      "puntos_clave": [
+        "Dar de alta productos con código de barras, descripción, precio de compra y precio de venta.",
+        "Registrar entradas de almacén incrementando el stock físico y actualizando el costo.",
+        "Registrar salidas por ventas o traspasos reduciendo el inventario y validando no dejar existencias negativas.",
+        "Generar alertas automáticas de reorden cuando el producto alcance su stock mínimo."
+      ],
+      "proceso_1": {
+        "nombre": "Registrar Entrada de Mercancía (cmdEntrada_Click)",
+        "pseudocodigo": "Inicio cmdEntrada_Click\n    cant <- Val(txtCantidad.Text)\n    Si cant <= 0 Entonces MostrarAviso \"Cantidad inválida\": Salir\n    stockActual <- stockActual + cant\n    rsProductos.Fields(\"Existencia\") <- stockActual\n    rsProductos.Update\n    MostrarMensaje \"Inventario actualizado con éxito.\"\nFin cmdEntrada_Click"
+      },
+      "proceso_2": {
+        "nombre": "Registrar Salida de Mercancía (cmdSalida_Click)",
+        "pseudocodigo": "Inicio cmdSalida_Click\n    cant <- Val(txtCantidad.Text)\n    Si cant > stockActual Entonces\n        MostrarError \"Existencias insuficientes para realizar la salida.\"\n    Sino\n        stockActual <- stockActual - cant\n        rsProductos.Fields(\"Existencia\") <- stockActual\n        rsProductos.Update\n    FinSi\nFin cmdSalida_Click"
+      },
+      "total_archivos": 7
+    },
+    {
+      "nombre": "Tablas de Multiplicar",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Tablas de Multiplicar",
+      "pdf_url": "docs/version_b/Tablas%20de%20Multiplicar/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Tablas de Multiplicar/DOCUMENTACION.pdf",
+      "pdf_size": 115282,
+      "exe_nombre": "TablasMultiplicar.exe",
+      "exe_url": "docs/version_b/Tablas%20de%20Multiplicar/TablasMultiplicar.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Tablas de Multiplicar/TablasMultiplicar.exe",
+      "descripcion": "Generar de forma dinámica y didáctica las tablas de multiplicar para cualquier número base ingresado por el usuario, mostrando la tabla completa y ofreciendo un módulo de práctica interactiva.",
+      "puntos_clave": [
+        "Capturar el número de la tabla a generar mediante caja de texto o control numérico.",
+        "Generar iterativamente del 1 al 10 (o rango personalizado) con un ciclo For-Next.",
+        "Presentar la tabla estructurada en una lista o cuadro de texto multilínea.",
+        "Ofrecer un módulo de evaluación donde el usuario ingresa respuestas y se evalúa el puntaje."
+      ],
+      "proceso_1": {
+        "nombre": "Generar Tabla (cmdGenerar_Click)",
+        "pseudocodigo": "Inicio cmdGenerar_Click\n    baseNum <- Val(txtNumero.Text)\n    lstTabla.Clear\n    Para i <- 1 Hasta 10\n        producto <- baseNum * i\n        lstTabla.AddItem baseNum + \" x \" + i + \" = \" + producto\n    FinPara\nFin cmdGenerar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Limpiar Tabla (cmdLimpiar_Click)",
+        "pseudocodigo": "Inicio cmdLimpiar_Click\n    lstTabla.Clear\n    txtNumero.Text <- \"\"\n    txtNumero.SetFocus\nFin cmdLimpiar_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Temporizador de Apagado",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Temporizador de Apagado",
+      "pdf_url": "docs/version_b/Temporizador%20de%20Apagado/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Temporizador de Apagado/DOCUMENTACION.pdf",
+      "pdf_size": 116083,
+      "exe_nombre": "TemporizadorApagado.exe",
+      "exe_url": "docs/version_b/Temporizador%20de%20Apagado/TemporizadorApagado.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Temporizador de Apagado/TemporizadorApagado.exe",
+      "descripcion": "Programar el apagado automático, reinicio o suspensión del equipo de cómputo en un tiempo determinado en minutos o segundos, invocando utilidades del sistema operativo mediante comandos de consola.",
+      "puntos_clave": [
+        "Permitir al usuario ingresar el tiempo de espera en minutos o seleccionar una hora fija.",
+        "Seleccionar la acción deseada: Apagar, Reiniciar o Cancelar apagado previo.",
+        "Ejecutar el comando del sistema 'shutdown -s -t <segundos>' mediante la función Shell.",
+        "Desplegar un temporizador regresivo visual indicando el tiempo restante antes del apagado."
+      ],
+      "proceso_1": {
+        "nombre": "Programar Apagado (cmdApagar_Click)",
+        "pseudocodigo": "Inicio cmdApagar_Click\n    minutos <- Val(txtMinutos.Text)\n    segundos <- minutos * 60\n    comando <- \"shutdown -s -t \" + segundos\n    Llamar Shell(comando, vbHide)\n    lblEstado.Caption <- \"El equipo se apagará en: \" + minutos + \" minutos.\"\nFin cmdApagar_Click"
+      },
+      "proceso_2": {
+        "nombre": "Cancelar Apagado (cmdCancelar_Click)",
+        "pseudocodigo": "Inicio cmdCancelar_Click\n    Llamar Shell(\"shutdown -a\", vbHide)\n    lblEstado.Caption <- \"Apagado automático cancelado.\"\nFin cmdCancelar_Click"
+      },
+      "total_archivos": 4
+    },
+    {
+      "nombre": "Texto 3D Modificable",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Texto 3D Modificable",
+      "pdf_url": "docs/version_b/Texto%203D%20Modificable/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Texto 3D Modificable/DOCUMENTACION.pdf",
+      "pdf_size": 120323,
+      "exe_nombre": "Proyecto1.exe",
+      "exe_url": "docs/version_b/Texto%203D%20Modificable/Proyecto1.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Texto 3D Modificable/Proyecto1.exe",
+      "descripcion": "Generar rótulos tipográficos con efectos tridimensionales y sombras personalizables, permitiendo al usuario modificar el texto, color frontal, color de sombra, profundidad y ángulo en tiempo real.",
+      "puntos_clave": [
+        "Capturar el texto ingresado en una caja de texto y redibujarlo sobre un PictureBox.",
+        "Dibujar capas de texto superpuestas con un desfase gradual de píxeles (offset) para simular volumen 3D.",
+        "Permitir seleccionar el color del texto principal y el color de las sombras de relieve.",
+        "Ajustar la profundidad del efecto mediante una barra de desplazamiento numérico."
+      ],
+      "proceso_1": {
+        "nombre": "Renderizar Texto 3D (DibujarTexto3D)",
+        "pseudocodigo": "Inicio DibujarTexto3D\n    picCanvas.Cls\n    texto <- txtEntrada.Text\n    profundidad <- hsbProfundidad.Value\n    Para i <- profundidad Hasta 1 Con Paso -1\n        picCanvas.CurrentX <- posX + i: picCanvas.CurrentY <- posY + i\n        picCanvas.ForeColor <- colorSombra\n        picCanvas.Print texto\n    FinPara\n    picCanvas.CurrentX <- posX: picCanvas.CurrentY <- posY\n    picCanvas.ForeColor <- colorFrontal\n    picCanvas.Print texto\nFin DibujarTexto3D"
+      },
+      "proceso_2": {
+        "nombre": "Cambio de Texto (txtEntrada_Change)",
+        "pseudocodigo": "Inicio txtEntrada_Change\n    Llamar DibujarTexto3D()\nFin txtEntrada_Change"
+      },
+      "total_archivos": 5
+    },
+    {
+      "nombre": "Texto en 3D",
+      "categoria": "Programas Similares (Versión B - Alumno)",
+      "carpeta": "C:\\Users\\ernes\\Documents\\VS proyectos informatica B\\Texto en 3D",
+      "pdf_url": "docs/version_b/Texto%20en%203D/DOCUMENTACION.pdf",
+      "pdf_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Texto en 3D/DOCUMENTACION.pdf",
+      "pdf_size": 115200,
+      "exe_nombre": "Texto3D.exe",
+      "exe_url": "docs/version_b/Texto%20en%203D/Texto3D.exe",
+      "exe_local": "file:///C:/Users/ernes/Documents/VS proyectos informatica B/Texto en 3D/Texto3D.exe",
+      "descripcion": "Crear rótulos con efecto de relieve tridimensional estático o dinámico sobre el lienzo mediante la técnica de capas decaladas con contrastes de luz y sombra.",
+      "puntos_clave": [
+        "Establecer la fuente, tamaño y estilo de negrita para maximizar la percepción del relieve.",
+        "Trazar una sombra oscura desfasada hacia abajo y hacia la derecha.",
+        "Trazar un brillo claro o blanco desfasado hacia arriba y hacia la izquierda.",
+        "Imprimir la capa principal del texto en el centro exacto para consolidar el efecto tridimensional."
+      ],
+      "proceso_1": {
+        "nombre": "Impresión de Relieve (ImprimirRelieve)",
+        "pseudocodigo": "Inicio ImprimirRelieve\n    picCanvas.Cls\n    ' Sombra oscura\n    picCanvas.CurrentX <- 102: picCanvas.CurrentY <- 102\n    picCanvas.ForeColor <- RGB(64, 64, 64)\n    picCanvas.Print txtTexto.Text\n    ' Capa frontal clara\n    picCanvas.CurrentX <- 100: picCanvas.CurrentY <- 100\n    picCanvas.ForeColor <- RGB(255, 255, 255)\n    picCanvas.Print txtTexto.Text\nFin ImprimirRelieve"
+      },
+      "proceso_2": {
+        "nombre": "Actualizar Efecto (Form_Load)",
+        "pseudocodigo": "Inicio Form_Load\n    Llamar ImprimirRelieve()\nFin Form_Load"
+      },
+      "total_archivos": 4
+    }
+  ]
+};

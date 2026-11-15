@@ -1,0 +1,288 @@
+{
+  "asignatura": "Ingeniería de Software",
+  "institucion": "Universidad Nacional Autónoma de México - Facultad de Estudios Superiores Cuautitlán",
+  "carrera": "Licenciatura en Ingeniería en Telecomunicaciones, Sistemas y Electrónica",
+  "alumno": "Alan Ernesto Orona Enríquez",
+  "semestre": "Quinto Semestre",
+  "grupo": "1501",
+  "docente": "ALEJANDRO VALDEZ SANTAMARIA",
+  "horas_totales": 80,
+  "horas_teoricas": 48,
+  "horas_practicas": 32,
+  "creditos": 8,
+  "unidades": [
+    {
+      "id": 1,
+      "numero": "Unidad 1",
+      "titulo": "Introducción al Desarrollo de Sistemas",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Comprender los fundamentos, conceptos generales y la evolución histórica de los sistemas de información, así como los principios elementales que rigen la disciplina de la Ingeniería de Software.",
+      "temas": [
+        {
+          "subtema": "1.1. Definición de un sistema",
+          "contenido": "Un sistema es un conjunto estructurado de elementos interrelacionados e interdependientes que interactúan de forma coordinada para alcanzar un objetivo común mediante la transformación de entradas (datos, materia o energía) en salidas procesadas, operando dentro de un entorno delimitado y sujeto a mecanismos de control y retroalimentación (feedback).\n\nEn el ámbito informático, un Sistema de Información (SI) integra recursos humanos, hardware, software, bases de datos y procedimientos organizacionales para capturar, almacenar, procesar y distribuir información estratégica útil para la toma de decisiones, el análisis operativo y la coordinación empresarial."
+        },
+        {
+          "subtema": "1.2. Tipos de sistemas",
+          "contenido": "Los sistemas informáticos se clasifican de acuerdo con su nivel jerárquico y función operativa dentro de una organización:\n\n• Sistemas de Procesamiento de Transacciones (TPS): Automatizan las actividades rutinarias de negocio (ej. cobro en punto de venta, altas de empleados, movimientos contables).\n• Sistemas de Información Gerencial (MIS): Consolidan los datos de los TPS para emitir reportes periódicos y resúmenes estructurados para jefaturas de departamento.\n• Sistemas de Soporte a Decisiones (DSS): Herramientas analíticas avanzadas que permiten realizar simulaciones '¿Qué pasaría si...?' para apoyar la toma de decisiones no estructuradas.\n• Sistemas de Información Ejecutiva (EIS): Tableros de control de alto nivel con indicadores clave de desempeño (KPIs) para directivos.\n• Sistemas Empresariales Integrados (ERP): Plataformas unificadas que centralizan finanzas, compras, recursos humanos y producción (ej. SAP, Oracle)."
+        },
+        {
+          "subtema": "1.3. Conceptos de desarrollo de sistemas",
+          "contenido": "El desarrollo de sistemas es el proceso sistemático, estructurado y disciplinado que abarca desde la concepción de una idea hasta la puesta en marcha, mantenimiento y retiro del software. Este proceso se fundamenta en el Ciclo de Vida del Desarrollo de Software (SDLC - Software Development Life Cycle), compuesto por las fases indispensables de:\n1. Planificación y Factibilidad\n2. Análisis de Requerimientos\n3. Diseño Arquitectónico y de Detalle\n4. Codificación o Implementación\n5. Pruebas y Aseguramiento de Calidad (QA)\n6. Despliegue y Mantenimiento.\n\nExisten diversos paradigmas de ciclo de vida: modelos tradicionales secuenciales (Cascada / Waterfall), iterativos e incrementales (Espiral, RUP) y metodologías ágiles modernas (Scrum, Kanban, XP) enfocadas en entregas continuas de valor."
+        },
+        {
+          "subtema": "1.4. Retos y problemas en el desarrollo de software",
+          "contenido": "Históricamente conocido como la 'Crisis del Software', el desarrollo de aplicaciones enfrenta problemáticas recurrentes que justifican la aplicación de métodos formales de ingeniería:\n\n• Desviación presupuestal y de tiempos: La mayoría de los proyectos tradicionales superan el costo proyectado o entregan con meses de retraso.\n• Requerimientos ambiguos o cambiantes: Los clientes rara vez comprenden con precisión sus necesidades desde el día uno, provocando retrabajo masivo (scope creep).\n• Deuda técnica y falta de documentación: Código no estructurado o sin comentar que imposibilita el mantenimiento futuro por otros desarrolladores.\n• Falta de pruebas exhaustivas: Errores que llegan a producción causando fallas de seguridad, pérdidas financieras o pérdida de datos críticos."
+        },
+        {
+          "subtema": "1.5. Participantes en el desarrollo de sistemas",
+          "contenido": "El éxito de un proyecto de software depende de la interacción armónica entre diversos roles multidisciplinarios:\n\n• Interesados (Stakeholders): Propietarios, directivos y patrocinadores que financian el proyecto y definen las metas de negocio.\n• Usuarios Finales: Personas que operan directamente el software diariamente; determinan la usabilidad y adopción de la herramienta.\n• Analista de Sistemas: Puente de comunicación entre las necesidades del usuario y la solución tecnológica; levanta requerimientos y elabora especificaciones funcionales.\n• Diseñador / Arquitecto de Software: Diseña la estructura global del sistema, modelos de bases de datos y patrones arquitectónicos.\n• Desarrolladores / Programadores: Traducen las especificaciones de diseño a código fuente en lenguajes de programación (ej. Visual Basic, Java, C#, SQL).\n• Ingenieros de Pruebas (Testers / QA): Validan que el software funcione sin fallas, cumpla los requerimientos y resista casos extremos.\n• Administrador del Proyecto (Project Manager): Coordina tiempos, costos, equipo de trabajo y riesgos."
+        },
+        {
+          "subtema": "1.6. Conceptos de Ingeniería de Software",
+          "contenido": "Según el IEEE (Institute of Electrical and Electronics Engineers), la Ingeniería de Software es: 'La aplicación de un enfoque sistemático, disciplinado y cuantificable al desarrollo, operación y mantenimiento del software; es decir, la aplicación de la ingeniería al software'.\n\nSus pilares fundamentales comprenden:\n• Calidad del Software: Conforme al estándar internacional ISO/IEC 25010 (adecuación funcional, eficiencia de desempeño, compatibilidad, usabilidad, fiabilidad, seguridad, mantenibilidad y portabilidad).\n• Principios de Modularidad: Descomposición de sistemas complejos en módulos pequeños y manejables.\n• Cohesión y Acoplamiento: Maximizar la cohesión interna de cada módulo (que realice una sola tarea bien definida) y minimizar el acoplamiento externo (independencia entre módulos)."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "numero": "Unidad 2",
+      "titulo": "Análisis de Sistemas",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Dominar las técnicas de levantamiento de información, detección de necesidades y formulación de especificaciones funcionales formales previas a la etapa de diseño de software.",
+      "temas": [
+        {
+          "subtema": "2.1. Pasos previos al análisis de sistemas",
+          "contenido": "Antes de iniciar el modelado técnico, es indispensable realizar la Solicitud de Proyecto y el Estudio de Factibilidad en tres vertientes obligatorias:\n\n1. Factibilidad Técnica: ¿Se dispone de hardware, software, redes y conocimientos técnicos para construir la solución propuesta?\n2. Factibilidad Económica: Análisis Costo-Beneficio (ROI - Retorno de Inversión) para determinar si las ganancias o ahorros generados superan el costo de desarrollo y mantenimiento.\n3. Factibilidad Operativa: ¿El personal de la organización adoptará el sistema o existirá resistencia al cambio institucional?"
+        },
+        {
+          "subtema": "2.2. Detección de necesidades",
+          "contenido": "Consiste en identificar los verdaderos problemas y cuellos de botella que obstaculizan la operación de la empresa, distinguiendo síntomas de causas de raíz mediante herramientas como el Diagrama de Causa y Efecto (Ishikawa) o el análisis FODA.\n\nSe analiza el sistema actual (manual o computarizado antiguo), las demoras en el flujo de información, la duplicidad de captura de datos, los errores de cálculo humano y la falta de seguridad en la información."
+        },
+        {
+          "subtema": "2.3. Levantamiento de información",
+          "contenido": "El analista utiliza diversas técnicas científicas para recolectar información verídica y completa:\n\n• Entrevistas estructuradas y no estructuradas: Diálogo directo con usuarios clave y directivos para recopilar expectativas cualitativas.\n• Cuestionarios y encuestas: Herramientas masivas para obtener datos estadísticos estandarizados de grandes plantillas de usuarios.\n• Observación directa: El analista presencia presencialmente cómo se ejecutan las tareas en el puesto de trabajo para detectar omisiones que los usuarios olvidan mencionar.\n• Análisis de documentos: Revisión de formatos en papel, reportes, pólizas, facturas y hojas de cálculo para identificar la estructura real de los datos.\n• Sesiones JAD (Joint Application Design): Talleres intensivos entre usuarios, directivos y desarrolladores para consensuar requerimientos en tiempo récord."
+        },
+        {
+          "subtema": "2.4. Propuesta de desarrollo",
+          "contenido": "Documento ejecutivo formal dirigido a los directivos de la organización que incluye:\n• Definición clara del problema y justificación del proyecto.\n• Alcance y limitaciones explícitas (lo que el sistema hará y lo que queda fuera).\n• Alternativas de solución evaluadas (desarrollo a la medida, compra de software comercial COTS, o parametrización).\n• Presupuesto desglosado y cronograma preliminar mediante Diagrama de Gantt.\n• Beneficios tangibles e intangibles esperados."
+        },
+        {
+          "subtema": "2.5. Documento de especificación funcional",
+          "contenido": "Conocido como SRS (Software Requirements Specification) bajo el estándar IEEE 830. Este documento es el contrato formal entre el cliente y el equipo de desarrollo y clasifica los requerimientos en:\n\n• Requerimientos Funcionales (RF): Describen qué debe hacer el sistema, los cálculos matemáticos, las entradas y salidas requeridas (ej. 'El sistema calculará automáticamente el tiempo extra doble cuando las horas trabajadas superen 40 semanales').\n• Requerimientos No Funcionales (RNF): Propiedades del servicio o restricciones técnicas (rendimiento, tiempos de respuesta menores a 2 segundos, seguridad, cifrado de contraseñas, respaldo en base de datos Access o SQL Server y compatibilidad de sistema operativo)."
+        },
+        {
+          "subtema": "2.6. Elección del entorno de desarrollo",
+          "contenido": "Criterios para seleccionar las herramientas de software idóneas para construir la solución:\n• Lenguaje de Programación e IDE: Por ejemplo, Microsoft Visual Basic 6.0 Enterprise Edition (ideal para interfaces gráficas rápidas basadas en eventos, aplicaciones de escritorio cliente-servidor y compatibilidad con bibliotecas nativas de Windows).\n• Sistema Gestor de Bases de Datos (DBMS): Microsoft Access Jet OLEDB 4.0 para aplicaciones departamentales o de oficina, frente a Microsoft SQL Server / Oracle para grandes volúmenes corporativos.\n• Arquitectura de la solución: Aplicaciones monolíticas de escritorio, modelo cliente-servidor de dos capas o aplicaciones distribuidas en tres capas (interfaz, lógica de negocio y persistencia de datos)."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "numero": "Unidad 3",
+      "titulo": "Análisis Estructurado Moderno",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Aplicar la metodología del Análisis Estructurado Moderno (Yourdon / DeMarco) y modelar los flujos de información organizacionales mediante Diagramas de Flujo de Datos jerárquicos.",
+      "temas": [
+        {
+          "subtema": "3.1. Herramientas y metodología",
+          "contenido": "El Análisis Estructurado Moderno, impulsado por Edward Yourdon y Tom DeMarco, propone modelar el sistema desde dos perspectivas complementarias:\n\n1. El Modelo Ambiental: Define el contexto del sistema, las fronteras con el mundo exterior y los estímulos a los que responde. Consta de:\n   • Declaración de Propósito del sistema.\n   • Diagrama de Contexto (DFD Nivel 0).\n   • Lista de Eventos que activan el sistema.\n2. El Modelo de Comportamiento: Modela la lógica interna, el almacenamiento y la transformación de datos mediante:\n   • Diagramas de Flujo de Datos (DFDs) detallados.\n   • Diccionario de Datos.\n   • Especificación de Procesos (Minispecs).\n   • Diagramas de Transición de Estados (DTE)."
+        },
+        {
+          "subtema": "3.2. Diagramas de Flujo de Datos (DFD)",
+          "contenido": "El DFD es la herramienta gráfica fundamental para representar la trayectoria y transformación que sufren los datos a través del sistema. Sus elementos estandarizados (notación Yourdon/DeMarco o Gane/Sarson) son:\n\n• Procesos (Círculos o Rectángulos redondeados): Transforman entradas en salidas mediante lógica matemática o reglas de negocio.\n• Flujos de Datos (Flechas orientadas): Representan el movimiento de paquetes de información entre procesos, entidades o almacenes.\n• Almacenes de Datos (Líneas paralelas abiertas): Archivos, tablas de base de datos o carpetas donde los datos reposan temporal o permanentemente.\n• Entidades Externas / Terminadores (Rectángulos): Personas, departamentos o sistemas externos que suministran datos de entrada o reciben salidas del sistema.\n\nJerarquía de DFDs:\n• Nivel 0 (Diagrama de Contexto): Un solo proceso central representativo con todas las entidades externas que interactúan con él.\n• Nivel 1 (Diagrama General): Descompone el proceso central en los subsistemas o módulos funcionales principales.\n• Nivel 2 (Descomposición Primitiva): Detalla cada subsistema en sus procesos matemáticos e interactivos elementales."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "numero": "Unidad 4",
+      "titulo": "Diseño de Sistemas",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Transformar los modelos lógicos de análisis en especificaciones técnicas de diseño arquitectónico, procedimental y de interfaz de usuario.",
+      "temas": [
+        {
+          "subtema": "4.1. Conceptos de diseño de sistemas",
+          "contenido": "Mientras el análisis responde a la pregunta '¿QUÉ debe hacer el sistema?', el diseño responde a la pregunta '¿CÓMO se va a construir técnicamente?'.\n\nEl diseño de software es el proceso de traducir los requerimientos del usuario en un plano de ingeniería ejecutable. Se basa en principios rectores:\n• Abstracción: Ocultar detalles complejos de bajo nivel para enfocar el esfuerzo en la arquitectura general.\n• Modularidad: División del software en componentes con interfaces explícitas.\n• Ocultamiento de Información (Information Hiding): Los detalles internos de un módulo deben ser inaccesibles para otros módulos que no requieran conocerlos.\n• Refinamiento Sucesivo: Proceso descendente (top-down) desde la vista más general hasta la especificación de algoritmos y variables."
+        },
+        {
+          "subtema": "4.2. Metodología de diseño",
+          "contenido": "El diseño de sistemas se estructura en cuatro actividades fundamentales:\n\n1. Diseño Arquitectónico: Define la estructura global del software, los módulos principales y sus patrones de comunicación (ej. arquitectura en capas, cliente-servidor o MVC).\n2. Diseño de la Interfaz: Especifica el diálogo entre las personas y la computadora (pantallas, menús, controles visuales, atajos de teclado y retroalimentación de errores).\n3. Diseño de Datos: Traduce los requerimientos de información en esquemas lógicos y físicos de bases de datos relacionales normalizados.\n4. Diseño a Nivel de Componentes (Procedimental): Define la lógica interna, algoritmos, estructuras de control y funciones de cada módulo individual."
+        },
+        {
+          "subtema": "4.3. Herramientas de diseño",
+          "contenido": "Instrumentos gráficos y técnicos utilizados durante la etapa de diseño:\n• Diagramas de Bloques Arquitectónicos.\n• Matrices de Trazabilidad de Requerimientos: Garantizan que cada requerimiento del análisis tenga un componente de diseño que lo satisfaga.\n• Wireframes y Maquetación de Interfaces: Bocetos de las ventanas, formularios y controles.\n• Especificaciones de Interfaz de Programación (APIs): Definición de firmas de métodos, tipos de parámetros y valores de retorno."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "numero": "Unidad 5",
+      "titulo": "Diseño Estructurado Moderno",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Aplicar las técnicas de modelado relacional de datos, cartas de estructura, especificación de procesos y diccionarios de datos bajo el paradigma estructurado.",
+      "temas": [
+        {
+          "subtema": "5.1. Metodología del diseño estructurado",
+          "contenido": "La metodología estructurada transforma los Diagramas de Flujo de Datos (DFDs) obtenidos en el análisis en Cartas de Estructura de software jerárquicas mediante dos estrategias de mapeo:\n\n• Análisis de Transformación: Se aplica a flujos de datos donde existe una corriente de entrada clara, un centro de transformación algorítmico y una corriente de salida (ej. cálculo de nómina, conversores de bases o algoritmos matemáticos).\n• Análisis de Transacciones: Se aplica cuando un flujo de datos se bifurca en múltiples caminos alternativos basados en el tipo de acción seleccionada por el usuario (ej. menú principal de opciones, punto de venta o cajero automático ATM)."
+        },
+        {
+          "subtema": "5.2. Herramientas del diseño estructurado",
+          "contenido": "Las principales herramientas técnicas para la especificación detallada del diseño estructurado son:\n• Modelo Entidad/Relación (MER).\n• Diccionario de Datos.\n• Especificación de Procesos (Minispecs).\n• Diagramas de Transición de Estados (DTE).\n• Cartas de Estructura (Structure Charts)."
+        },
+        {
+          "subtema": "5.3. Ventajas y limitaciones",
+          "contenido": "• Ventajas: Claridad en el flujo de información, descomposición jerárquica sencilla de comprender para clientes y programadores, excelente adecuación para sistemas orientados a procesamiento secuencial de transacciones.\n• Limitaciones: Dificultad para modelar interfaces gráficas complejas orientadas a eventos (GUI), mantenimiento costoso en sistemas con requerimientos que cambian drásticamente y separación artificial entre datos y funciones (lo que motivó el surgimiento del paradigma orientado a objetos)."
+        },
+        {
+          "subtema": "5.4. Modelo Entidad/Relación (MER)",
+          "contenido": "Modela la estructura de información que será almacenada en la base de datos relacional:\n\n• Entidades: Objetos del mundo real sobre los que se recolecta información (ej. Empleado, Cliente, Producto, Venta).\n• Atributos: Propiedades o características de una entidad (ej. RFC, Nombre, HorasTrabajadas, Precio).\n• Clave Primaria (PK): Atributo o conjunto de atributos que identifica unívocamente a cada registro.\n• Clave Foránea (FK): Atributo que establece la relación referencial con la clave primaria de otra tabla.\n• Cardinalidades: Tipo de relación entre entidades (1:1 Uno a Uno, 1:N Uno a Muchos, N:M Muchos a Muchos resuelta mediante tabla intermedia).\n• Normalización (1FN, 2FN, 3FN): Proceso sistemático para eliminar la redundancia de datos, evitar anomalías de inserción/borrado y garantizar la integridad referencial."
+        },
+        {
+          "subtema": "5.5. Diccionario de datos",
+          "contenido": "Es el repositorio formal y exhaustivo que describe el significado, composición y tipo de dato de cada elemento, flujo y almacén presente en el sistema. Utiliza operadores de notación estándar:\n• =  Significa 'está compuesto por'\n• +  Significa 'y' (secuencia)\n• [ | ]  Significa 'selección' (uno u otro)\n• { }  Significa 'iteración' (cero o más repeticiones)\n• ( )  Significa 'opcional'\n\nEjemplo formal:\nExpediente_Nomina = Clave_Empleado + Nombre_Completo + RFC + CURP + Horas_Trabajadas + Tarifa_Hora + (Bono_Antiguedad) + {Deduccion_Aplicada} + Sueldo_Neto."
+        },
+        {
+          "subtema": "5.6. Especificación de procesos (Minispecs)",
+          "contenido": "Describe la lógica interna de los procesos primitivos (los procesos de nivel más bajo en los DFDs que ya no se descomponen más). Se emplean tres técnicas estandarizadas:\n\n1. Lenguaje Estructurado (Pseudocódigo formal): Utiliza vocabulario restringido con palabras reservadas en mayúsculas (SI, ENTONCES, SINO, REPETIR, MIENTRAS, FINSI) con sangrías obligatorias.\n2. Tablas de Decisión: Matrices de filas y columnas que relacionan combinaciones complejas de condiciones con las acciones que deben ejecutarse (muy útiles para reglas fiscales o de nómina con múltiples excepciones).\n3. Árboles de Decisión: Representaciones gráficas ramificadas útiles para explicar la lógica condicional a usuarios no técnicos."
+        },
+        {
+          "subtema": "5.7. Diagrama de transición de estados (DTE)",
+          "contenido": "Modela el comportamiento dinámico del sistema a lo largo del tiempo, representando cómo responde ante eventos externos o del usuario según su estado interno actual.\n\nElementos:\n• Estados (Rectángulos): Situación o condición en la que se encuentra el software en un momento dado (ej. 'Modo Espera', 'Modo Captura', 'Procesando Pago', 'Alarma Activada').\n• Transiciones (Flechas): Cambio de un estado a otro provocado por un Evento y condicionado por una Guarda.\n• Acciones: Tareas que el sistema ejecuta de inmediato como consecuencia de la transición (ej. reproducir sonido, actualizar pantalla, guardar en base de datos)."
+        },
+        {
+          "subtema": "5.8. Cartas de estructura (Structure Charts)",
+          "contenido": "Diagrama en árbol jerárquico que describe la arquitectura modular del código fuente del programa:\n\n• Módulos de Control: Módulos superiores que coordinan las decisiones y llamadas a procedimientos subordinados.\n• Módulos Trabajadores: Procedimientos y funciones que realizan tareas específicas de cómputo o entrada/salida.\n• Coplas de Datos (Flechas con círculo blanco): Información útil enviada entre módulos como parámetros de función.\n• Coplas de Control (Flechas con círculo negro): Banderas (flags) lógicas booleanas que indican estados, condiciones de error o fin de archivo."
+        },
+        {
+          "subtema": "5.9. Partición por eventos",
+          "contenido": "Técnica moderna para descomponer un sistema complejo a partir de los eventos del entorno que exigen una respuesta del software. Se clasifican en:\n• Eventos Normales / Externos: Provocados por el usuario (ej. clic en botón 'Guardar', pulsar tecla de dirección en el juego de la viborita).\n• Eventos Temporales: Disparados por el paso del tiempo o controles Timer (ej. segundo cumplido en reloj, tiempo de semáforo, actualización de posición de objetos).\n• Eventos de Control: Señales generadas por hardware o sensores externos (ej. puerto serie, escáner de código de barras)."
+        },
+        {
+          "subtema": "5.10. Documentación técnica de diseño",
+          "contenido": "La documentación de diseño recopila toda la arquitectura del software de forma que cualquier ingeniero de desarrollo pueda mantener, corregir o extender la aplicación sin depender del programador original. Incluye diagramas de base de datos, descripción de procedimientos, esquemas de navegación y manuales de usuario."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "numero": "Unidad 6",
+      "titulo": "Herramientas CASE",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Conocer la clasificación, utilidad e impacto de las herramientas de Ingeniería de Software Asistida por Computadora (CASE) en el ciclo de vida del software.",
+      "temas": [
+        {
+          "subtema": "6.1. Introducción a las herramientas CASE",
+          "contenido": "CASE (Computer-Aided Software Engineering) comprende el conjunto de aplicaciones informáticas diseñadas para automatizar, asistir y mejorar las actividades del ciclo de vida del software, reduciendo errores humanos, acortando tiempos de entrega y asegurando la consistencia de los modelos técnicos.\n\nClasificación funcional de las herramientas CASE:\n• Upper CASE (CASE Superior): Enfocadas en las fases iniciales de planificación, análisis y modelado de requerimientos (ej. diagramadores de DFDs, modeladores de procesos de negocio).\n• Lower CASE (CASE Inferior): Enfocadas en las fases finales de generación automática de código, esquemas de bases de datos DDL, compilación automatizada y suites de pruebas unitarias.\n• Integrated CASE (I-CASE): Entornos integrados completos que cubren desde el levantamiento de requerimientos hasta el despliegue y mantenimiento con repositorio central unificado."
+        },
+        {
+          "subtema": "6.2. Taller de CASE y aplicaciones prácticas",
+          "contenido": "Uso práctico de herramientas de modelado y desarrollo:\n• Modelado de Datos y Generación de Esquemas: Herramientas como Erwin Data Modeler o Microsoft Access Visual Schema que permiten diseñar el MER y generar automáticamente las tablas, relaciones y restricciones de clave primaria y foránea.\n• Asistentes de Ingeniería Inversa: Capacidad de una herramienta CASE para inspeccionar una base de datos o código fuente existente y generar automáticamente sus diagramas arquitectónicos y de flujo.\n• Repositorio Central de Metadatos: Almacén unificado donde se registran todas las definiciones del diccionario de datos, pantallas, módulos y reglas de negocio para asegurar que ningún cambio rompa la integridad del sistema."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "numero": "Unidad 7",
+      "titulo": "Elaboración de Prototipos",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Analizar la metodología del desarrollo basado en prototipos como mecanismo ágil para validar requerimientos, reducir la incertidumbre y diseñar interfaces de usuario centradas en la persona.",
+      "temas": [
+        {
+          "subtema": "7.1. Prototipos no funcionales",
+          "contenido": "Los prototipos no funcionales (de baja fidelidad) representan la apariencia y distribución espacial de las interfaces sin contener lógica de programación interna ni acceso a bases de datos reales:\n\n• Prototipos en papel: Bocetos rápidos dibujados a mano durante reuniones iniciales con el cliente.\n• Wireframes y Mockups: Esquemas digitales estáticos elaborados en herramientas gráficas que muestran la disposición de cajas de texto, etiquetas, botones y menús.\n• Storyboards: Secuencias de pantallas que ilustran la navegación y el flujo de trabajo del usuario a través de los diferentes módulos del sistema.\n\nObjetivo principal: Validar con rapidez y costo mínimo la comprensión de los requerimientos y el diseño conceptual antes de escribir una sola línea de código."
+        },
+        {
+          "subtema": "7.2. Prototipos funcionales",
+          "contenido": "Los prototipos funcionales (de alta fidelidad) son programas ejecutables reales que responden de forma interactiva ante las acciones del usuario:\n\n• Prototipos Desechables (Throwaway Prototyping): Construidos rápidamente para explorar aspectos técnicos poco claros (ej. validar si un control de código de barras lee correctamente en Visual Basic) y que luego se descartan para construir la versión definitiva con código optimizado.\n• Prototipos Evolutivos (Evolutionary Prototyping): Sistemas que inician con un núcleo funcional básico y van incorporando módulos en iteraciones sucesivas hasta convertirse en el producto final entregado al cliente (enfoque adoptado en las prácticas de Visual Basic 6.0 desarrolladas en el curso)."
+        },
+        {
+          "subtema": "7.3. Ventajas y riesgos de los prototipos",
+          "contenido": "• Ventajas:\n  1. Claridad absoluta de requerimientos: Los usuarios descubren necesidades ocultas al interactuar con una interfaz viva.\n  2. Reducción drástica del riesgo de rechazo: El cliente participa activamente en el diseño.\n  3. Capacitación temprana del personal operativo antes del despliegue final.\n\n• Riesgos y Desventajas:\n  1. Falsas expectativas del cliente: Al ver una pantalla funcionando, el usuario puede pensar equivocadamente que el sistema completo está terminado, sin considerar la lógica de seguridad y robustez pendiente.\n  2. Tentación de dejar el código 'parchado': Presión para poner en producción prototipos con código rápido no optimizado ni seguro.\n  3. Desbordamiento del alcance si no se fijan límites estrictos a las revisiones del prototipo."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "numero": "Unidad 8",
+      "titulo": "Especificación de Programas",
+      "horas_teoricas": 6,
+      "horas_practicas": 4,
+      "objetivo": "Diseñar e implementar con excelencia técnica los componentes visuales, procesos algorítmicos, periféricos especiales (código de barras, lectura óptica) y sistemas multimedia de aplicaciones de software.",
+      "temas": [
+        {
+          "subtema": "8.1. Diseño de pantallas",
+          "contenido": "El diseño de formularios en Visual Basic 6.0 debe aplicar principios rigurosos de ergonomía visual e Interacción Humano-Computadora (HCI):\n\n• Jerarquía visual y flujo de lectura natural: Disposición lógica de controles de izquierda a derecha y de arriba hacia abajo.\n• Contraste y psicología del color: Uso de colores sobrios y contrastes accesibles para evitar la fatiga visual del operador en jornadas laborales prolongadas.\n• Agrupación lógica: Uso de marcos (Frame) para agrupar campos relacionados (ej. datos personales, percepciones, deducciones en la nómina).\n• Consistencia de controles: Mantener alineaciones, tamaños homogéneos de cajas de texto y fuentes tipográficas legibles (Segoe UI, Arial, Tahoma)."
+        },
+        {
+          "subtema": "8.2. Diseño de reportes",
+          "contenido": "La salida de información impresa o digital debe satisfacer estándares ejecutivos y legales:\n\n• Estructura estándar de reporte: Encabezado corporativo (logotipo, razón social, fecha, folio), cuerpo del reporte (tabla con datos tabulados y justificados) y pie de página (totales acumulados, firmas de autorización y número de página).\n• Formatos digitales: Generación de textos formateados con tabuladores y caracteres monoespaciados para impresión en impresoras térmicas de tickets o exportación al portapapeles de Windows.\n• Resúmenes estadísticos: Inclusión de conteo total de registros, promedios salariales, valores máximos y mínimos."
+        },
+        {
+          "subtema": "8.3. Diseño de procesos y algoritmos",
+          "contenido": "Estructuración de la lógica interna de cada programa aplicando programación modular y estructurada:\n\n• Descomposición algorítmica: Separar la lectura de datos, el cálculo matemático y la presentación de resultados en procedimientos independientes.\n• Manejo de estructuras de control:\n  - Condicionales: If-Then-Else para decisiones simples y Select Case para bifurcaciones múltiples (operaciones de calculadora, menús de cajero ATM).\n  - Iterativas: For-Next para conteos acotados (tablas de multiplicar, búsqueda en arreglos) y Do-While / Do-Until para recorridos de registros en bases de datos (Recordset.EOF).\n• Limpieza de código: Nombres nemotécnicos de variables, validación preventiva contra división entre cero y código libre de comentarios redundantes."
+        },
+        {
+          "subtema": "8.4. Interfaz con el usuario",
+          "contenido": "Programación basada en eventos que responde con inmediatez a la interacción de la persona:\n\n• Eventos de teclado: KeyPress, KeyDown y KeyUp para filtrar caracteres (ej. restringir a sólo números en cajas de importe o detectar flechas en el juego de la viborita).\n• Eventos de ratón: Click, DblClick, MouseMove, MouseDown, MouseUp y eventos de arrastre DragDrop / DragOver.\n• Accesibilidad por teclado: Definición rigurosa de TabIndex para que el usuario pueda navegar entre controles con la tecla Tabulador sin requerir el ratón, y teclas aceleradoras mnemónicas (tecla Alt + letra subrayada)."
+        },
+        {
+          "subtema": "8.5. Lectura óptica",
+          "contenido": "Integración de tecnologías de reconocimiento visual y captura masiva de datos en sistemas de software:\n\n• OMR (Optical Mark Recognition): Reconocimiento óptico de marcas para calificación automatizada de cuestionarios o encuestas de opción múltiple.\n• OCR (Optical Character Recognition): Conversión de texto impreso o manuscrito digitalizado en caracteres de texto editables por computadora.\n• Integración en aplicaciones: Lectura de credenciales, captura digital de firmas y archivo fotográfico automatizado mediante controles gráficos de Visual Basic."
+        },
+        {
+          "subtema": "8.6. Código de barras",
+          "contenido": "Tecnología de identificación automática y captura de datos (AIDC) ampliamente utilizada en puntos de venta, control de inventarios y logística:\n\n• Estándar Code 39 (3 de 9): Estándar industrial alfanumérico donde cada carácter está compuesto por 9 elementos (5 barras y 4 espacios, de los cuales 3 son anchos y 6 son estrechos).\n• Generación Gráfica en Software: Algoritmo para convertir una cadena de texto en líneas verticales trazadas con el método Line (X1, Y1)-(X2, Y2), vbBlack, BF en un PictureBox, incluyendo delimitadores de inicio y fin (*).\n• Lectura por Escáner: Los lectores ópticos emiten una secuencia emulando pulsaciones de teclado, permitiendo la captura inmediata de productos o claves con cero margen de error humano."
+        },
+        {
+          "subtema": "8.7. Sistemas de información multimedia",
+          "contenido": "Integración armónica de múltiples medios digitales (texto, gráficos de alta resolución, audio digital, video y animaciones) dentro de aplicaciones interactivas:\n\n• Control de Audio: Reproducción de efectos sonoros y música mediante llamadas a la API de Windows (mciSendString, sndPlaySound de winmm.dll) o controles OCX de Windows Media Player (WMP).\n• Gráficos Interactivos y Animación: Uso de temporizadores para controlar velocidad de cuadros por segundo (FPS), detección de colisiones geométricas y renderizado de texto tridimensional con sombras dinámicas.\n• Aplicaciones representativas desarrolladas: Rockola Multimedia Jukebox, Piano MIDI Virtual, Protectores de Pantalla interactivos y Videojuegos clásicos (Gato, Memoria, Tiro al Blanco, Viborita)."
+        }
+      ]
+    }
+  ],
+  "bibliografia": [
+    {
+      "autor": "Roger S. Pressman",
+      "titulo": "Ingeniería del Software: Un enfoque práctico",
+      "edicion": "7ma Edición",
+      "editorial": "McGraw-Hill",
+      "año": "2010"
+    },
+    {
+      "autor": "Ian Sommerville",
+      "titulo": "Software Engineering",
+      "edicion": "9na Edición",
+      "editorial": "Addison-Wesley",
+      "año": "2011"
+    },
+    {
+      "autor": "Kenneth E. Kendall & Julie E. Kendall",
+      "titulo": "Systems Analysis and Design",
+      "edicion": "8va Edición",
+      "editorial": "Pearson Prentice Hall",
+      "año": "2010"
+    },
+    {
+      "autor": "Edward Yourdon",
+      "titulo": "Modern Structured Analysis",
+      "edicion": "1ra Edición",
+      "editorial": "Prentice-Hall",
+      "año": "1989"
+    },
+    {
+      "autor": "Tom DeMarco",
+      "titulo": "Structured Analysis and System Specification",
+      "edicion": "1ra Edición",
+      "editorial": "Yourdon Press",
+      "año": "1979"
+    }
+  ]
+}
