@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Informática V | Temario Resuelto y Catálogo de Ejercicios</title>
+  <title>Informática V | Catálogo de Ejercicios y Temario</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,12 +11,11 @@
 </head>
 <body>
 
-  <!-- Barra Superior Institucional -->
+  <!-- Barra Superior Institucional (Limpia, sin letrero UNAM, colores modernos) -->
   <header class="header-main">
     <div class="header-banner">
       <div class="container header-container">
         <div class="brand-block">
-          <div class="crest-badge">UNAM</div>
           <div class="brand-text">
             <h1>UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO</h1>
             <h2>Facultad de Estudios Superiores Cuautitlán</h2>
@@ -43,15 +42,12 @@
       </div>
     </div>
 
-    <!-- Barra de Navegación -->
+    <!-- Barra de Navegación por Pestañas -->
     <nav class="nav-bar">
       <div class="container nav-container">
         <div class="tabs-group">
-          <button class="nav-tab active" data-tab="tab-temario">
-            <span class="tab-text">Temario Resuelto</span>
-          </button>
-          <button class="nav-tab" data-tab="tab-todos">
-            <span class="tab-text">Todos los Ejercicios (100)</span>
+          <button class="nav-tab active" data-tab="tab-todos">
+            <span class="tab-text">Catálogo de Ejercicios (100)</span>
           </button>
           <button class="nav-tab" data-tab="tab-clase">
             <span class="tab-text">Versión Original (51)</span>
@@ -59,46 +55,25 @@
           <button class="nav-tab" data-tab="tab-version-b">
             <span class="tab-text">Versión B (49)</span>
           </button>
+          <button class="nav-tab" data-tab="tab-temario">
+            <span class="tab-text">Temario Resuelto</span>
+          </button>
           <button class="nav-tab" data-tab="tab-drive">
             <span class="tab-text">Google Drive</span>
           </button>
         </div>
         <div class="stats-pills">
-          <span class="pill">51 Originales</span>
-          <span class="pill pill-gold">49 Versión B</span>
-          <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="pill pill-link">Abrir Drive</a>
+          <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="pill pill-drive">Abrir Google Drive</a>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- Contenedor Principal -->
+  <!-- Contenedor Principal de la Página -->
   <main class="container main-content">
 
-    <!-- SECCIÓN 1: TEMARIO RESUELTO -->
-    <section id="tab-temario" class="tab-pane active">
-      <div class="pane-header">
-        <h2>Temario Resuelto — Informática V</h2>
-        <div class="search-box">
-          <input type="text" id="temario-search" placeholder="Buscar en el temario...">
-          <button id="clear-temario-search" class="btn-clear" title="Limpiar búsqueda">X</button>
-        </div>
-      </div>
-
-      <div class="temario-layout">
-        <aside class="units-sidebar">
-          <h3>Unidades</h3>
-          <ul id="units-nav-list" class="units-nav-list"></ul>
-        </aside>
-
-        <article class="units-content" id="units-container">
-          <div class="loading-state">Cargando temario...</div>
-        </article>
-      </div>
-    </section>
-
-    <!-- SECCIÓN 2: TODOS LOS EJERCICIOS (100 TOTALES) -->
-    <section id="tab-todos" class="tab-pane">
+    <!-- SECCIÓN 1: TODOS LOS EJERCICIOS (100) -->
+    <section id="tab-todos" class="tab-pane active">
       <div class="pane-header">
         <h2>Catálogo de Ejercicios — Versión Original y Versión B</h2>
         <div class="filter-actions-row">
@@ -119,7 +94,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 3: PROGRAMAS EN CLASE (VERSIÓN ORIGINAL) -->
+    <!-- SECCIÓN 2: PROGRAMAS EN CLASE (VERSIÓN ORIGINAL 51) -->
     <section id="tab-clase" class="tab-pane">
       <div class="pane-header">
         <h2>1. Programas Realizados en Clase (Versión Original)</h2>
@@ -134,7 +109,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN 4: PROGRAMAS VERSIÓN B (ALUMNO) -->
+    <!-- SECCIÓN 3: PROGRAMAS VERSIÓN B (ALUMNO 49) -->
     <section id="tab-version-b" class="tab-pane">
       <div class="pane-header">
         <h2>2. Programas Similares pero no Iguales (Versión B)</h2>
@@ -149,6 +124,28 @@
       </div>
     </section>
 
+    <!-- SECCIÓN 4: TEMARIO RESUELTO -->
+    <section id="tab-temario" class="tab-pane">
+      <div class="pane-header">
+        <h2>Temario Resuelto — Informática V</h2>
+        <div class="search-box">
+          <input type="text" id="temario-search" placeholder="Buscar en el temario...">
+          <button id="clear-temario-search" class="btn-clear" title="Limpiar búsqueda">X</button>
+        </div>
+      </div>
+
+      <div class="temario-layout">
+        <aside class="units-sidebar">
+          <h3>Unidades</h3>
+          <ul id="units-nav-list" class="units-nav-list"></ul>
+        </aside>
+
+        <article class="units-content" id="units-container">
+          <div class="loading-state">Cargando temario...</div>
+        </article>
+      </div>
+    </section>
+
     <!-- SECCIÓN 5: GOOGLE DRIVE -->
     <section id="tab-drive" class="tab-pane">
       <div class="drive-hub">
@@ -159,8 +156,8 @@
               <span class="url-label">URL Oficial de Compartición:</span>
               <div class="url-input-wrap">
                 <input type="text" id="drive-url-input" readonly value="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9">
-                <button class="btn btn-gold" onclick="copyDriveUrl()">Copiar Enlace</button>
-                <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="btn btn-primary">Abrir en Drive</a>
+                <button class="btn btn-action-blue" onclick="copyDriveUrl()">Copiar Enlace</button>
+                <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="btn btn-action-outline">Abrir en Drive</a>
               </div>
             </div>
           </div>
@@ -173,19 +170,19 @@
             <ul>
               <li>Código fuente original en Visual Basic 6.0</li>
               <li>Ejecutables compilados (.exe)</li>
-              <li>Documentación individual DOCUMENTACION.pdf</li>
+              <li>Documento DOCUMENTACION.pdf de cada programa</li>
             </ul>
             <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="card-link">Ver en Google Drive</a>
           </div>
 
           <div class="structure-card highlight-card">
             <h3>2. Programas Similares Versión B</h3>
-            <span class="struct-tag tag-gold">49 Programas</span>
+            <span class="struct-tag tag-b">49 Programas</span>
             <ul>
               <li>Nuevas funcionalidades y diseño renovado</li>
               <li>Código fuente sin comentarios</li>
               <li>Ejecutables compilados (.exe)</li>
-              <li>Documentación individual DOCUMENTACION.pdf</li>
+              <li>Documento DOCUMENTACION.pdf de cada programa</li>
             </ul>
             <a href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="card-link">Ver en Google Drive</a>
           </div>
@@ -241,16 +238,14 @@
 
         <div class="modal-section">
           <h4>Codificación en Visual Basic 6.0</h4>
-          <div id="modal-code-container">
-            <!-- Rellenado dinámicamente con pestañas de archivos si hay múltiples -->
-          </div>
+          <div id="modal-code-container"></div>
         </div>
 
         <div class="modal-section modal-files-box">
           <div class="modal-action-btns">
-            <a id="modal-btn-pdf" href="#" target="_blank" class="btn btn-pdf">Ver DOCUMENTACION.pdf</a>
-            <a id="modal-btn-exe" href="#" download class="btn btn-primary">Descargar Ejecutable (.EXE)</a>
-            <a id="modal-btn-drive" href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="btn btn-gold">Abrir en Google Drive</a>
+            <a id="modal-btn-pdf" href="#" target="_blank" class="btn btn-modal-pdf">Ver DOCUMENTACION.pdf</a>
+            <a id="modal-btn-exe" href="#" download class="btn btn-modal-exe">Descargar Ejecutable (.EXE)</a>
+            <a id="modal-btn-drive" href="https://drive.google.com/drive/u/0/folders/1z1JDq5uIyZdHCfoj5mnfabUsYzrmPqk9" target="_blank" class="btn btn-action-blue">Abrir en Google Drive</a>
           </div>
         </div>
       </div>

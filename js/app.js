@@ -1,10 +1,24 @@
 // BLOG INFORMÁTICA V — CLIENT SIDE
-document.addEventListener("DOMContentLoaded", function () {
-  initTabs();
-  initTemario();
-  initProgramas();
-  initSearch();
-});
+function getTemarioData() {
+  return window.TEMARIO_DATA || (typeof TEMARIO_DATA !== 'undefined' ? TEMARIO_DATA : null);
+}
+
+function getProgramasData() {
+  return window.PROGRAMAS_DATA || (typeof PROGRAMAS_DATA !== 'undefined' ? PROGRAMAS_DATA : null);
+}
+
+function startApp() {
+  try { initTabs(); } catch (e) { console.error("Error initTabs:", e); }
+  try { initTemario(); } catch (e) { console.error("Error initTemario:", e); }
+  try { initProgramas(); } catch (e) { console.error("Error initProgramas:", e); }
+  try { initSearch(); } catch (e) { console.error("Error initSearch:", e); }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", startApp);
+} else {
+  startApp();
+}
 
 function initTabs() {
   const tabs = document.querySelectorAll(".nav-tab");
@@ -28,13 +42,15 @@ function initTabs() {
 function initTemario() {
   const unitsNavList = document.getElementById("units-nav-list");
   const unitsContainer = document.getElementById("units-container");
+  if (!unitsContainer) return;
 
-  if (!window.TEMARIO_DATA || !window.TEMARIO_DATA.unidades) {
+  const temario = getTemarioData();
+  if (!temario || !temario.unidades) {
     unitsContainer.innerHTML = "<p>No se encontraron datos del temario.</p>";
     return;
   }
 
-  const unidades = window.TEMARIO_DATA.unidades;
+  const unidades = temario.unidades;
   unitsNavList.innerHTML = "";
   unitsContainer.innerHTML = "";
 
@@ -42,35 +58,45 @@ function initTemario() {
     const li = document.createElement("li");
     const btn = document.createElement("button");
     btn.className = `unit-nav-btn ${idx === 0 ? "active" : ""}`;
-    btn.innerHTML = `<span class="unit-badge-small">U${u.numero}</span> ${u.titulo}`;
-    btn.onclick = () => scrollToUnit(`unit-section-${u.numero}`, btn);
+    const num = u.numero || (idx + 1);
+    const tit = u.titulo || "";
+    const numClean = String(num).replace("Unidad ", "");
+    btn.innerHTML = `<span class="unit-badge-small">U${numClean}</span> ${escapeHtml(tit)}`;
+    btn.onclick = () => scrollToUnit(`unit-section-${num}`, btn);
     li.appendChild(btn);
     unitsNavList.appendChild(li);
 
     const card = document.createElement("div");
     card.className = "unit-card";
-    card.id = `unit-section-${u.numero}`;
+    card.id = `unit-section-${num}`;
 
     let temasHtml = "";
-    u.temas.forEach(t => {
-      let subpuntosHtml = "";
-      if (t.subpuntos && t.subpuntos.length > 0) {
-        subpuntosHtml = "<ul>" + t.subpuntos.map(sp => `<li>${sp}</li>`).join("") + "</ul>";
-      }
+    if (u.temas && Array.isArray(u.temas)) {
+      u.temas.forEach(t => {
+        const subtema = t.subtema || "";
+        const titulo = t.titulo || "";
+        const contenido = t.contenido || t.desarrollo || "";
+        const searchStr = `${subtema.toLowerCase()} ${titulo.toLowerCase()} ${contenido.toLowerCase()}`;
 
-      temasHtml += `
-        <div class="tema-item" data-tema="${t.subtema.toLowerCase()} ${t.titulo.toLowerCase()} ${t.desarrollo.toLowerCase()}">
-          <h4>${t.subtema} — ${t.titulo}</h4>
-          <p>${t.desarrollo}</p>
-          ${subpuntosHtml}
-        </div>
-      `;
-    });
+        let subpuntosHtml = "";
+        if (t.subpuntos && Array.isArray(t.subpuntos) && t.subpuntos.length > 0) {
+          subpuntosHtml = "<ul>" + t.subpuntos.map(sp => `<li>${escapeHtml(sp)}</li>`).join("") + "</ul>";
+        }
+
+        temasHtml += `
+          <div class="tema-item" data-tema="${escapeHtml(searchStr)}">
+            <h4>${escapeHtml(subtema)}${titulo ? " — " + escapeHtml(titulo) : ""}</h4>
+            <p>${escapeHtml(contenido).replace(/\n/g, "<br>")}</p>
+            ${subpuntosHtml}
+          </div>
+        `;
+      });
+    }
 
     card.innerHTML = `
       <div class="unit-card-header">
-        <span class="unit-num-pill">Unidad ${u.numero}</span>
-        <h3>${u.titulo}</h3>
+        <span class="unit-num-pill">${String(num).startsWith("Unidad") ? num : "Unidad " + num}</span>
+        <h3>${escapeHtml(tit)}</h3>
       </div>
       <div class="temas-list">
         ${temasHtml}
@@ -98,13 +124,15 @@ function initProgramas() {
   const gridClase = document.getElementById("grid-clase");
   const gridVersionB = document.getElementById("grid-version-b");
 
-  if (!window.PROGRAMAS_DATA) {
+  const progData = getProgramasData();
+  if (!progData) {
+    if (gridTodos) gridTodos.innerHTML = "<p>No se encontraron datos de programas.</p>";
     return;
   }
 
-  const projsClase = window.PROGRAMAS_DATA.programas_clase || [];
-  const projsB = window.PROGRAMAS_DATA.programas_b || [];
-  const projsTodos = window.PROGRAMAS_DATA.todos_los_programas || (projsClase.concat(projsB));
+  const projsClase = progData.programas_clase || [];
+  const projsB = progData.programas_b || [];
+  const projsTodos = progData.todos_los_programas || (projsClase.concat(projsB));
 
   renderGrid(gridTodos, projsTodos);
   renderGrid(gridClase, projsClase);
@@ -117,7 +145,7 @@ function initProgramas() {
       filterBtns.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       const f = btn.getAttribute("data-filter");
-      const cards = gridTodos.querySelectorAll(".program-card");
+      const cards = gridTodos ? gridTodos.querySelectorAll(".program-card") : [];
       cards.forEach(c => {
         if (f === "all") {
           c.style.display = "flex";
@@ -134,7 +162,7 @@ function initProgramas() {
 function renderGrid(container, list) {
   if (!container) return;
   container.innerHTML = "";
-  if (list.length === 0) {
+  if (!list || list.length === 0) {
     container.innerHTML = "<p>No hay programas para mostrar.</p>";
     return;
   }
@@ -142,50 +170,59 @@ function renderGrid(container, list) {
   list.forEach(p => {
     const card = document.createElement("div");
     card.className = "program-card";
-    card.setAttribute("data-search", `${p.nombre.toLowerCase()} ${p.descripcion.toLowerCase()}`);
+    const nombre = p.nombre || "Programa";
+    const desc = p.descripcion || "";
+    card.setAttribute("data-search", `${nombre.toLowerCase()} ${desc.toLowerCase()}`);
     card.setAttribute("data-es-b", p.es_version_b ? "true" : "false");
 
     const badgeClass = p.es_version_b ? "card-category-badge version-b" : "card-category-badge";
     const badgeText = p.version || (p.es_version_b ? "Versión B (Alumno)" : "Versión Original (Clase)");
 
-    const pdfHref = p.pdf_url || p.pdf_local;
+    const pdfHref = p.pdf_url || p.pdf_local || "#";
     const exeHref = p.exe_url || p.exe_local;
+
+    const btnFicha = document.createElement("button");
+    btnFicha.className = "btn-inscribir-style";
+    btnFicha.textContent = "Ficha Técnica y Código";
+    btnFicha.onclick = () => openModal(p);
 
     card.innerHTML = `
       <div class="card-top">
-        <span class="${badgeClass}">${badgeText}</span>
-        <h3 class="program-title">${p.nombre}</h3>
-        <p class="program-desc">${p.descripcion}</p>
+        <div class="card-badge-row">
+          <span class="${badgeClass}">${badgeText}</span>
+        </div>
+        <h3 class="program-title">${escapeHtml(nombre)}</h3>
+        <p class="program-desc">${escapeHtml(desc)}</p>
       </div>
       <div>
         <div class="card-meta">
-          <span>${p.total_archivos} archivos</span>
-          <span>${(p.pdf_size / 1024).toFixed(0)} KB PDF</span>
+          <span>${p.total_archivos || 0} archivos</span>
+          <span>${((p.pdf_size || 0) / 1024).toFixed(0)} KB PDF</span>
         </div>
-        <div class="card-actions">
-          <button class="btn btn-secondary" onclick='openModal(${JSON.stringify(p).replace(/'/g, "&#39;")})' style="flex:1;">
-            Ficha y Código
-          </button>
-          <a href="${pdfHref}" target="_blank" class="btn btn-pdf" title="Ver Documentación en PDF">
-            PDF
-          </a>
-          ${exeHref ? `<a href="${exeHref}" download class="btn btn-exe" title="Descargar ejecutable .EXE">EXE</a>` : ''}
+        <div class="card-actions-col">
+          <div class="card-sub-actions">
+            <a href="${pdfHref}" target="_blank" class="btn-sub-pdf" title="Ver Documentación en PDF">PDF</a>
+            ${exeHref ? `<a href="${exeHref}" download class="btn-sub-exe" title="Descargar ejecutable .EXE">EXE</a>` : ''}
+          </div>
         </div>
       </div>
     `;
+
+    const actionsCol = card.querySelector(".card-actions-col");
+    actionsCol.insertBefore(btnFicha, actionsCol.firstChild);
 
     container.appendChild(card);
   });
 }
 
 window.openModal = function (p) {
-  document.getElementById("modal-category").innerText = p.version || p.categoria;
-  document.getElementById("modal-title").innerText = p.nombre;
-  document.getElementById("modal-desc").innerText = p.descripcion;
+  document.getElementById("modal-category").innerText = p.version || p.categoria || "";
+  document.getElementById("modal-title").innerText = p.nombre || "";
+  document.getElementById("modal-desc").innerText = p.descripcion || "";
 
   const featuresList = document.getElementById("modal-features");
   featuresList.innerHTML = "";
-  if (p.puntos_clave) {
+  if (p.puntos_clave && Array.isArray(p.puntos_clave)) {
     p.puntos_clave.forEach(pt => {
       const li = document.createElement("li");
       li.innerText = pt;
@@ -199,20 +236,34 @@ window.openModal = function (p) {
   document.getElementById("modal-proc2-title").innerText = (p.proceso_2 && p.proceso_2.nombre) ? p.proceso_2.nombre : "Proceso 2";
   document.getElementById("modal-proc2-code").innerText = (p.proceso_2 && p.proceso_2.pseudocodigo) ? p.proceso_2.pseudocodigo : "// Algoritmo implementado";
 
-  // Contenedor de código fuente VB6
+  // Visualizador de código fuente VB6
   const codeContainer = document.getElementById("modal-code-container");
   codeContainer.innerHTML = "";
   if (p.archivos_codigo && p.archivos_codigo.length > 0) {
     p.archivos_codigo.forEach(cfile => {
       const viewer = document.createElement("div");
       viewer.className = "code-viewer";
-      viewer.innerHTML = `
-        <div class="code-viewer-header">
-          <span class="code-file-tag">${cfile.archivo}</span>
-          <button class="btn-copy-code" onclick="navigator.clipboard.writeText(decodeURIComponent('${encodeURIComponent(cfile.codigo)}')); alert('Código copiado al portapapeles');">Copiar Código</button>
-        </div>
-        <pre><code>${escapeHtml(cfile.codigo)}</code></pre>
-      `;
+
+      const header = document.createElement("div");
+      header.className = "code-viewer-header";
+      header.innerHTML = `<span class="code-file-tag">${escapeHtml(cfile.archivo)}</span>`;
+
+      const btnCopy = document.createElement("button");
+      btnCopy.className = "btn-copy-code";
+      btnCopy.textContent = "Copiar Código";
+      btnCopy.onclick = () => {
+        navigator.clipboard.writeText(cfile.codigo);
+        alert("Código copiado al portapapeles");
+      };
+      header.appendChild(btnCopy);
+
+      const pre = document.createElement("pre");
+      const code = document.createElement("code");
+      code.textContent = cfile.codigo;
+      pre.appendChild(code);
+
+      viewer.appendChild(header);
+      viewer.appendChild(pre);
       codeContainer.appendChild(viewer);
     });
   } else {
@@ -222,7 +273,7 @@ window.openModal = function (p) {
   const btnPdf = document.getElementById("modal-btn-pdf");
   const btnExe = document.getElementById("modal-btn-exe");
 
-  btnPdf.href = p.pdf_url || p.pdf_local;
+  btnPdf.href = p.pdf_url || p.pdf_local || "#";
   if (p.exe_url || p.exe_local) {
     btnExe.style.display = "inline-flex";
     btnExe.href = p.exe_url || p.exe_local;
@@ -234,6 +285,7 @@ window.openModal = function (p) {
 };
 
 function escapeHtml(text) {
+  if (typeof text !== "string") return "";
   return text
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -249,19 +301,21 @@ window.closeModal = function () {
 function initSearch() {
   const temarioInput = document.getElementById("temario-search");
   const temarioClear = document.getElementById("clear-temario-search");
-  temarioInput.addEventListener("input", () => {
-    const q = temarioInput.value.toLowerCase().trim();
-    temarioClear.classList.toggle("visible", q.length > 0);
-    const items = document.querySelectorAll(".tema-item");
-    items.forEach(it => {
-      const match = it.getAttribute("data-tema").includes(q);
-      it.style.display = match ? "block" : "none";
+  if (temarioInput && temarioClear) {
+    temarioInput.addEventListener("input", () => {
+      const q = temarioInput.value.toLowerCase().trim();
+      temarioClear.classList.toggle("visible", q.length > 0);
+      const items = document.querySelectorAll(".tema-item");
+      items.forEach(it => {
+        const match = it.getAttribute("data-tema").includes(q);
+        it.style.display = match ? "block" : "none";
+      });
     });
-  });
-  temarioClear.addEventListener("click", () => {
-    temarioInput.value = "";
-    temarioInput.dispatchEvent(new Event("input"));
-  });
+    temarioClear.addEventListener("click", () => {
+      temarioInput.value = "";
+      temarioInput.dispatchEvent(new Event("input"));
+    });
+  }
 
   setupGridFilter("todos-search", "clear-todos-search", "grid-todos");
   setupGridFilter("clase-search", "clear-clase-search", "grid-clase");

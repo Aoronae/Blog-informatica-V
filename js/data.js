@@ -1,5 +1,5 @@
-// Base de datos estática embebida para compatibilidad local y web sin CORS
-const TEMARIO_DATA = {
+// Base de datos estática embebida para compatibilidad local y web
+window.TEMARIO_DATA = {
   "asignatura": "Informática V",
   "institucion": "Universidad Nacional Autónoma de México - Facultad de Estudios Superiores Cuautitlán",
   "alumno": "Alan Ernesto Orona Enríquez",
@@ -286,7 +286,7 @@ const TEMARIO_DATA = {
     }
   ]
 };
-const PROGRAMAS_DATA = {
+window.PROGRAMAS_DATA = {
   "total_programas": 100,
   "programas_clase": [
     {
@@ -7627,3 +7627,6 @@ const PROGRAMAS_DATA = {
     }
   ]
 };
+
+var TEMARIO_DATA = window.TEMARIO_DATA;
+var PROGRAMAS_DATA = window.PROGRAMAS_DATA;
