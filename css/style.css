@@ -1,25 +1,24 @@
 /* =====================================================================
    BLOG INFORMÁTICA V — UNAM FESC
-   Diseño Moderno Limpio (Estilo Cartelera de Eventos)
+   Barra superior Azul UNAM + Elementos de acción en Dorado UNAM
    ===================================================================== */
 
 :root {
+  --unam-blue: #002B49;
+  --unam-blue-dark: #001F35;
+  --unam-blue-light: #003E6B;
+  --unam-gold: #D59F0F;
+  --unam-gold-hover: #C48D08;
+  --unam-gold-dark: #A17405;
+  --unam-gold-soft: #FEF3C7;
+  --unam-gold-border: #FDE68A;
   --bg-page: #F8FAFC;
   --bg-card: #FFFFFF;
-  --primary-blue: #3861FB;
-  --primary-blue-hover: #274BD4;
   --border-light: #E2E8F0;
-  --border-card: #E5E7EB;
   --text-title: #0F172A;
   --text-body: #334155;
   --text-muted: #64748B;
   --text-subtle: #94A3B8;
-  --chip-blue-bg: #EFF6FF;
-  --chip-blue-text: #1D4ED8;
-  --chip-blue-border: #DBEAFE;
-  --chip-amber-bg: #FEF3C7;
-  --chip-amber-text: #B45309;
-  --chip-amber-border: #FDE68A;
   --code-bg: #0F172A;
   --code-text: #F8FAFC;
   --radius-card: 12px;
@@ -51,19 +50,20 @@ body {
 }
 
 /* ==========================================
-   HEADER MODERNO Y LIMPIO
+   BARRA SUPERIOR AZUL UNAM CON ACENTO DORADO
    ========================================== */
 .header-main {
-  background-color: #FFFFFF;
-  border-bottom: 1px solid var(--border-light);
+  background-color: var(--unam-blue);
+  color: #FFFFFF;
+  border-bottom: 3px solid var(--unam-gold);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 2px 8px rgba(0, 43, 73, 0.15);
 }
 
 .header-banner {
-  padding: 18px 0;
+  padding: 16px 0;
 }
 
 .header-container {
@@ -71,7 +71,7 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 16px;
 }
 
 .brand-block {
@@ -83,13 +83,13 @@ body {
   font-size: 1.15rem;
   letter-spacing: -0.2px;
   font-weight: 800;
-  color: var(--text-title);
+  color: #FFFFFF;
 }
 
 .brand-text h2 {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: #CBD5E1;
 }
 
 .badge-block {
@@ -99,8 +99,8 @@ body {
 }
 
 .badge-item {
-  background-color: #F8FAFC;
-  border: 1px solid var(--border-light);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 6px;
   padding: 6px 12px;
   display: flex;
@@ -111,25 +111,26 @@ body {
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--text-subtle);
+  color: #94A3B8;
   font-weight: 600;
 }
 
 .badge-val {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text-title);
+  color: #FFFFFF;
 }
 
 .badge-val.highlight {
-  color: var(--primary-blue);
+  color: #FDE047;
   font-weight: 700;
 }
 
-/* BARRA DE NAVEGACIÓN MODERNA */
+/* BARRA DE NAVEGACIÓN MODERNA BLANCA */
 .nav-bar {
   background-color: #FFFFFF;
-  border-top: 1px solid var(--border-light);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--border-light);
   padding: 0;
 }
 
@@ -168,8 +169,8 @@ body {
 }
 
 .nav-tab.active {
-  color: var(--primary-blue);
-  background-color: #EFF6FF;
+  color: var(--unam-gold-dark);
+  background-color: #FFFBEB;
 }
 
 .nav-tab.active::after {
@@ -179,7 +180,7 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background-color: var(--primary-blue);
+  background-color: var(--unam-gold);
 }
 
 .stats-pills {
@@ -188,10 +189,10 @@ body {
 }
 
 .pill-drive {
-  background-color: var(--primary-blue);
-  color: #FFFFFF;
+  background-color: var(--unam-gold);
+  color: var(--unam-blue);
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 7px 14px;
   border-radius: var(--radius-btn);
   text-decoration: none;
@@ -199,12 +200,13 @@ body {
 }
 
 .pill-drive:hover {
-  background-color: var(--primary-blue-hover);
+  background-color: var(--unam-gold-hover);
+  color: #FFFFFF;
 }
 
 /* ==========================================
    MAIN CONTENT
-   ========================================== */
+   ========================================= */
 .main-content {
   padding: 32px 24px 60px;
 }
@@ -258,13 +260,14 @@ body {
 }
 
 .btn-filter:hover {
-  border-color: var(--primary-blue);
+  border-color: var(--unam-gold);
 }
 
 .btn-filter.active {
-  background-color: var(--primary-blue);
-  color: #FFFFFF;
-  border-color: var(--primary-blue);
+  background-color: var(--unam-gold);
+  color: var(--unam-blue);
+  border-color: var(--unam-gold);
+  font-weight: 700;
 }
 
 .search-box {
@@ -286,8 +289,8 @@ body {
 }
 
 .search-box input:focus {
-  border-color: var(--primary-blue);
-  box-shadow: 0 0 0 3px rgba(56, 97, 251, 0.12);
+  border-color: var(--unam-gold);
+  box-shadow: 0 0 0 3px rgba(213, 159, 15, 0.18);
 }
 
 .btn-clear {
@@ -309,7 +312,7 @@ body {
 }
 
 /* ==========================================
-   CATÁLOGO DE TARJETAS (ESTILO IMAGEN EJEMPLO)
+   TARJETAS DE PROGRAMAS (ACENTO DORADO UNAM)
    ========================================== */
 .programs-grid {
   display: grid;
@@ -352,15 +355,15 @@ body {
   font-weight: 700;
   padding: 3px 10px;
   border-radius: 6px;
-  background-color: var(--chip-blue-bg);
-  color: var(--chip-blue-text);
-  border: 1px solid var(--chip-blue-border);
+  background-color: #F1F5F9;
+  color: var(--unam-blue);
+  border: 1px solid #CBD5E1;
 }
 
 .card-category-badge.version-b {
-  background-color: var(--chip-amber-bg);
-  color: var(--chip-amber-text);
-  border-color: var(--chip-amber-border);
+  background-color: var(--unam-gold-soft);
+  color: var(--unam-gold-dark);
+  border-color: var(--unam-gold-border);
 }
 
 .program-title {
@@ -392,7 +395,7 @@ body {
   color: var(--text-muted);
 }
 
-/* BOTONES DE LA TARJETA */
+/* BOTONES DE LA TARJETA (DORADO UNAM) */
 .card-actions-col {
   display: flex;
   flex-direction: column;
@@ -401,25 +404,26 @@ body {
 }
 
 .btn-inscribir-style {
-  background-color: var(--primary-blue);
-  color: #FFFFFF;
+  background-color: var(--unam-gold);
+  color: var(--unam-blue);
   border: none;
   border-radius: var(--radius-btn);
   padding: 10px 16px;
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   cursor: pointer;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
   font-family: inherit;
 }
 
 .btn-inscribir-style:hover {
-  background-color: var(--primary-blue-hover);
+  background-color: var(--unam-gold-hover);
+  color: #FFFFFF;
 }
 
 .card-sub-actions {
@@ -449,8 +453,8 @@ body {
 .btn-sub-exe {
   flex: 1;
   background-color: #FFFFFF;
-  color: #0D9488;
-  border: 1px solid #99F6E4;
+  color: var(--unam-blue);
+  border: 1px solid #CBD5E1;
   border-radius: 6px;
   padding: 7px 10px;
   font-size: 0.82rem;
@@ -461,12 +465,12 @@ body {
 }
 
 .btn-sub-exe:hover {
-  background-color: #F0FDFA;
-  border-color: #0D9488;
+  background-color: #F1F5F9;
+  border-color: var(--unam-blue);
 }
 
 /* ==========================================
-   TEMARIO
+   TEMARIO RESUELTO
    ========================================== */
 .temario-layout {
   display: grid;
@@ -525,9 +529,9 @@ body {
 }
 
 .unit-nav-btn.active {
-  background-color: var(--primary-blue);
-  color: #FFFFFF;
-  font-weight: 600;
+  background-color: var(--unam-gold);
+  color: var(--unam-blue);
+  font-weight: 700;
 }
 
 .unit-badge-small {
@@ -541,7 +545,7 @@ body {
 }
 
 .unit-nav-btn.active .unit-badge-small {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 43, 73, 0.15);
 }
 
 .units-content {
@@ -566,8 +570,9 @@ body {
 
 .unit-num-pill {
   display: inline-block;
-  background-color: var(--chip-blue-bg);
-  color: var(--chip-blue-text);
+  background-color: var(--unam-gold-soft);
+  color: var(--unam-gold-dark);
+  border: 1px solid var(--unam-gold-border);
   font-weight: 700;
   font-size: 0.8rem;
   padding: 4px 10px;
@@ -590,7 +595,7 @@ body {
 .tema-item {
   background-color: #F8FAFC;
   border: 1px solid var(--border-light);
-  border-left: 4px solid var(--primary-blue);
+  border-left: 4px solid var(--unam-gold);
   border-radius: 6px;
   padding: 18px 22px;
 }
@@ -631,6 +636,7 @@ body {
 .drive-card-hero {
   background-color: #FFFFFF;
   border: 1px solid var(--border-light);
+  border-top: 4px solid var(--unam-gold);
   border-radius: var(--radius-card);
   padding: 36px;
   text-align: center;
@@ -696,8 +702,8 @@ body {
 }
 
 .structure-card.highlight-card {
-  border-color: #BFDBFE;
-  background-color: #FAFCFF;
+  border-color: var(--unam-gold);
+  background-color: #FFFEFA;
 }
 
 .structure-card h3 {
@@ -713,15 +719,15 @@ body {
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 4px;
-  background-color: var(--chip-blue-bg);
-  color: var(--chip-blue-text);
+  background-color: #F1F5F9;
+  color: var(--unam-blue);
   margin-bottom: 14px;
   width: fit-content;
 }
 
 .struct-tag.tag-b {
-  background-color: var(--chip-amber-bg);
-  color: var(--chip-amber-text);
+  background-color: var(--unam-gold-soft);
+  color: var(--unam-gold-dark);
 }
 
 .structure-card ul {
@@ -736,10 +742,14 @@ body {
 }
 
 .card-link {
-  color: var(--primary-blue);
+  color: var(--unam-blue);
   font-weight: 700;
   text-decoration: underline;
   font-size: 0.88rem;
+}
+
+.card-link:hover {
+  color: var(--unam-gold);
 }
 
 /* ==========================================
@@ -767,6 +777,7 @@ body {
 .modal-dialog {
   background-color: #FFFFFF;
   border-radius: var(--radius-card);
+  border-top: 5px solid var(--unam-gold);
   max-width: 900px;
   width: 100%;
   max-height: 90vh;
@@ -792,8 +803,8 @@ body {
   font-weight: 700;
   padding: 3px 8px;
   border-radius: 4px;
-  background-color: var(--chip-blue-bg);
-  color: var(--chip-blue-text);
+  background-color: var(--unam-gold-soft);
+  color: var(--unam-gold-dark);
   margin-bottom: 6px;
 }
 
@@ -887,7 +898,7 @@ body {
 .code-file-tag {
   font-size: 0.82rem;
   font-weight: 700;
-  color: var(--primary-blue);
+  color: var(--unam-gold-dark);
   font-family: var(--font-mono);
 }
 
@@ -932,23 +943,25 @@ body {
   transition: all 0.15s ease;
 }
 
-.btn-action-blue {
-  background-color: var(--primary-blue);
-  color: #FFFFFF;
+.btn-action-gold {
+  background-color: var(--unam-gold);
+  color: var(--unam-blue);
+  font-weight: 700;
 }
 
-.btn-action-blue:hover {
-  background-color: var(--primary-blue-hover);
+.btn-action-gold:hover {
+  background-color: var(--unam-gold-hover);
+  color: #FFFFFF;
 }
 
 .btn-action-outline {
   background-color: #FFFFFF;
-  color: var(--primary-blue);
-  border: 1.5px solid var(--primary-blue);
+  color: var(--unam-blue);
+  border: 1.5px solid var(--unam-blue);
 }
 
 .btn-action-outline:hover {
-  background-color: #EFF6FF;
+  background-color: #F1F5F9;
 }
 
 .btn-modal-pdf {
@@ -961,15 +974,15 @@ body {
 }
 
 .btn-modal-exe {
-  background-color: #0D9488;
+  background-color: var(--unam-blue);
   color: #FFFFFF;
 }
 
 .btn-modal-exe:hover {
-  background-color: #0F766E;
+  background-color: var(--unam-blue-dark);
 }
 
-/* FOOTER MODERNO */
+/* FOOTER */
 .footer-main {
   background-color: #FFFFFF;
   color: var(--text-muted);
@@ -991,7 +1004,7 @@ body {
 }
 
 .footer-link {
-  color: var(--primary-blue);
+  color: var(--unam-gold-dark);
   text-decoration: underline;
   font-weight: 700;
 }
